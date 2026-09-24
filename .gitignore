@@ -1,2 +1,4 @@
 *.zip
 .venv/
+solari_forecast/models/*.ubj
+solari_forecast/models/*.cbm

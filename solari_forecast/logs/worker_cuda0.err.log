@@ -1,0 +1,4 @@
+/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [20:50:30] WARNING: /__w/xgboost/xgboost/src/learner.cc:782: 
+Parameters: { "huber_slope" } are not used.
+
+  self.starting_round = model.num_boosted_rounds()

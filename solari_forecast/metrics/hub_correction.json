@@ -1,0 +1,43 @@
+{
+	"measured_as": "back-test residual offsets applied to the validation forecast",
+	"curve": [
+		{
+			"prior": 5.0,
+			"valid_rmsle_testlike": 0.08662030987580738,
+			"valid_rmsle_all_rows": 0.09753222273080207,
+			"offset_sd": 0.02712753446421561
+		},
+		{
+			"prior": 10.0,
+			"valid_rmsle_testlike": 0.08556369755031396,
+			"valid_rmsle_all_rows": 0.09674853704891812,
+			"offset_sd": 0.022743628776052207
+		},
+		{
+			"prior": 20.0,
+			"valid_rmsle_testlike": 0.08450572029064966,
+			"valid_rmsle_all_rows": 0.0959973484083043,
+			"offset_sd": 0.017191310769354446
+		},
+		{
+			"prior": 40.0,
+			"valid_rmsle_testlike": 0.08376219422963622,
+			"valid_rmsle_all_rows": 0.09551503519292766,
+			"offset_sd": 0.011553609554099483
+		},
+		{
+			"prior": 80.0,
+			"valid_rmsle_testlike": 0.0834108790400153,
+			"valid_rmsle_all_rows": 0.09533475729566389,
+			"offset_sd": 0.006978329831040693
+		}
+	],
+	"valid_rmsle_testlike_before": 0.08331811034958768,
+	"best_prior": 80.0,
+	"gain_testlike": -9.276869042762481e-5,
+	"min_gain_required": 0.0001,
+	"applied_prior": null,
+	"valid_rmsle_all_rows_before": 0.0954280974418454,
+	"valid_rmsle_all_rows_after": 0.0954280974418454,
+	"test_offsets_summary": {}
+}

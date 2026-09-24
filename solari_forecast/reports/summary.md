@@ -1,6 +1,6 @@
 # Solari hub demand forecasting — approach, validation and findings
 
-**Run:** `20260924_185033` · **Seed:** `42` (models use `42`..`49`)
+**Run:** `20260924_203311` · **Seed:** `42` (models use `42`..`45`)
 · **Hardware:** cuda:0, cuda:1 · **XGBoost** 3.2.0
 
 ## 1. Problem and metric
@@ -13,21 +13,21 @@ loss the metric implies — and predictions are mapped back with `expm1`.
 
 ## 2. Approach
 
-- **Models:** a log-space blend of three structurally different gradient-boosting forecasters
-  (weights XGBoost rolling-origin 0.15, LightGBM direct 0.70, XGBoost multi-gap direct 0.15,
-  chosen on both held-out blocks). No deep learning.
-  - _Rolling-origin XGBoost:_ 8 boosters (`hist`, depth 10,
-    eta 0.03), 1400 rounds, averaged in log space.
-  - _Direct LightGBM (CPU, concurrent with the GPU boosters when GPUs exist):_
-    2 boosters, 4249 rounds, trained on every
-    open day with `HubID` as a native categorical, a Huber loss (alpha
-    0.2) and lags that are all at least 42 days old.
-  - _Multi-gap direct XGBoost (GPU):_ 6 models whose lags end
+- **Models:** a log-space blend of 3 structurally different gradient-boosting
+  forecasters, all trained on the GPUs (weights
+  XGBoost rolling-origin 0.45, XGBoost multi-gap direct 0.35, CatBoost direct 0.20,
+  chosen on the holiday-free rows of both held-out blocks). No deep learning.
+  - _Rolling-origin XGBoost:_ 4 boosters (`hist`, depth 10,
+    eta 0.03), 572 rounds, averaged in log space.
+  - _Multi-gap direct XGBoost:_ trained on every open day with `HubID` as a native
+    categorical and a pseudo-Huber loss (slope 0.2);
+    6 models whose lags end
     7, 14, 21, 28, 35, 42 days back. A test day `h` days ahead uses the smallest
     gap `>= h`, so near days get the freshest history the horizon allows.
+  - _Direct CatBoost:_ gaps 14, 42 with ordered target statistics on HubID, Weekday, RegionCluster.
 - **Rows used:** open days with positive volume. Closed days (`IsOpen == 0`) are predicted as
   exact zeros — in the full history that implication holds without a single exception.
-- **Features (122 total):** hub history statistics (overall, by weekday, by promo
+- **Features (128 total):** hub history statistics (overall, by weekday, by promo
   state, by month, with shrinkage), trailing 7/28/91/182/365-day levels and trends, the
   operating calendar supplied for the test window (promo runs, days since/until promo, closure
   runs), calendar seasonality, and hub metadata (format, assortment, competitor distance and
@@ -42,8 +42,9 @@ loss the metric implies — and predictions are mapped back with `expm1`.
   by its own earlier statistics window.
   No training row contributes to any statistic that describes it. Three automated audits assert
   this (Section 8.2).
-- **Calibration:** one global multiplier (1.014), selected on the validation block
+- **Calibration:** one global multiplier (1.018), selected on the validation block
   and confirmed on an independent back-test block.
+- **Per-hub correction:** evaluated but not applied (gain -0.00009 below the threshold).
 
 ## 3. Validation
 
@@ -57,16 +58,18 @@ the same horizon as the leaderboard window:
 
 **Results**
 
-| Model                                              | RMSLE       |
-| -------------------------------------------------- | ----------- |
-| XGBoost single booster (mean of 8)                 | 0.09890     |
-| XGBoost 8-booster ensemble                         | 0.09776     |
-| LightGBM direct (2 seeds)                          | 0.09558     |
-| XGBoost multi-gap direct (6 gap models)            | 0.09684     |
-| blend                                              | 0.09436     |
-| blend + calibration                                | **0.09358** |
-| blend, excluding open-but-zero rows                | 0.08259     |
-| back-test block, blend (models early-stopped here) | 0.08455     |
+| Model                                                 | RMSLE       |
+| ----------------------------------------------------- | ----------- |
+| XGBoost single booster (mean of 4)                    | 0.09873     |
+| XGBoost 4-booster ensemble                            | 0.09797     |
+| XGBoost multi-gap direct (6 gap models)               | 0.09679     |
+| CatBoost direct (2 gap models)                        | 0.09762     |
+| blend                                                 | 0.09491     |
+| blend + calibration                                   | 0.09543     |
+| blend + calibration + per-hub correction              | **0.09543** |
+| blend, test-like rows only (no holiday within 3 days) | 0.08484     |
+| blend, excluding open-but-zero rows                   | 0.08468     |
+| back-test block, blend (models early-stopped here)    | 0.08696     |
 
 **Naive baselines on the same validation block**
 
@@ -81,47 +84,48 @@ the same horizon as the leaderboard window:
 
 | Horizon | RMSLE   |
 | ------- | ------- |
-| week 1  | 0.13353 |
-| week 2  | 0.07916 |
-| week 3  | 0.08222 |
-| week 4  | 0.08155 |
-| week 5  | 0.08855 |
-| week 6  | 0.08482 |
+| week 1  | 0.13759 |
+| week 2  | 0.08581 |
+| week 3  | 0.08094 |
+| week 4  | 0.08265 |
+| week 5  | 0.08820 |
+| week 6  | 0.08476 |
 
 ## 4. Findings
 
-- Hub identity and recent level dominate: the top features are `HubDowPromoMean`, `HubPromoMean`, `HubTrailPromo91`, `HubTrailDow365`, `HolidaysThisWeek`, `PromoActive`, `HolidayTomorrow`, `HubDowMean`.
+- Hub identity and recent level dominate: the top features are `HubDowPromoMean`, `HubPromoMean`, `HubTrailPromo91`, `HubTrailDow365`, `HubDowMean`, `PromoActive`, `HubTrailDow91`, `HubTrailMean365`.
 - Gain share by feature family:
 
 | Family                  | Share |
 | ----------------------- | ----- |
-| hub history             | 54.0% |
-| trailing-window history | 22.3% |
-| calendar                | 14.8% |
-| promotion calendar      | 4.4%  |
-| operating status        | 2.9%  |
-| hub metadata            | 0.8%  |
-| network shape           | 0.5%  |
+| hub history             | 52.6% |
+| trailing-window history | 27.5% |
+| calendar                | 11.8% |
+| promotion calendar      | 4.9%  |
+| operating status        | 1.9%  |
+| hub metadata            | 0.5%  |
+| network shape           | 0.4%  |
 | year-over-year          | 0.4%  |
 
 - Promotions lift demand materially and the model captures them: RMSLE on promo days is
-  0.0850 vs 0.0980 on
+  0.0876 vs 0.0995 on
   non-promo days.
 - Error is concentrated: the worst 1% of rows carry
-  36.3% of the total squared log error.
+  35.1% of the total squared log error.
 - Hubs with a renovation gap in their history score
-  0.0881 vs 0.0946 for
+  0.0889 vs 0.0966 for
   the rest, and the first week after a closure is harder
-  (0.1041) than settled trading days
-  (0.1177).
+  (0.1064) than settled trading days
+  (0.1151).
 - Residual log-space bias after calibration is
-  +0.00028, i.e. the forecast is effectively unbiased at the network level.
+  +0.00992, i.e. the forecast is effectively unbiased at the network level.
 
 ## 5. Limitations
 
 - `RegionalHoliday` takes values 1–3 in training but is uniformly 0 across the test window, so
-  the holiday features cannot contribute there; the validation block does contain holidays, so
-  the reported score is, if anything, conservative for this specific test period.
+  the holiday features cannot contribute there. The validation block does contain holidays, so
+  the all-rows score is conservative for this test period; model selection therefore uses the
+  test-like (holiday-free) rows.
 - A 42-day-ahead forecast cannot react to level shifts that begin after the history ends; the
   hub-series plots in Section 15.1 show this is the dominant residual failure mode.
 - The calibration multiplier is a single parameter fitted on the validation block, which makes

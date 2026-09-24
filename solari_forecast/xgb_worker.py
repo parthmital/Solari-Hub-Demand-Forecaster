@@ -1,4 +1,5 @@
-# Standalone XGBoost training worker: one process per device, jobs run sequentially.
+# Standalone GPU training worker (XGBoost or CatBoost). The dispatcher starts one process per
+# job and pins it to one card, so several jobs can share a GPU without sharing a CUDA context.
 import argparse
 import json
 import os
@@ -31,6 +32,172 @@ def make_callback(xgb, tag, total, every=25):
     return _CB()
 
 
+def row_masks(df, job):
+    if "train_end" in job:
+        # direct-model table: every observed hub-day; the job names its own windows
+        dates = df["Date"].to_numpy()
+        good = (df["IsOpen"].to_numpy() == 1) & (df["OrderVolume"].to_numpy() > 0)
+        is_train = good & (dates <= np.datetime64(job["train_end"]))
+        is_target = (dates >= np.datetime64(job["target_start"])) & (
+            dates <= np.datetime64(job["target_end"])
+        )
+    else:
+        is_train = (df["role"] == "train").to_numpy()
+        is_target = (df["role"] == "target").to_numpy()
+    # only open target rows carry a usable label; closed rows are deterministic zeros
+    is_eval = (
+        is_target & (df["IsOpen"].to_numpy() == 1) & (df["OrderVolume"].to_numpy() > 0)
+    )
+    return is_train, is_target, is_eval
+
+
+def train_xgboost(job, df, masks, device, nthread):
+    import xgboost as xgb  # imported after CUDA_VISIBLE_DEVICES is set
+
+    is_train, is_target, is_eval = masks
+    tag, feats = job["tag"], job["features"]
+    cats = set(job.get("categorical", []))
+    ftypes = ["c" if f in cats else "q" for f in feats]
+    dm_kw = {
+        "feature_names": feats,
+        "feature_types": ftypes,
+        "enable_categorical": bool(cats),
+    }
+
+    Xtr = df.loc[is_train, feats].to_numpy(dtype=np.float32)
+    ytr = df.loc[is_train, "y"].to_numpy(dtype=np.float32)
+    wtr = (
+        df.loc[is_train, "w"].to_numpy(dtype=np.float32) if job["use_weights"] else None
+    )
+
+    params = dict(job["params"])
+    params["device"] = device
+    params["seed"] = int(job["seed"])
+    # start from the (weighted) mean log volume: a robust loss would otherwise need hundreds
+    # of rounds just to walk from the default intercept to ~8.7
+    params.setdefault("base_score", float(np.average(ytr, weights=wtr)))
+    if nthread:
+        params["nthread"] = int(nthread)
+
+    dtrain = xgb.QuantileDMatrix(Xtr, label=ytr, weight=wtr, **dm_kw)
+    evals = [(dtrain, "train")]
+    if job["evaluate"]:
+        Xva = df.loc[is_eval, feats].to_numpy(dtype=np.float32)
+        yva = df.loc[is_eval, "y"].to_numpy(dtype=np.float32)
+        dvalid = xgb.QuantileDMatrix(Xva, label=yva, ref=dtrain, **dm_kw)
+        evals.append((dvalid, "valid"))
+
+    total = int(job["num_boost_round"])
+    callbacks = [make_callback(xgb, tag, total, job.get("progress_every", 25))]
+    kwargs = {}
+    if job["evaluate"] and job.get("early_stopping"):
+        kwargs["early_stopping_rounds"] = int(job["early_stopping"])
+
+    booster = xgb.train(
+        params,
+        dtrain,
+        num_boost_round=total,
+        evals=evals,
+        verbose_eval=False,
+        callbacks=callbacks,
+        **kwargs
+    )
+    best_iter = int(getattr(booster, "best_iteration", total - 1))
+    best_score = float(getattr(booster, "best_score", float("nan")))
+
+    # predictions for every target row of this block, in the parquet's own row order
+    dall = xgb.DMatrix(df.loc[is_target, feats].to_numpy(dtype=np.float32), **dm_kw)
+    preds = booster.predict(dall, iteration_range=(0, best_iter + 1))
+
+    booster.save_model(job["out_prefix"] + ".ubj")
+    importance = {
+        "importance_gain": {
+            k: float(v) for k, v in booster.get_score(importance_type="gain").items()
+        },
+        "importance_weight": {
+            k: float(v) for k, v in booster.get_score(importance_type="weight").items()
+        },
+    }
+    return preds, best_iter, best_score, importance, params
+
+
+def train_catboost(job, df, masks, device, nthread):
+    from catboost import CatBoostRegressor, Pool
+
+    is_train, is_target, is_eval = masks
+    tag, feats = job["tag"], job["features"]
+    cats = list(job.get("categorical", []))
+
+    def frame(mask):
+        X = df.loc[mask, feats].copy()
+        for c in cats:
+            X[c] = X[c].astype("int64")  # CatBoost needs integer (or string) categories
+        return X
+
+    ytr = df.loc[is_train, "y"].to_numpy(dtype=np.float64)
+    wtr = (
+        df.loc[is_train, "w"].to_numpy(dtype=np.float64) if job["use_weights"] else None
+    )
+    ptrain = Pool(frame(is_train), label=ytr, weight=wtr, cat_features=cats)
+
+    total = int(job["num_boost_round"])
+    early = (
+        int(job["early_stopping"])
+        if job["evaluate"] and job.get("early_stopping")
+        else 0
+    )
+    params = dict(job["params"])
+    params.update(
+        iterations=total,
+        random_seed=int(job["seed"]),
+        task_type="GPU" if device != "cpu" else "CPU",
+        verbose=0,
+        allow_writing_files=False,
+        use_best_model=bool(early),  # never pick rounds on a block that is being scored
+    )
+    if device != "cpu":
+        params["devices"] = "0"
+    else:
+        params.pop("gpu_ram_part", None)
+    if nthread:
+        params["thread_count"] = int(nthread)
+
+    fit_kw = {}
+    if early:
+        yva = df.loc[is_eval, "y"].to_numpy(dtype=np.float64)
+        fit_kw["eval_set"] = Pool(frame(is_eval), label=yva, cat_features=cats)
+        fit_kw["early_stopping_rounds"] = early
+    emit("PROGRESS", {"tag": tag, "iter": 0, "total": total, "metrics": {}})
+    model = CatBoostRegressor(**params)
+    model.fit(ptrain, **fit_kw)
+
+    best_iter = model.get_best_iteration() if early else None
+    best_iter = int(best_iter) if best_iter is not None else int(model.tree_count_) - 1
+    best_score = float("nan")
+    if early:
+        best_score = float(
+            model.get_best_score().get("validation", {}).get("RMSE", float("nan"))
+        )
+    emit(
+        "PROGRESS",
+        {
+            "tag": tag,
+            "iter": best_iter + 1,
+            "total": total,
+            "metrics": {"valid-rmse": best_score} if early else {},
+        },
+    )
+
+    preds = model.predict(frame(is_target))
+    model.save_model(job["out_prefix"] + ".cbm")
+    importance = {
+        "importance_gain": {
+            f: float(v) for f, v in zip(feats, model.get_feature_importance())
+        },
+    }
+    return preds, best_iter, best_score, importance, params
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--jobs", required=True, help="JSON file holding the list of jobs")
@@ -45,8 +212,6 @@ def main():
     else:
         device = "cpu"
 
-    import xgboost as xgb  # imported after CUDA_VISIBLE_DEVICES is set
-
     jobs = json.loads(open(args.jobs, "r", encoding="utf-8").read())
     cache = {}
 
@@ -54,109 +219,41 @@ def main():
         tag = job["tag"]
         t0 = time.time()
         if job["data"] not in cache:
-            if len(cache) >= 3:
-                cache.clear()  # bound worker RAM; jobs are dealt so that reloads are rare
+            cache.clear()  # one table at a time bounds worker RAM
             cache[job["data"]] = pd.read_parquet(job["data"])
         df = cache[job["data"]]
-        feats = job["features"]
+        masks = row_masks(df, job)
 
-        if "train_end" in job:
-            # direct-model table: every observed hub-day; the job names its own windows
-            dates = df["Date"].to_numpy()
-            good = (df["IsOpen"].to_numpy() == 1) & (df["OrderVolume"].to_numpy() > 0)
-            is_train = good & (dates <= np.datetime64(job["train_end"]))
-            is_target = (dates >= np.datetime64(job["target_start"])) & (
-                dates <= np.datetime64(job["target_end"])
-            )
-        else:
-            is_train = (df["role"] == "train").to_numpy()
-            is_target = (df["role"] == "target").to_numpy()
-        Xtr = df.loc[is_train, feats].to_numpy(dtype=np.float32)
-        ytr = df.loc[is_train, "y"].to_numpy(dtype=np.float32)
-        wtr = (
-            df.loc[is_train, "w"].to_numpy(dtype=np.float32)
-            if job["use_weights"]
-            else None
+        trainer = train_catboost if job.get("lib") == "catboost" else train_xgboost
+        preds, best_iter, best_score, importance, params = trainer(
+            job, df, masks, device, args.nthread
         )
-
-        params = dict(job["params"])
-        params["device"] = device
-        params["seed"] = int(job["seed"])
-        if args.nthread:
-            params["nthread"] = int(args.nthread)
-
-        dtrain = xgb.QuantileDMatrix(Xtr, label=ytr, weight=wtr, feature_names=feats)
-        evals = [(dtrain, "train")]
-        dvalid = None
-        if job["evaluate"]:
-            # Only open target rows carry a usable label; closed rows are deterministic zeros.
-            mask = (
-                is_target
-                & (df["IsOpen"].to_numpy() == 1)
-                & (df["OrderVolume"].to_numpy() > 0)
-            )
-            if "eval_end" in job:
-                # a gap-G direct model is only allowed to serve the first G days of a block
-                mask &= df["Date"].to_numpy() <= np.datetime64(job["eval_end"])
-            Xva = df.loc[mask, feats].to_numpy(dtype=np.float32)
-            yva = df.loc[mask, "y"].to_numpy(dtype=np.float32)
-            dvalid = xgb.QuantileDMatrix(
-                Xva, label=yva, ref=dtrain, feature_names=feats
-            )
-            evals.append((dvalid, "valid"))
-
-        total = int(job["num_boost_round"])
-        callbacks = [make_callback(xgb, tag, total, job.get("progress_every", 25))]
-        kwargs = {}
-        if job["evaluate"] and job.get("early_stopping"):
-            kwargs["early_stopping_rounds"] = int(job["early_stopping"])
-
-        booster = xgb.train(
-            params,
-            dtrain,
-            num_boost_round=total,
-            evals=evals,
-            verbose_eval=False,
-            callbacks=callbacks,
-            **kwargs
-        )
-
-        best_iter = int(getattr(booster, "best_iteration", total - 1))
-        rng = (0, best_iter + 1)
-
-        # predictions for every target row of this block, in the parquet's own row order
-        Xall = df.loc[is_target, feats].to_numpy(dtype=np.float32)
-        dall = xgb.DMatrix(Xall, feature_names=feats)
-        preds = booster.predict(dall, iteration_range=rng)
 
         prefix = job["out_prefix"]
-        booster.save_model(prefix + ".ubj")
-        np.save(prefix + ".pred.npy", preds.astype(np.float32))
-        score_map = booster.get_score(importance_type="gain")
-        weight_map = booster.get_score(importance_type="weight")
+        np.save(prefix + ".pred.npy", np.asarray(preds, dtype=np.float32))
         meta = {
             "tag": tag,
+            "lib": job.get("lib", "xgboost"),
             "device": args.device,
             "seed": int(job["seed"]),
             "best_iteration": best_iter,
-            "best_score": float(getattr(booster, "best_score", float("nan"))),
-            "num_boost_round": total,
-            "train_rows": int(is_train.sum()),
-            "target_rows": int(is_target.sum()),
+            "best_score": best_score,
+            "num_boost_round": int(job["num_boost_round"]),
+            "train_rows": int(masks[0].sum()),
+            "target_rows": int(masks[1].sum()),
             "use_weights": bool(job["use_weights"]),
             "seconds": round(time.time() - t0, 1),
-            "importance_gain": {k: float(v) for k, v in score_map.items()},
-            "importance_weight": {k: float(v) for k, v in weight_map.items()},
+            **importance,
             "params": {k: v for k, v in params.items()},
         }
         with open(prefix + ".meta.json", "w", encoding="utf-8") as fh:
-            json.dump(meta, fh, indent=2)
+            json.dump(meta, fh, indent=2, default=str)
         emit(
             "DONE",
             {
                 "tag": tag,
                 "best_iteration": best_iter,
-                "best_score": meta["best_score"],
+                "best_score": best_score,
                 "seconds": meta["seconds"],
             },
         )

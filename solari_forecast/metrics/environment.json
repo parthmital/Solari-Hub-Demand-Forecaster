@@ -1,17 +1,17 @@
 {
-	"run_tag": "20260924_185033",
-	"started_at": "2026-09-24T18:50:33",
+	"run_tag": "20260924_203311",
+	"started_at": "2026-09-24T20:33:11",
 	"python": "3.12.13",
 	"platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
 	"cpu_count": 4,
 	"numpy": "2.0.2",
 	"pandas": "2.3.3",
 	"xgboost": "3.2.0",
-	"lightgbm": "4.6.0",
+	"catboost": "1.2.10",
 	"matplotlib": "3.10.0",
 	"devices": ["cuda:0", "cuda:1"],
-	"lightgbm_threads": 4,
-	"lightgbm_concurrent_with_gpu": true,
+	"workers_per_gpu": 2,
+	"worker_slots": 4,
 	"gpu_devices_detected": ["cuda:0", "cuda:1"],
 	"seed": 42
 }
