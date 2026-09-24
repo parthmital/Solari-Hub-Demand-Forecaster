@@ -1,3 +1,215 @@
+PROGRESS {"tag": "B_valid_seed43", "iter": 1, "total": 1273, "metrics": {"train-rmse": 0.41311433469562964, "valid-rmse": 0.39278161045643506}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 26, "total": 1273, "metrics": {"train-rmse": 0.2208160677571738, "valid-rmse": 0.21207898779365683}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 51, "total": 1273, "metrics": {"train-rmse": 0.14155649635584386, "valid-rmse": 0.14244756604473813}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 76, "total": 1273, "metrics": {"train-rmse": 0.11180760972192774, "valid-rmse": 0.11766676634976854}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 101, "total": 1273, "metrics": {"train-rmse": 0.1002749949712188, "valid-rmse": 0.10919260877912049}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 126, "total": 1273, "metrics": {"train-rmse": 0.09431144090059528, "valid-rmse": 0.10590088529476858}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 151, "total": 1273, "metrics": {"train-rmse": 0.09050956819184415, "valid-rmse": 0.1041233864188191}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 176, "total": 1273, "metrics": {"train-rmse": 0.0877444973734256, "valid-rmse": 0.10317533723209114}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 201, "total": 1273, "metrics": {"train-rmse": 0.08550042654008272, "valid-rmse": 0.1024481611375372}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 226, "total": 1273, "metrics": {"train-rmse": 0.0836481124938614, "valid-rmse": 0.1017299917327901}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 251, "total": 1273, "metrics": {"train-rmse": 0.08195784369338219, "valid-rmse": 0.10110862002384273}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 276, "total": 1273, "metrics": {"train-rmse": 0.0805722949432056, "valid-rmse": 0.100612927832494}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 301, "total": 1273, "metrics": {"train-rmse": 0.07940978607639868, "valid-rmse": 0.10019800235045012}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 326, "total": 1273, "metrics": {"train-rmse": 0.07828852919524758, "valid-rmse": 0.10017111579872547}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 351, "total": 1273, "metrics": {"train-rmse": 0.07729372723190948, "valid-rmse": 0.09972081477132332}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 376, "total": 1273, "metrics": {"train-rmse": 0.07639636540169131, "valid-rmse": 0.0996723161439139}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 401, "total": 1273, "metrics": {"train-rmse": 0.07563383735183027, "valid-rmse": 0.09965274547384037}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 426, "total": 1273, "metrics": {"train-rmse": 0.0748916450703734, "valid-rmse": 0.09971931456130566}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 451, "total": 1273, "metrics": {"train-rmse": 0.07423925430517679, "valid-rmse": 0.09969670242173588}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 476, "total": 1273, "metrics": {"train-rmse": 0.07358418989250491, "valid-rmse": 0.09964768998991105}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 501, "total": 1273, "metrics": {"train-rmse": 0.07295927667876956, "valid-rmse": 0.09960945243771492}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 526, "total": 1273, "metrics": {"train-rmse": 0.07234985283036362, "valid-rmse": 0.09956119406517218}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 551, "total": 1273, "metrics": {"train-rmse": 0.07175798283618082, "valid-rmse": 0.09944870370650237}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 576, "total": 1273, "metrics": {"train-rmse": 0.07115283037532333, "valid-rmse": 0.09949946281482454}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 601, "total": 1273, "metrics": {"train-rmse": 0.07062207259959623, "valid-rmse": 0.09925249144403515}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 626, "total": 1273, "metrics": {"train-rmse": 0.07010985305608222, "valid-rmse": 0.0992201611221974}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 651, "total": 1273, "metrics": {"train-rmse": 0.06960128821195301, "valid-rmse": 0.09918317134161042}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 676, "total": 1273, "metrics": {"train-rmse": 0.06911452489667055, "valid-rmse": 0.09909247133801403}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 701, "total": 1273, "metrics": {"train-rmse": 0.06858505657969292, "valid-rmse": 0.09910394870191318}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 726, "total": 1273, "metrics": {"train-rmse": 0.06810399623026533, "valid-rmse": 0.09911231394266484}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 751, "total": 1273, "metrics": {"train-rmse": 0.06763822840214165, "valid-rmse": 0.09905359189017134}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 776, "total": 1273, "metrics": {"train-rmse": 0.06720877166332007, "valid-rmse": 0.09900543363293234}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 801, "total": 1273, "metrics": {"train-rmse": 0.06676034650299904, "valid-rmse": 0.09914502033692196}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 826, "total": 1273, "metrics": {"train-rmse": 0.06633311930596665, "valid-rmse": 0.09912291719171187}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 851, "total": 1273, "metrics": {"train-rmse": 0.06598599477896154, "valid-rmse": 0.09914480257282811}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 876, "total": 1273, "metrics": {"train-rmse": 0.06556495927402543, "valid-rmse": 0.09912176346908842}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 901, "total": 1273, "metrics": {"train-rmse": 0.06514610266375068, "valid-rmse": 0.09908921778498331}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 926, "total": 1273, "metrics": {"train-rmse": 0.06481050098815556, "valid-rmse": 0.09907337139971142}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 951, "total": 1273, "metrics": {"train-rmse": 0.06452756013055311, "valid-rmse": 0.09903300720413703}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 976, "total": 1273, "metrics": {"train-rmse": 0.0641778430852741, "valid-rmse": 0.09893911935400636}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 1001, "total": 1273, "metrics": {"train-rmse": 0.06378509457201237, "valid-rmse": 0.09895368605006072}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 1026, "total": 1273, "metrics": {"train-rmse": 0.0634196443123805, "valid-rmse": 0.0989261354820713}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 1051, "total": 1273, "metrics": {"train-rmse": 0.06304364320487943, "valid-rmse": 0.09891882702480458}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 1076, "total": 1273, "metrics": {"train-rmse": 0.06269848130601917, "valid-rmse": 0.09891267154329067}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 1101, "total": 1273, "metrics": {"train-rmse": 0.06240438844265472, "valid-rmse": 0.09889394911705318}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 1126, "total": 1273, "metrics": {"train-rmse": 0.06211054216964083, "valid-rmse": 0.0989143217554374}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 1151, "total": 1273, "metrics": {"train-rmse": 0.06181811377175553, "valid-rmse": 0.0989397438997927}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 1176, "total": 1273, "metrics": {"train-rmse": 0.06154501572454774, "valid-rmse": 0.09891682408801247}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 1201, "total": 1273, "metrics": {"train-rmse": 0.06123321139595679, "valid-rmse": 0.09899773062953969}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 1226, "total": 1273, "metrics": {"train-rmse": 0.06088637383882407, "valid-rmse": 0.09898960208402725}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 1251, "total": 1273, "metrics": {"train-rmse": 0.06057245551495605, "valid-rmse": 0.09898323875783312}}
+PROGRESS {"tag": "B_valid_seed43", "iter": 1273, "total": 1273, "metrics": {"train-rmse": 0.06032778057502716, "valid-rmse": 0.09896610334400162}}
+DONE {"tag": "B_valid_seed43", "best_iteration": 1272, "best_score": NaN, "seconds": 66.2}
+PROGRESS {"tag": "B_valid_seed45", "iter": 1, "total": 1273, "metrics": {"train-rmse": 0.4130830984776387, "valid-rmse": 0.3926468243124459}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 26, "total": 1273, "metrics": {"train-rmse": 0.22108819925122586, "valid-rmse": 0.2126696849784828}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 51, "total": 1273, "metrics": {"train-rmse": 0.14168864730843697, "valid-rmse": 0.14209116137893313}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 76, "total": 1273, "metrics": {"train-rmse": 0.111705028958469, "valid-rmse": 0.11762175796177182}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 101, "total": 1273, "metrics": {"train-rmse": 0.10020044042128468, "valid-rmse": 0.10970882231397873}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 126, "total": 1273, "metrics": {"train-rmse": 0.09430967084826114, "valid-rmse": 0.10628336973574526}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 151, "total": 1273, "metrics": {"train-rmse": 0.09046011226914723, "valid-rmse": 0.10436983571057486}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 176, "total": 1273, "metrics": {"train-rmse": 0.08751132976765794, "valid-rmse": 0.1034298865198429}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 201, "total": 1273, "metrics": {"train-rmse": 0.08510833203320632, "valid-rmse": 0.10272921838758048}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 226, "total": 1273, "metrics": {"train-rmse": 0.0831432462049885, "valid-rmse": 0.10192111958026936}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 251, "total": 1273, "metrics": {"train-rmse": 0.08153438254747254, "valid-rmse": 0.10145968083095747}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 276, "total": 1273, "metrics": {"train-rmse": 0.0802305172413148, "valid-rmse": 0.10103093962794642}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 301, "total": 1273, "metrics": {"train-rmse": 0.0791018231262157, "valid-rmse": 0.10078449515782435}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 326, "total": 1273, "metrics": {"train-rmse": 0.0780912990757365, "valid-rmse": 0.100566996690346}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 351, "total": 1273, "metrics": {"train-rmse": 0.07692950201930661, "valid-rmse": 0.10053023180081966}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 376, "total": 1273, "metrics": {"train-rmse": 0.07603743926125527, "valid-rmse": 0.10038901152878724}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 401, "total": 1273, "metrics": {"train-rmse": 0.07529959108968383, "valid-rmse": 0.10025404554734267}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 426, "total": 1273, "metrics": {"train-rmse": 0.07455125848024005, "valid-rmse": 0.10012098762569265}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 451, "total": 1273, "metrics": {"train-rmse": 0.07383889053063715, "valid-rmse": 0.09994965017484361}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 476, "total": 1273, "metrics": {"train-rmse": 0.0732750973943008, "valid-rmse": 0.09979133502158216}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 501, "total": 1273, "metrics": {"train-rmse": 0.07262009075296305, "valid-rmse": 0.09969495180072285}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 526, "total": 1273, "metrics": {"train-rmse": 0.07199807787062307, "valid-rmse": 0.09963256905084099}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 551, "total": 1273, "metrics": {"train-rmse": 0.07141951311630652, "valid-rmse": 0.09956222649296821}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 576, "total": 1273, "metrics": {"train-rmse": 0.07091687590289153, "valid-rmse": 0.09950332332934707}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 601, "total": 1273, "metrics": {"train-rmse": 0.070406540837377, "valid-rmse": 0.09926119830898032}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 626, "total": 1273, "metrics": {"train-rmse": 0.06990307496707372, "valid-rmse": 0.09923220251046523}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 651, "total": 1273, "metrics": {"train-rmse": 0.06942208362758048, "valid-rmse": 0.09927453227920094}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 676, "total": 1273, "metrics": {"train-rmse": 0.06889751242625557, "valid-rmse": 0.09918695603535127}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 701, "total": 1273, "metrics": {"train-rmse": 0.06846373581059782, "valid-rmse": 0.0991248056830797}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 726, "total": 1273, "metrics": {"train-rmse": 0.06799789426920205, "valid-rmse": 0.09905800672455999}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 751, "total": 1273, "metrics": {"train-rmse": 0.06752076387876935, "valid-rmse": 0.09907321260734982}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 776, "total": 1273, "metrics": {"train-rmse": 0.06710885051359178, "valid-rmse": 0.09900544357732396}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 801, "total": 1273, "metrics": {"train-rmse": 0.06672984222093335, "valid-rmse": 0.09898985885216707}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 826, "total": 1273, "metrics": {"train-rmse": 0.06630777095245077, "valid-rmse": 0.09895529634505768}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 851, "total": 1273, "metrics": {"train-rmse": 0.06593324150020637, "valid-rmse": 0.09892765567016507}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 876, "total": 1273, "metrics": {"train-rmse": 0.06553933773845486, "valid-rmse": 0.09895690010366437}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 901, "total": 1273, "metrics": {"train-rmse": 0.06515185259411985, "valid-rmse": 0.09889186115535518}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 926, "total": 1273, "metrics": {"train-rmse": 0.06479534601380588, "valid-rmse": 0.09889240554710381}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 951, "total": 1273, "metrics": {"train-rmse": 0.06445189965765818, "valid-rmse": 0.09887676091857626}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 976, "total": 1273, "metrics": {"train-rmse": 0.06411598404471541, "valid-rmse": 0.09885812898619785}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 1001, "total": 1273, "metrics": {"train-rmse": 0.06375696207499934, "valid-rmse": 0.09885632898749148}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 1026, "total": 1273, "metrics": {"train-rmse": 0.06340225613986819, "valid-rmse": 0.09882651952751896}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 1051, "total": 1273, "metrics": {"train-rmse": 0.06303788646385394, "valid-rmse": 0.09885851780250181}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 1076, "total": 1273, "metrics": {"train-rmse": 0.06267191593612473, "valid-rmse": 0.09881934879481402}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 1101, "total": 1273, "metrics": {"train-rmse": 0.06236042918570127, "valid-rmse": 0.0987430058000147}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 1126, "total": 1273, "metrics": {"train-rmse": 0.06206825707645451, "valid-rmse": 0.09877754021831248}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 1151, "total": 1273, "metrics": {"train-rmse": 0.06177269829616919, "valid-rmse": 0.0987824264909037}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 1176, "total": 1273, "metrics": {"train-rmse": 0.06147557976906533, "valid-rmse": 0.0987860722935612}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 1201, "total": 1273, "metrics": {"train-rmse": 0.06117040156425081, "valid-rmse": 0.09877114782640924}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 1226, "total": 1273, "metrics": {"train-rmse": 0.06086769667688285, "valid-rmse": 0.0987806932168479}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 1251, "total": 1273, "metrics": {"train-rmse": 0.06059033712170727, "valid-rmse": 0.09875638611112447}}
+PROGRESS {"tag": "B_valid_seed45", "iter": 1273, "total": 1273, "metrics": {"train-rmse": 0.06036882608203369, "valid-rmse": 0.09873606523080806}}
+DONE {"tag": "B_valid_seed45", "best_iteration": 1272, "best_score": NaN, "seconds": 65.3}
+PROGRESS {"tag": "B_valid_seed47", "iter": 1, "total": 1273, "metrics": {"train-rmse": 0.41308977805432845, "valid-rmse": 0.3929112805873172}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 26, "total": 1273, "metrics": {"train-rmse": 0.22087015449136826, "valid-rmse": 0.2124474435229933}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 51, "total": 1273, "metrics": {"train-rmse": 0.14139829608819074, "valid-rmse": 0.1420656718456885}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 76, "total": 1273, "metrics": {"train-rmse": 0.11159440750673008, "valid-rmse": 0.1175358872314729}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 101, "total": 1273, "metrics": {"train-rmse": 0.1000152111654261, "valid-rmse": 0.1092107468380343}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 126, "total": 1273, "metrics": {"train-rmse": 0.09429738110757332, "valid-rmse": 0.1060408026128508}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 151, "total": 1273, "metrics": {"train-rmse": 0.0904513850308959, "valid-rmse": 0.10420280234910433}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 176, "total": 1273, "metrics": {"train-rmse": 0.0875884647911274, "valid-rmse": 0.10296130113198393}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 201, "total": 1273, "metrics": {"train-rmse": 0.08521268575006469, "valid-rmse": 0.10206601820489936}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 226, "total": 1273, "metrics": {"train-rmse": 0.08328833459050823, "valid-rmse": 0.10137669945443939}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 251, "total": 1273, "metrics": {"train-rmse": 0.08164127394521908, "valid-rmse": 0.10091788780849474}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 276, "total": 1273, "metrics": {"train-rmse": 0.08030721308237729, "valid-rmse": 0.10055155619697348}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 301, "total": 1273, "metrics": {"train-rmse": 0.07915726697363658, "valid-rmse": 0.10008934733607311}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 326, "total": 1273, "metrics": {"train-rmse": 0.07806608624558413, "valid-rmse": 0.09995612332258338}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 351, "total": 1273, "metrics": {"train-rmse": 0.0770929605686714, "valid-rmse": 0.09973403181296288}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 376, "total": 1273, "metrics": {"train-rmse": 0.07633281359883314, "valid-rmse": 0.09952493833108098}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 401, "total": 1273, "metrics": {"train-rmse": 0.07551299723219054, "valid-rmse": 0.09942009838495544}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 426, "total": 1273, "metrics": {"train-rmse": 0.0747795983712846, "valid-rmse": 0.09924826252029116}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 451, "total": 1273, "metrics": {"train-rmse": 0.0741235909585235, "valid-rmse": 0.09923417673906426}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 476, "total": 1273, "metrics": {"train-rmse": 0.0734949452921486, "valid-rmse": 0.09917158886004405}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 501, "total": 1273, "metrics": {"train-rmse": 0.0727846631125053, "valid-rmse": 0.0990362077827583}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 526, "total": 1273, "metrics": {"train-rmse": 0.07219937704939414, "valid-rmse": 0.09893652196216843}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 551, "total": 1273, "metrics": {"train-rmse": 0.07154777477092897, "valid-rmse": 0.09874154355765367}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 576, "total": 1273, "metrics": {"train-rmse": 0.07101754933878363, "valid-rmse": 0.09875003868525262}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 601, "total": 1273, "metrics": {"train-rmse": 0.07049076048068272, "valid-rmse": 0.09861443844473014}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 626, "total": 1273, "metrics": {"train-rmse": 0.06994311919950953, "valid-rmse": 0.09854848415686945}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 651, "total": 1273, "metrics": {"train-rmse": 0.06945441158632192, "valid-rmse": 0.09847775819458902}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 676, "total": 1273, "metrics": {"train-rmse": 0.06898742438858826, "valid-rmse": 0.09851903052060833}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 701, "total": 1273, "metrics": {"train-rmse": 0.06852475944238562, "valid-rmse": 0.09854864499056577}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 726, "total": 1273, "metrics": {"train-rmse": 0.06805802027981976, "valid-rmse": 0.09850431839962819}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 751, "total": 1273, "metrics": {"train-rmse": 0.06765989141794619, "valid-rmse": 0.09848774458191416}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 776, "total": 1273, "metrics": {"train-rmse": 0.0672493775129092, "valid-rmse": 0.09849769856038443}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 801, "total": 1273, "metrics": {"train-rmse": 0.06682733917912773, "valid-rmse": 0.09841000891065192}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 826, "total": 1273, "metrics": {"train-rmse": 0.06640170107115823, "valid-rmse": 0.0983630537122431}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 851, "total": 1273, "metrics": {"train-rmse": 0.06593675548159644, "valid-rmse": 0.09834410360330992}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 876, "total": 1273, "metrics": {"train-rmse": 0.0655638322149518, "valid-rmse": 0.09832035882372639}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 901, "total": 1273, "metrics": {"train-rmse": 0.06518333081152816, "valid-rmse": 0.09828822028687906}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 926, "total": 1273, "metrics": {"train-rmse": 0.0648060853392076, "valid-rmse": 0.09826210048529038}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 951, "total": 1273, "metrics": {"train-rmse": 0.06443414164922433, "valid-rmse": 0.09821140280916758}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 976, "total": 1273, "metrics": {"train-rmse": 0.06407393559244327, "valid-rmse": 0.09816179556341051}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 1001, "total": 1273, "metrics": {"train-rmse": 0.06371288869102135, "valid-rmse": 0.09811644700538316}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 1026, "total": 1273, "metrics": {"train-rmse": 0.06334388904268488, "valid-rmse": 0.09810941293801369}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 1051, "total": 1273, "metrics": {"train-rmse": 0.06302791602010643, "valid-rmse": 0.0980928835766396}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 1076, "total": 1273, "metrics": {"train-rmse": 0.06273403910532736, "valid-rmse": 0.09809618580747086}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 1101, "total": 1273, "metrics": {"train-rmse": 0.06241716424559815, "valid-rmse": 0.09810642498998243}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 1126, "total": 1273, "metrics": {"train-rmse": 0.06212639316684785, "valid-rmse": 0.09814741085583688}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 1151, "total": 1273, "metrics": {"train-rmse": 0.06178810381453769, "valid-rmse": 0.09806641918784076}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 1176, "total": 1273, "metrics": {"train-rmse": 0.06148988934551798, "valid-rmse": 0.09806796625293547}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 1201, "total": 1273, "metrics": {"train-rmse": 0.06117419509536818, "valid-rmse": 0.09808921870826817}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 1226, "total": 1273, "metrics": {"train-rmse": 0.06088360311881009, "valid-rmse": 0.09812156465225268}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 1251, "total": 1273, "metrics": {"train-rmse": 0.06058570453196194, "valid-rmse": 0.09811664809609968}}
+PROGRESS {"tag": "B_valid_seed47", "iter": 1273, "total": 1273, "metrics": {"train-rmse": 0.06030580069298375, "valid-rmse": 0.09816286614676725}}
+DONE {"tag": "B_valid_seed47", "best_iteration": 1272, "best_score": NaN, "seconds": 65.3}
+PROGRESS {"tag": "B_valid_seed49", "iter": 1, "total": 1273, "metrics": {"train-rmse": 0.4132900780239427, "valid-rmse": 0.39300742747929657}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 26, "total": 1273, "metrics": {"train-rmse": 0.22129897630056336, "valid-rmse": 0.21281140773700657}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 51, "total": 1273, "metrics": {"train-rmse": 0.1418067756580771, "valid-rmse": 0.14225231943604136}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 76, "total": 1273, "metrics": {"train-rmse": 0.11181729976245448, "valid-rmse": 0.11745831137753211}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 101, "total": 1273, "metrics": {"train-rmse": 0.10019929463015637, "valid-rmse": 0.10900851712145242}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 126, "total": 1273, "metrics": {"train-rmse": 0.09424317667026204, "valid-rmse": 0.10558518910341501}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 151, "total": 1273, "metrics": {"train-rmse": 0.09047087031695386, "valid-rmse": 0.10404264117183785}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 176, "total": 1273, "metrics": {"train-rmse": 0.08755157192396243, "valid-rmse": 0.10315863438054446}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 201, "total": 1273, "metrics": {"train-rmse": 0.08527123627698209, "valid-rmse": 0.10233065196488293}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 226, "total": 1273, "metrics": {"train-rmse": 0.08334116022225865, "valid-rmse": 0.1016748330046836}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 251, "total": 1273, "metrics": {"train-rmse": 0.08171173664321667, "valid-rmse": 0.10117204812382109}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 276, "total": 1273, "metrics": {"train-rmse": 0.08029837752387196, "valid-rmse": 0.10084783712780673}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 301, "total": 1273, "metrics": {"train-rmse": 0.07918922563255228, "valid-rmse": 0.10050423698168194}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 326, "total": 1273, "metrics": {"train-rmse": 0.07809576655264039, "valid-rmse": 0.10048545396047101}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 351, "total": 1273, "metrics": {"train-rmse": 0.07719237539421711, "valid-rmse": 0.10019576162650451}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 376, "total": 1273, "metrics": {"train-rmse": 0.0763595567153103, "valid-rmse": 0.1000781627369043}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 401, "total": 1273, "metrics": {"train-rmse": 0.07553813090003235, "valid-rmse": 0.1000114535382205}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 426, "total": 1273, "metrics": {"train-rmse": 0.07491276426432462, "valid-rmse": 0.09998209931326149}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 451, "total": 1273, "metrics": {"train-rmse": 0.07415604560689275, "valid-rmse": 0.09995062405436475}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 476, "total": 1273, "metrics": {"train-rmse": 0.0734909359370159, "valid-rmse": 0.09990137969092239}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 501, "total": 1273, "metrics": {"train-rmse": 0.07289632406844088, "valid-rmse": 0.09986809120394859}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 526, "total": 1273, "metrics": {"train-rmse": 0.07227209012101928, "valid-rmse": 0.09978322691958891}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 551, "total": 1273, "metrics": {"train-rmse": 0.07171900666816963, "valid-rmse": 0.0997146479828423}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 576, "total": 1273, "metrics": {"train-rmse": 0.07115908656209087, "valid-rmse": 0.09965596962613207}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 601, "total": 1273, "metrics": {"train-rmse": 0.07061392724252959, "valid-rmse": 0.09966509740394791}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 626, "total": 1273, "metrics": {"train-rmse": 0.07009725793980488, "valid-rmse": 0.09973861987882303}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 651, "total": 1273, "metrics": {"train-rmse": 0.0696461634437723, "valid-rmse": 0.09968459499268909}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 676, "total": 1273, "metrics": {"train-rmse": 0.069165283532458, "valid-rmse": 0.09970897247058132}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 701, "total": 1273, "metrics": {"train-rmse": 0.06868605307366613, "valid-rmse": 0.09967409109811559}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 726, "total": 1273, "metrics": {"train-rmse": 0.0681949271193141, "valid-rmse": 0.09965808678613174}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 751, "total": 1273, "metrics": {"train-rmse": 0.06775577487815561, "valid-rmse": 0.09963609175630134}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 776, "total": 1273, "metrics": {"train-rmse": 0.06731725779528866, "valid-rmse": 0.09953229144796906}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 801, "total": 1273, "metrics": {"train-rmse": 0.06690887166761043, "valid-rmse": 0.09959913513087534}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 826, "total": 1273, "metrics": {"train-rmse": 0.06652549451948729, "valid-rmse": 0.0995873653962065}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 851, "total": 1273, "metrics": {"train-rmse": 0.06611464997690226, "valid-rmse": 0.09954651564002097}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 876, "total": 1273, "metrics": {"train-rmse": 0.06571596713284183, "valid-rmse": 0.09950755900902879}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 901, "total": 1273, "metrics": {"train-rmse": 0.06537055507019118, "valid-rmse": 0.0995413989821213}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 926, "total": 1273, "metrics": {"train-rmse": 0.06492054658613604, "valid-rmse": 0.09951235658397206}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 951, "total": 1273, "metrics": {"train-rmse": 0.0645576056241831, "valid-rmse": 0.09957571656223223}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 976, "total": 1273, "metrics": {"train-rmse": 0.06421453916728447, "valid-rmse": 0.09957576406453403}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 1001, "total": 1273, "metrics": {"train-rmse": 0.06384388292691882, "valid-rmse": 0.09958846773666265}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 1026, "total": 1273, "metrics": {"train-rmse": 0.06353804302441454, "valid-rmse": 0.09956881197947728}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 1051, "total": 1273, "metrics": {"train-rmse": 0.06325536591600908, "valid-rmse": 0.09958889558401933}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 1076, "total": 1273, "metrics": {"train-rmse": 0.06293015963285693, "valid-rmse": 0.09956987926838032}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 1101, "total": 1273, "metrics": {"train-rmse": 0.06259633015424378, "valid-rmse": 0.09958258009806037}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 1126, "total": 1273, "metrics": {"train-rmse": 0.06227004742313771, "valid-rmse": 0.09959258332706135}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 1151, "total": 1273, "metrics": {"train-rmse": 0.06196804991419626, "valid-rmse": 0.09957384521862052}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 1176, "total": 1273, "metrics": {"train-rmse": 0.06168104519684692, "valid-rmse": 0.09959384922231997}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 1201, "total": 1273, "metrics": {"train-rmse": 0.06138052664089776, "valid-rmse": 0.09963312702938881}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 1226, "total": 1273, "metrics": {"train-rmse": 0.06108346796627116, "valid-rmse": 0.09962473412460461}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 1251, "total": 1273, "metrics": {"train-rmse": 0.06078127960486887, "valid-rmse": 0.09958877240547177}}
+PROGRESS {"tag": "B_valid_seed49", "iter": 1273, "total": 1273, "metrics": {"train-rmse": 0.06054208039538313, "valid-rmse": 0.09963481253005163}}
+DONE {"tag": "B_valid_seed49", "best_iteration": 1272, "best_score": NaN, "seconds": 64.6}
 PROGRESS {"tag": "C_final_seed43", "iter": 1, "total": 1400, "metrics": {"train-rmse": 0.4124790663973738}}
 PROGRESS {"tag": "C_final_seed43", "iter": 26, "total": 1400, "metrics": {"train-rmse": 0.22047772867692056}}
 PROGRESS {"tag": "C_final_seed43", "iter": 51, "total": 1400, "metrics": {"train-rmse": 0.14100451810816708}}
@@ -55,7 +267,7 @@ PROGRESS {"tag": "C_final_seed43", "iter": 1326, "total": 1400, "metrics": {"tra
 PROGRESS {"tag": "C_final_seed43", "iter": 1351, "total": 1400, "metrics": {"train-rmse": 0.05856480230376018}}
 PROGRESS {"tag": "C_final_seed43", "iter": 1376, "total": 1400, "metrics": {"train-rmse": 0.05829842065992877}}
 PROGRESS {"tag": "C_final_seed43", "iter": 1400, "total": 1400, "metrics": {"train-rmse": 0.05804695944867838}}
-DONE {"tag": "C_final_seed43", "best_iteration": 1399, "best_score": NaN, "seconds": 53.6}
+DONE {"tag": "C_final_seed43", "best_iteration": 1399, "best_score": NaN, "seconds": 69.7}
 PROGRESS {"tag": "C_final_seed45", "iter": 1, "total": 1400, "metrics": {"train-rmse": 0.4124295521314551}}
 PROGRESS {"tag": "C_final_seed45", "iter": 26, "total": 1400, "metrics": {"train-rmse": 0.2206549965551414}}
 PROGRESS {"tag": "C_final_seed45", "iter": 51, "total": 1400, "metrics": {"train-rmse": 0.14119652656703097}}
@@ -113,7 +325,7 @@ PROGRESS {"tag": "C_final_seed45", "iter": 1326, "total": 1400, "metrics": {"tra
 PROGRESS {"tag": "C_final_seed45", "iter": 1351, "total": 1400, "metrics": {"train-rmse": 0.05870412077083513}}
 PROGRESS {"tag": "C_final_seed45", "iter": 1376, "total": 1400, "metrics": {"train-rmse": 0.05841722707333882}}
 PROGRESS {"tag": "C_final_seed45", "iter": 1400, "total": 1400, "metrics": {"train-rmse": 0.05815069398228897}}
-DONE {"tag": "C_final_seed45", "best_iteration": 1399, "best_score": NaN, "seconds": 53.8}
+DONE {"tag": "C_final_seed45", "best_iteration": 1399, "best_score": NaN, "seconds": 69.1}
 PROGRESS {"tag": "C_final_seed47", "iter": 1, "total": 1400, "metrics": {"train-rmse": 0.41243465990835204}}
 PROGRESS {"tag": "C_final_seed47", "iter": 26, "total": 1400, "metrics": {"train-rmse": 0.22042386595706998}}
 PROGRESS {"tag": "C_final_seed47", "iter": 51, "total": 1400, "metrics": {"train-rmse": 0.140844623137597}}
@@ -171,7 +383,7 @@ PROGRESS {"tag": "C_final_seed47", "iter": 1326, "total": 1400, "metrics": {"tra
 PROGRESS {"tag": "C_final_seed47", "iter": 1351, "total": 1400, "metrics": {"train-rmse": 0.0587080589134337}}
 PROGRESS {"tag": "C_final_seed47", "iter": 1376, "total": 1400, "metrics": {"train-rmse": 0.05840351593453314}}
 PROGRESS {"tag": "C_final_seed47", "iter": 1400, "total": 1400, "metrics": {"train-rmse": 0.05813012328576148}}
-DONE {"tag": "C_final_seed47", "best_iteration": 1399, "best_score": NaN, "seconds": 52.8}
+DONE {"tag": "C_final_seed47", "best_iteration": 1399, "best_score": NaN, "seconds": 67.4}
 PROGRESS {"tag": "C_final_seed49", "iter": 1, "total": 1400, "metrics": {"train-rmse": 0.41263068426584143}}
 PROGRESS {"tag": "C_final_seed49", "iter": 26, "total": 1400, "metrics": {"train-rmse": 0.2208742957467923}}
 PROGRESS {"tag": "C_final_seed49", "iter": 51, "total": 1400, "metrics": {"train-rmse": 0.1412889011828648}}
@@ -229,5 +441,259 @@ PROGRESS {"tag": "C_final_seed49", "iter": 1326, "total": 1400, "metrics": {"tra
 PROGRESS {"tag": "C_final_seed49", "iter": 1351, "total": 1400, "metrics": {"train-rmse": 0.05873132557853813}}
 PROGRESS {"tag": "C_final_seed49", "iter": 1376, "total": 1400, "metrics": {"train-rmse": 0.05845335827013258}}
 PROGRESS {"tag": "C_final_seed49", "iter": 1400, "total": 1400, "metrics": {"train-rmse": 0.05819864728926769}}
-DONE {"tag": "C_final_seed49", "best_iteration": 1399, "best_score": NaN, "seconds": 53.2}
-WORKER_DONE {"device": "cuda:1", "jobs": 4}
+DONE {"tag": "C_final_seed49", "best_iteration": 1399, "best_score": NaN, "seconds": 68.1}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1, "total": 2887, "metrics": {"train-rmse": 0.4042026759277863, "valid-rmse": 0.373277303934785}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 51, "total": 2887, "metrics": {"train-rmse": 0.12642431124959552, "valid-rmse": 0.11199885353715212}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 101, "total": 2887, "metrics": {"train-rmse": 0.11153856715067531, "valid-rmse": 0.10361946315578774}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 151, "total": 2887, "metrics": {"train-rmse": 0.10477195493710281, "valid-rmse": 0.09934080256270328}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 201, "total": 2887, "metrics": {"train-rmse": 0.10078865675182416, "valid-rmse": 0.09745187767383962}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 251, "total": 2887, "metrics": {"train-rmse": 0.09821767113806343, "valid-rmse": 0.09577164275054866}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 301, "total": 2887, "metrics": {"train-rmse": 0.09610745936240642, "valid-rmse": 0.09512200479809546}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 351, "total": 2887, "metrics": {"train-rmse": 0.09437381849461438, "valid-rmse": 0.09429062107482014}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 401, "total": 2887, "metrics": {"train-rmse": 0.09293782990808895, "valid-rmse": 0.09397785004687317}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 451, "total": 2887, "metrics": {"train-rmse": 0.09182834284669446, "valid-rmse": 0.09348838999222864}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 501, "total": 2887, "metrics": {"train-rmse": 0.09070047041220484, "valid-rmse": 0.09299340924992734}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 551, "total": 2887, "metrics": {"train-rmse": 0.0896646497831649, "valid-rmse": 0.09265463033184468}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 601, "total": 2887, "metrics": {"train-rmse": 0.0887572761853474, "valid-rmse": 0.0922739320965181}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 651, "total": 2887, "metrics": {"train-rmse": 0.08797015260080807, "valid-rmse": 0.09203716067512255}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 701, "total": 2887, "metrics": {"train-rmse": 0.08718508235699451, "valid-rmse": 0.09201622134563732}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 751, "total": 2887, "metrics": {"train-rmse": 0.08648833744065353, "valid-rmse": 0.09175492317410597}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 801, "total": 2887, "metrics": {"train-rmse": 0.08574693385829422, "valid-rmse": 0.09165754443646298}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 851, "total": 2887, "metrics": {"train-rmse": 0.08506771394432305, "valid-rmse": 0.0917418941083022}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 901, "total": 2887, "metrics": {"train-rmse": 0.08442192035622986, "valid-rmse": 0.09160627244970826}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 951, "total": 2887, "metrics": {"train-rmse": 0.0838211084174275, "valid-rmse": 0.09152494702699886}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1001, "total": 2887, "metrics": {"train-rmse": 0.08327880771341863, "valid-rmse": 0.09137019505161585}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1051, "total": 2887, "metrics": {"train-rmse": 0.08273948562870366, "valid-rmse": 0.09127541080987324}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1101, "total": 2887, "metrics": {"train-rmse": 0.08224179205866292, "valid-rmse": 0.09119651816965732}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1151, "total": 2887, "metrics": {"train-rmse": 0.08177034764377114, "valid-rmse": 0.09113943811217835}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1201, "total": 2887, "metrics": {"train-rmse": 0.08130435286516667, "valid-rmse": 0.09106354265724066}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1251, "total": 2887, "metrics": {"train-rmse": 0.08083897562174513, "valid-rmse": 0.09099353854184446}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1301, "total": 2887, "metrics": {"train-rmse": 0.0803999965118113, "valid-rmse": 0.09098129054538365}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1351, "total": 2887, "metrics": {"train-rmse": 0.07995870491417635, "valid-rmse": 0.09091689583231385}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1401, "total": 2887, "metrics": {"train-rmse": 0.07954042494981348, "valid-rmse": 0.09083232763070073}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1451, "total": 2887, "metrics": {"train-rmse": 0.07912704936517591, "valid-rmse": 0.09074544090889121}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1501, "total": 2887, "metrics": {"train-rmse": 0.07872624991053413, "valid-rmse": 0.09070397545016304}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1551, "total": 2887, "metrics": {"train-rmse": 0.07833049745708284, "valid-rmse": 0.09067262500594316}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1601, "total": 2887, "metrics": {"train-rmse": 0.07796418694561731, "valid-rmse": 0.09066837958800796}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1651, "total": 2887, "metrics": {"train-rmse": 0.07760425766629571, "valid-rmse": 0.09066120043670176}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1701, "total": 2887, "metrics": {"train-rmse": 0.07725010910776607, "valid-rmse": 0.09066712393888635}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1751, "total": 2887, "metrics": {"train-rmse": 0.07687906882994541, "valid-rmse": 0.09065312147749972}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1801, "total": 2887, "metrics": {"train-rmse": 0.07649953339162127, "valid-rmse": 0.09058478980890446}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1851, "total": 2887, "metrics": {"train-rmse": 0.07613780865396558, "valid-rmse": 0.09056835742645773}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1901, "total": 2887, "metrics": {"train-rmse": 0.07580498256290623, "valid-rmse": 0.09054819587912592}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 1951, "total": 2887, "metrics": {"train-rmse": 0.07546238581167446, "valid-rmse": 0.09056259743578841}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 2001, "total": 2887, "metrics": {"train-rmse": 0.07512911633408718, "valid-rmse": 0.09055065399049804}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 2051, "total": 2887, "metrics": {"train-rmse": 0.07480174357457411, "valid-rmse": 0.09049064306832783}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 2101, "total": 2887, "metrics": {"train-rmse": 0.07450747735840668, "valid-rmse": 0.09041802339273738}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 2151, "total": 2887, "metrics": {"train-rmse": 0.07421441200365314, "valid-rmse": 0.09040369315678956}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 2201, "total": 2887, "metrics": {"train-rmse": 0.07390498833626598, "valid-rmse": 0.09045030769291933}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 2251, "total": 2887, "metrics": {"train-rmse": 0.07359325683183192, "valid-rmse": 0.09036472181502307}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 2301, "total": 2887, "metrics": {"train-rmse": 0.0732758470994701, "valid-rmse": 0.09032865095729815}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 2351, "total": 2887, "metrics": {"train-rmse": 0.07297770906919739, "valid-rmse": 0.09028904940652879}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 2401, "total": 2887, "metrics": {"train-rmse": 0.0727026804661098, "valid-rmse": 0.09024755128959626}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 2451, "total": 2887, "metrics": {"train-rmse": 0.07242828696765029, "valid-rmse": 0.09020036293599173}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 2501, "total": 2887, "metrics": {"train-rmse": 0.07214114748729722, "valid-rmse": 0.09010289569585425}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 2551, "total": 2887, "metrics": {"train-rmse": 0.07188187251684489, "valid-rmse": 0.09010172391563162}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 2601, "total": 2887, "metrics": {"train-rmse": 0.07160723624168737, "valid-rmse": 0.09010680839837588}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 2651, "total": 2887, "metrics": {"train-rmse": 0.07133398425607172, "valid-rmse": 0.0901209733274883}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 2701, "total": 2887, "metrics": {"train-rmse": 0.07106433389344408, "valid-rmse": 0.09018271052329435}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 2751, "total": 2887, "metrics": {"train-rmse": 0.07078823455222337, "valid-rmse": 0.09018033150595706}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 2801, "total": 2887, "metrics": {"train-rmse": 0.07052726690375, "valid-rmse": 0.09014868607600336}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 2851, "total": 2887, "metrics": {"train-rmse": 0.07026617753654044, "valid-rmse": 0.09012740263411323}}
+PROGRESS {"tag": "M_valid_gap14", "iter": 2887, "total": 2887, "metrics": {"train-rmse": 0.07009767640681425, "valid-rmse": 0.09010408996721164}}
+DONE {"tag": "M_valid_gap14", "best_iteration": 2886, "best_score": NaN, "seconds": 114.6}
+PROGRESS {"tag": "M_valid_gap28", "iter": 1, "total": 1058, "metrics": {"train-rmse": 0.40462725835353575, "valid-rmse": 0.3875211323411496}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 51, "total": 1058, "metrics": {"train-rmse": 0.13560635446343489, "valid-rmse": 0.11887774800535389}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 101, "total": 1058, "metrics": {"train-rmse": 0.11856286982718256, "valid-rmse": 0.1093920052722746}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 151, "total": 1058, "metrics": {"train-rmse": 0.1101519584277848, "valid-rmse": 0.10480388157871115}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 201, "total": 1058, "metrics": {"train-rmse": 0.10568826482026043, "valid-rmse": 0.10290519852524048}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 251, "total": 1058, "metrics": {"train-rmse": 0.10273047051076979, "valid-rmse": 0.1012950997781592}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 301, "total": 1058, "metrics": {"train-rmse": 0.10011743651833677, "valid-rmse": 0.10069848332594857}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 351, "total": 1058, "metrics": {"train-rmse": 0.09819046624954667, "valid-rmse": 0.0998489587641465}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 401, "total": 1058, "metrics": {"train-rmse": 0.09630456816189259, "valid-rmse": 0.09937749331868742}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 451, "total": 1058, "metrics": {"train-rmse": 0.09487922006963703, "valid-rmse": 0.09883003735517826}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 501, "total": 1058, "metrics": {"train-rmse": 0.09348841499664945, "valid-rmse": 0.09822691991276483}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 551, "total": 1058, "metrics": {"train-rmse": 0.0923638103517159, "valid-rmse": 0.0980591197222439}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 601, "total": 1058, "metrics": {"train-rmse": 0.09143147057228117, "valid-rmse": 0.09773161150547788}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 651, "total": 1058, "metrics": {"train-rmse": 0.09038825104494727, "valid-rmse": 0.09747611736868139}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 701, "total": 1058, "metrics": {"train-rmse": 0.0894257139556222, "valid-rmse": 0.09729585838824542}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 751, "total": 1058, "metrics": {"train-rmse": 0.08868121180631301, "valid-rmse": 0.09702928754392863}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 801, "total": 1058, "metrics": {"train-rmse": 0.08785363818738146, "valid-rmse": 0.09684897491398643}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 851, "total": 1058, "metrics": {"train-rmse": 0.08709365204030758, "valid-rmse": 0.09684886927501017}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 901, "total": 1058, "metrics": {"train-rmse": 0.08631189695330958, "valid-rmse": 0.09687067844583655}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 951, "total": 1058, "metrics": {"train-rmse": 0.08569729741227358, "valid-rmse": 0.09676947184441362}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 1001, "total": 1058, "metrics": {"train-rmse": 0.08501654262197396, "valid-rmse": 0.09664822137234141}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 1051, "total": 1058, "metrics": {"train-rmse": 0.08442955691571247, "valid-rmse": 0.0964258193551874}}
+PROGRESS {"tag": "M_valid_gap28", "iter": 1058, "total": 1058, "metrics": {"train-rmse": 0.08434285460078239, "valid-rmse": 0.09641572105885567}}
+DONE {"tag": "M_valid_gap28", "best_iteration": 1057, "best_score": NaN, "seconds": 54.7}
+PROGRESS {"tag": "M_valid_gap42", "iter": 1, "total": 1736, "metrics": {"train-rmse": 0.40502086028780676, "valid-rmse": 0.38469663260804254}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 51, "total": 1736, "metrics": {"train-rmse": 0.14225879007373687, "valid-rmse": 0.11659249387850111}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 101, "total": 1736, "metrics": {"train-rmse": 0.12353464903978874, "valid-rmse": 0.10700576562840344}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 151, "total": 1736, "metrics": {"train-rmse": 0.11387572614576602, "valid-rmse": 0.10341467041813161}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 201, "total": 1736, "metrics": {"train-rmse": 0.10850358588312901, "valid-rmse": 0.10199734624543236}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 251, "total": 1736, "metrics": {"train-rmse": 0.10462053059979916, "valid-rmse": 0.10061689439446427}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 301, "total": 1736, "metrics": {"train-rmse": 0.10171870221110213, "valid-rmse": 0.09973754440611957}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 351, "total": 1736, "metrics": {"train-rmse": 0.09966241900374098, "valid-rmse": 0.09915417376511504}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 401, "total": 1736, "metrics": {"train-rmse": 0.0976752237301317, "valid-rmse": 0.09906937081568824}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 451, "total": 1736, "metrics": {"train-rmse": 0.0960897018358105, "valid-rmse": 0.0989447602837507}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 501, "total": 1736, "metrics": {"train-rmse": 0.09476986491591688, "valid-rmse": 0.09851999771666378}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 551, "total": 1736, "metrics": {"train-rmse": 0.09355858306796244, "valid-rmse": 0.09821488870511257}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 601, "total": 1736, "metrics": {"train-rmse": 0.09243923125080694, "valid-rmse": 0.09805046199528282}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 651, "total": 1736, "metrics": {"train-rmse": 0.09145750242249782, "valid-rmse": 0.09779849971917434}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 701, "total": 1736, "metrics": {"train-rmse": 0.09039976446135288, "valid-rmse": 0.0976647707186641}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 751, "total": 1736, "metrics": {"train-rmse": 0.08961282272760357, "valid-rmse": 0.09750344617666253}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 801, "total": 1736, "metrics": {"train-rmse": 0.08880908318144844, "valid-rmse": 0.09736091985219901}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 851, "total": 1736, "metrics": {"train-rmse": 0.08802794759338917, "valid-rmse": 0.09726902791069633}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 901, "total": 1736, "metrics": {"train-rmse": 0.08731226331525392, "valid-rmse": 0.09724440795251825}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 951, "total": 1736, "metrics": {"train-rmse": 0.08662444458684297, "valid-rmse": 0.0972187270992974}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 1001, "total": 1736, "metrics": {"train-rmse": 0.08602538103207816, "valid-rmse": 0.09712927812240917}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 1051, "total": 1736, "metrics": {"train-rmse": 0.08534438186300065, "valid-rmse": 0.09699280437211398}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 1101, "total": 1736, "metrics": {"train-rmse": 0.08477330105799104, "valid-rmse": 0.09693840589980425}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 1151, "total": 1736, "metrics": {"train-rmse": 0.08417975797901917, "valid-rmse": 0.09698050761879091}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 1201, "total": 1736, "metrics": {"train-rmse": 0.08364100469878247, "valid-rmse": 0.09692595405649876}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 1251, "total": 1736, "metrics": {"train-rmse": 0.08311369234101308, "valid-rmse": 0.09685315381350836}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 1301, "total": 1736, "metrics": {"train-rmse": 0.0825698982519877, "valid-rmse": 0.0968656981429401}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 1351, "total": 1736, "metrics": {"train-rmse": 0.08206381148293682, "valid-rmse": 0.09696616810037334}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 1401, "total": 1736, "metrics": {"train-rmse": 0.08158061631740006, "valid-rmse": 0.09693765885313442}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 1451, "total": 1736, "metrics": {"train-rmse": 0.08107672038499157, "valid-rmse": 0.09687281956651266}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 1501, "total": 1736, "metrics": {"train-rmse": 0.08062414849012435, "valid-rmse": 0.09691219894404696}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 1551, "total": 1736, "metrics": {"train-rmse": 0.08023237626485437, "valid-rmse": 0.09680282221982317}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 1601, "total": 1736, "metrics": {"train-rmse": 0.07977211559504839, "valid-rmse": 0.09672675708688987}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 1651, "total": 1736, "metrics": {"train-rmse": 0.07936293726069422, "valid-rmse": 0.09672823993894393}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 1701, "total": 1736, "metrics": {"train-rmse": 0.0790110995583932, "valid-rmse": 0.09670147366866808}}
+PROGRESS {"tag": "M_valid_gap42", "iter": 1736, "total": 1736, "metrics": {"train-rmse": 0.07872477774654436, "valid-rmse": 0.09670973116867806}}
+DONE {"tag": "M_valid_gap42", "best_iteration": 1735, "best_score": NaN, "seconds": 79.2}
+PROGRESS {"tag": "M_final_gap14", "iter": 1, "total": 3176, "metrics": {"train-rmse": 0.40330485813116523}}
+PROGRESS {"tag": "M_final_gap14", "iter": 51, "total": 3176, "metrics": {"train-rmse": 0.12560245920198243}}
+PROGRESS {"tag": "M_final_gap14", "iter": 101, "total": 3176, "metrics": {"train-rmse": 0.11082376154156773}}
+PROGRESS {"tag": "M_final_gap14", "iter": 151, "total": 3176, "metrics": {"train-rmse": 0.10411015607831671}}
+PROGRESS {"tag": "M_final_gap14", "iter": 201, "total": 3176, "metrics": {"train-rmse": 0.10036195950216284}}
+PROGRESS {"tag": "M_final_gap14", "iter": 251, "total": 3176, "metrics": {"train-rmse": 0.09778033213187243}}
+PROGRESS {"tag": "M_final_gap14", "iter": 301, "total": 3176, "metrics": {"train-rmse": 0.09567947516765843}}
+PROGRESS {"tag": "M_final_gap14", "iter": 351, "total": 3176, "metrics": {"train-rmse": 0.09409923336756897}}
+PROGRESS {"tag": "M_final_gap14", "iter": 401, "total": 3176, "metrics": {"train-rmse": 0.09278122495910067}}
+PROGRESS {"tag": "M_final_gap14", "iter": 451, "total": 3176, "metrics": {"train-rmse": 0.09158791015626061}}
+PROGRESS {"tag": "M_final_gap14", "iter": 501, "total": 3176, "metrics": {"train-rmse": 0.0903564617417233}}
+PROGRESS {"tag": "M_final_gap14", "iter": 551, "total": 3176, "metrics": {"train-rmse": 0.08944734341505774}}
+PROGRESS {"tag": "M_final_gap14", "iter": 601, "total": 3176, "metrics": {"train-rmse": 0.08849272011829142}}
+PROGRESS {"tag": "M_final_gap14", "iter": 651, "total": 3176, "metrics": {"train-rmse": 0.08761941163242588}}
+PROGRESS {"tag": "M_final_gap14", "iter": 701, "total": 3176, "metrics": {"train-rmse": 0.08683021108606373}}
+PROGRESS {"tag": "M_final_gap14", "iter": 751, "total": 3176, "metrics": {"train-rmse": 0.08609950856050871}}
+PROGRESS {"tag": "M_final_gap14", "iter": 801, "total": 3176, "metrics": {"train-rmse": 0.08544037964638848}}
+PROGRESS {"tag": "M_final_gap14", "iter": 851, "total": 3176, "metrics": {"train-rmse": 0.08483478579694144}}
+PROGRESS {"tag": "M_final_gap14", "iter": 901, "total": 3176, "metrics": {"train-rmse": 0.08421263555106984}}
+PROGRESS {"tag": "M_final_gap14", "iter": 951, "total": 3176, "metrics": {"train-rmse": 0.0836398464793624}}
+PROGRESS {"tag": "M_final_gap14", "iter": 1001, "total": 3176, "metrics": {"train-rmse": 0.08307556187957363}}
+PROGRESS {"tag": "M_final_gap14", "iter": 1051, "total": 3176, "metrics": {"train-rmse": 0.08252778856082207}}
+PROGRESS {"tag": "M_final_gap14", "iter": 1101, "total": 3176, "metrics": {"train-rmse": 0.08201910999496159}}
+PROGRESS {"tag": "M_final_gap14", "iter": 1151, "total": 3176, "metrics": {"train-rmse": 0.08156767393668311}}
+PROGRESS {"tag": "M_final_gap14", "iter": 1201, "total": 3176, "metrics": {"train-rmse": 0.08109618114361944}}
+PROGRESS {"tag": "M_final_gap14", "iter": 1251, "total": 3176, "metrics": {"train-rmse": 0.08065756980191115}}
+PROGRESS {"tag": "M_final_gap14", "iter": 1301, "total": 3176, "metrics": {"train-rmse": 0.0802468823278498}}
+PROGRESS {"tag": "M_final_gap14", "iter": 1351, "total": 3176, "metrics": {"train-rmse": 0.0798153629947036}}
+PROGRESS {"tag": "M_final_gap14", "iter": 1401, "total": 3176, "metrics": {"train-rmse": 0.07941325812107937}}
+PROGRESS {"tag": "M_final_gap14", "iter": 1451, "total": 3176, "metrics": {"train-rmse": 0.07900657558100745}}
+PROGRESS {"tag": "M_final_gap14", "iter": 1501, "total": 3176, "metrics": {"train-rmse": 0.07860343985310758}}
+PROGRESS {"tag": "M_final_gap14", "iter": 1551, "total": 3176, "metrics": {"train-rmse": 0.078205492397811}}
+PROGRESS {"tag": "M_final_gap14", "iter": 1601, "total": 3176, "metrics": {"train-rmse": 0.07783040490244497}}
+PROGRESS {"tag": "M_final_gap14", "iter": 1651, "total": 3176, "metrics": {"train-rmse": 0.07745911577634657}}
+PROGRESS {"tag": "M_final_gap14", "iter": 1701, "total": 3176, "metrics": {"train-rmse": 0.0770946370781817}}
+PROGRESS {"tag": "M_final_gap14", "iter": 1751, "total": 3176, "metrics": {"train-rmse": 0.07676718940136606}}
+PROGRESS {"tag": "M_final_gap14", "iter": 1801, "total": 3176, "metrics": {"train-rmse": 0.07641802999764123}}
+PROGRESS {"tag": "M_final_gap14", "iter": 1851, "total": 3176, "metrics": {"train-rmse": 0.07609901331805817}}
+PROGRESS {"tag": "M_final_gap14", "iter": 1901, "total": 3176, "metrics": {"train-rmse": 0.07577590689929156}}
+PROGRESS {"tag": "M_final_gap14", "iter": 1951, "total": 3176, "metrics": {"train-rmse": 0.07545036470831544}}
+PROGRESS {"tag": "M_final_gap14", "iter": 2001, "total": 3176, "metrics": {"train-rmse": 0.0751096647895527}}
+PROGRESS {"tag": "M_final_gap14", "iter": 2051, "total": 3176, "metrics": {"train-rmse": 0.07479150149175554}}
+PROGRESS {"tag": "M_final_gap14", "iter": 2101, "total": 3176, "metrics": {"train-rmse": 0.07447540563996079}}
+PROGRESS {"tag": "M_final_gap14", "iter": 2151, "total": 3176, "metrics": {"train-rmse": 0.0741825579055893}}
+PROGRESS {"tag": "M_final_gap14", "iter": 2201, "total": 3176, "metrics": {"train-rmse": 0.07388318385534841}}
+PROGRESS {"tag": "M_final_gap14", "iter": 2251, "total": 3176, "metrics": {"train-rmse": 0.07358723119507614}}
+PROGRESS {"tag": "M_final_gap14", "iter": 2301, "total": 3176, "metrics": {"train-rmse": 0.07329846051177888}}
+PROGRESS {"tag": "M_final_gap14", "iter": 2351, "total": 3176, "metrics": {"train-rmse": 0.0730313723136882}}
+PROGRESS {"tag": "M_final_gap14", "iter": 2401, "total": 3176, "metrics": {"train-rmse": 0.07274770238238083}}
+PROGRESS {"tag": "M_final_gap14", "iter": 2451, "total": 3176, "metrics": {"train-rmse": 0.07246052350223599}}
+PROGRESS {"tag": "M_final_gap14", "iter": 2501, "total": 3176, "metrics": {"train-rmse": 0.07217187578941896}}
+PROGRESS {"tag": "M_final_gap14", "iter": 2551, "total": 3176, "metrics": {"train-rmse": 0.07190147767000357}}
+PROGRESS {"tag": "M_final_gap14", "iter": 2601, "total": 3176, "metrics": {"train-rmse": 0.07164593345768669}}
+PROGRESS {"tag": "M_final_gap14", "iter": 2651, "total": 3176, "metrics": {"train-rmse": 0.07137439154590346}}
+PROGRESS {"tag": "M_final_gap14", "iter": 2701, "total": 3176, "metrics": {"train-rmse": 0.07111385152155551}}
+PROGRESS {"tag": "M_final_gap14", "iter": 2751, "total": 3176, "metrics": {"train-rmse": 0.07085575132639974}}
+PROGRESS {"tag": "M_final_gap14", "iter": 2801, "total": 3176, "metrics": {"train-rmse": 0.0706139313693636}}
+PROGRESS {"tag": "M_final_gap14", "iter": 2851, "total": 3176, "metrics": {"train-rmse": 0.07036123273773408}}
+PROGRESS {"tag": "M_final_gap14", "iter": 2901, "total": 3176, "metrics": {"train-rmse": 0.07010987706834242}}
+PROGRESS {"tag": "M_final_gap14", "iter": 2951, "total": 3176, "metrics": {"train-rmse": 0.06986509190286999}}
+PROGRESS {"tag": "M_final_gap14", "iter": 3001, "total": 3176, "metrics": {"train-rmse": 0.06962277742780325}}
+PROGRESS {"tag": "M_final_gap14", "iter": 3051, "total": 3176, "metrics": {"train-rmse": 0.06939625444713596}}
+PROGRESS {"tag": "M_final_gap14", "iter": 3101, "total": 3176, "metrics": {"train-rmse": 0.06916558632935678}}
+PROGRESS {"tag": "M_final_gap14", "iter": 3151, "total": 3176, "metrics": {"train-rmse": 0.0689453949533765}}
+PROGRESS {"tag": "M_final_gap14", "iter": 3176, "total": 3176, "metrics": {"train-rmse": 0.0688312398421111}}
+DONE {"tag": "M_final_gap14", "best_iteration": 3175, "best_score": NaN, "seconds": 126.0}
+PROGRESS {"tag": "M_final_gap28", "iter": 1, "total": 1164, "metrics": {"train-rmse": 0.4037361268184843}}
+PROGRESS {"tag": "M_final_gap28", "iter": 51, "total": 1164, "metrics": {"train-rmse": 0.13441802303953926}}
+PROGRESS {"tag": "M_final_gap28", "iter": 101, "total": 1164, "metrics": {"train-rmse": 0.11800996263967371}}
+PROGRESS {"tag": "M_final_gap28", "iter": 151, "total": 1164, "metrics": {"train-rmse": 0.1098745758942637}}
+PROGRESS {"tag": "M_final_gap28", "iter": 201, "total": 1164, "metrics": {"train-rmse": 0.10533470129646999}}
+PROGRESS {"tag": "M_final_gap28", "iter": 251, "total": 1164, "metrics": {"train-rmse": 0.10224959913038696}}
+PROGRESS {"tag": "M_final_gap28", "iter": 301, "total": 1164, "metrics": {"train-rmse": 0.09946704704736696}}
+PROGRESS {"tag": "M_final_gap28", "iter": 351, "total": 1164, "metrics": {"train-rmse": 0.09765326731574746}}
+PROGRESS {"tag": "M_final_gap28", "iter": 401, "total": 1164, "metrics": {"train-rmse": 0.09605072495616902}}
+PROGRESS {"tag": "M_final_gap28", "iter": 451, "total": 1164, "metrics": {"train-rmse": 0.0944856051092911}}
+PROGRESS {"tag": "M_final_gap28", "iter": 501, "total": 1164, "metrics": {"train-rmse": 0.09312636622728289}}
+PROGRESS {"tag": "M_final_gap28", "iter": 551, "total": 1164, "metrics": {"train-rmse": 0.09203490676238384}}
+PROGRESS {"tag": "M_final_gap28", "iter": 601, "total": 1164, "metrics": {"train-rmse": 0.09095730110752173}}
+PROGRESS {"tag": "M_final_gap28", "iter": 651, "total": 1164, "metrics": {"train-rmse": 0.08997209842519376}}
+PROGRESS {"tag": "M_final_gap28", "iter": 701, "total": 1164, "metrics": {"train-rmse": 0.08909546640653467}}
+PROGRESS {"tag": "M_final_gap28", "iter": 751, "total": 1164, "metrics": {"train-rmse": 0.08834848754538956}}
+PROGRESS {"tag": "M_final_gap28", "iter": 801, "total": 1164, "metrics": {"train-rmse": 0.08755096654770478}}
+PROGRESS {"tag": "M_final_gap28", "iter": 851, "total": 1164, "metrics": {"train-rmse": 0.08687548655187442}}
+PROGRESS {"tag": "M_final_gap28", "iter": 901, "total": 1164, "metrics": {"train-rmse": 0.08617901039850477}}
+PROGRESS {"tag": "M_final_gap28", "iter": 951, "total": 1164, "metrics": {"train-rmse": 0.0855045347520109}}
+PROGRESS {"tag": "M_final_gap28", "iter": 1001, "total": 1164, "metrics": {"train-rmse": 0.08486083188941723}}
+PROGRESS {"tag": "M_final_gap28", "iter": 1051, "total": 1164, "metrics": {"train-rmse": 0.08431939699472489}}
+PROGRESS {"tag": "M_final_gap28", "iter": 1101, "total": 1164, "metrics": {"train-rmse": 0.08376758374483297}}
+PROGRESS {"tag": "M_final_gap28", "iter": 1151, "total": 1164, "metrics": {"train-rmse": 0.08326575681817432}}
+PROGRESS {"tag": "M_final_gap28", "iter": 1164, "total": 1164, "metrics": {"train-rmse": 0.0831162457918269}}
+DONE {"tag": "M_final_gap28", "best_iteration": 1163, "best_score": NaN, "seconds": 56.1}
+PROGRESS {"tag": "M_final_gap42", "iter": 1, "total": 1910, "metrics": {"train-rmse": 0.4040991517780247}}
+PROGRESS {"tag": "M_final_gap42", "iter": 51, "total": 1910, "metrics": {"train-rmse": 0.14078899398033573}}
+PROGRESS {"tag": "M_final_gap42", "iter": 101, "total": 1910, "metrics": {"train-rmse": 0.12203257560665402}}
+PROGRESS {"tag": "M_final_gap42", "iter": 151, "total": 1910, "metrics": {"train-rmse": 0.11282670606175953}}
+PROGRESS {"tag": "M_final_gap42", "iter": 201, "total": 1910, "metrics": {"train-rmse": 0.10777515376525905}}
+PROGRESS {"tag": "M_final_gap42", "iter": 251, "total": 1910, "metrics": {"train-rmse": 0.10448631881948643}}
+PROGRESS {"tag": "M_final_gap42", "iter": 301, "total": 1910, "metrics": {"train-rmse": 0.10134184640848726}}
+PROGRESS {"tag": "M_final_gap42", "iter": 351, "total": 1910, "metrics": {"train-rmse": 0.09931371678918381}}
+PROGRESS {"tag": "M_final_gap42", "iter": 401, "total": 1910, "metrics": {"train-rmse": 0.0976328861529525}}
+PROGRESS {"tag": "M_final_gap42", "iter": 451, "total": 1910, "metrics": {"train-rmse": 0.09602161308198452}}
+PROGRESS {"tag": "M_final_gap42", "iter": 501, "total": 1910, "metrics": {"train-rmse": 0.09466527644468294}}
+PROGRESS {"tag": "M_final_gap42", "iter": 551, "total": 1910, "metrics": {"train-rmse": 0.09351289318455157}}
+PROGRESS {"tag": "M_final_gap42", "iter": 601, "total": 1910, "metrics": {"train-rmse": 0.09244545247406863}}
+PROGRESS {"tag": "M_final_gap42", "iter": 651, "total": 1910, "metrics": {"train-rmse": 0.09146999558833291}}
+PROGRESS {"tag": "M_final_gap42", "iter": 701, "total": 1910, "metrics": {"train-rmse": 0.09055564843996491}}
+PROGRESS {"tag": "M_final_gap42", "iter": 751, "total": 1910, "metrics": {"train-rmse": 0.08963685325913373}}
+PROGRESS {"tag": "M_final_gap42", "iter": 801, "total": 1910, "metrics": {"train-rmse": 0.0887702629067409}}
+PROGRESS {"tag": "M_final_gap42", "iter": 851, "total": 1910, "metrics": {"train-rmse": 0.08806166206939497}}
+PROGRESS {"tag": "M_final_gap42", "iter": 901, "total": 1910, "metrics": {"train-rmse": 0.08727656571811275}}
+PROGRESS {"tag": "M_final_gap42", "iter": 951, "total": 1910, "metrics": {"train-rmse": 0.08663749689010622}}
+PROGRESS {"tag": "M_final_gap42", "iter": 1001, "total": 1910, "metrics": {"train-rmse": 0.08595988655781027}}
+PROGRESS {"tag": "M_final_gap42", "iter": 1051, "total": 1910, "metrics": {"train-rmse": 0.085321915173592}}
+PROGRESS {"tag": "M_final_gap42", "iter": 1101, "total": 1910, "metrics": {"train-rmse": 0.08472139092131692}}
+PROGRESS {"tag": "M_final_gap42", "iter": 1151, "total": 1910, "metrics": {"train-rmse": 0.08415860500079117}}
+PROGRESS {"tag": "M_final_gap42", "iter": 1201, "total": 1910, "metrics": {"train-rmse": 0.08358944475259313}}
+PROGRESS {"tag": "M_final_gap42", "iter": 1251, "total": 1910, "metrics": {"train-rmse": 0.08301230097651599}}
+PROGRESS {"tag": "M_final_gap42", "iter": 1301, "total": 1910, "metrics": {"train-rmse": 0.08252582703197725}}
+PROGRESS {"tag": "M_final_gap42", "iter": 1351, "total": 1910, "metrics": {"train-rmse": 0.082045604105082}}
+PROGRESS {"tag": "M_final_gap42", "iter": 1401, "total": 1910, "metrics": {"train-rmse": 0.08154394809924197}}
+PROGRESS {"tag": "M_final_gap42", "iter": 1451, "total": 1910, "metrics": {"train-rmse": 0.0811306642922244}}
+PROGRESS {"tag": "M_final_gap42", "iter": 1501, "total": 1910, "metrics": {"train-rmse": 0.08064089727851692}}
+PROGRESS {"tag": "M_final_gap42", "iter": 1551, "total": 1910, "metrics": {"train-rmse": 0.08022693052819428}}
+PROGRESS {"tag": "M_final_gap42", "iter": 1601, "total": 1910, "metrics": {"train-rmse": 0.07975322258706005}}
+PROGRESS {"tag": "M_final_gap42", "iter": 1651, "total": 1910, "metrics": {"train-rmse": 0.07934650303283847}}
+PROGRESS {"tag": "M_final_gap42", "iter": 1701, "total": 1910, "metrics": {"train-rmse": 0.07891943612918667}}
+PROGRESS {"tag": "M_final_gap42", "iter": 1751, "total": 1910, "metrics": {"train-rmse": 0.07855330690637319}}
+PROGRESS {"tag": "M_final_gap42", "iter": 1801, "total": 1910, "metrics": {"train-rmse": 0.07818317525066988}}
+PROGRESS {"tag": "M_final_gap42", "iter": 1851, "total": 1910, "metrics": {"train-rmse": 0.07779869011041936}}
+PROGRESS {"tag": "M_final_gap42", "iter": 1901, "total": 1910, "metrics": {"train-rmse": 0.07742238489159703}}
+PROGRESS {"tag": "M_final_gap42", "iter": 1910, "total": 1910, "metrics": {"train-rmse": 0.07735828303896947}}
+DONE {"tag": "M_final_gap42", "best_iteration": 1909, "best_score": NaN, "seconds": 68.4}
+WORKER_DONE {"device": "cuda:1", "jobs": 14}

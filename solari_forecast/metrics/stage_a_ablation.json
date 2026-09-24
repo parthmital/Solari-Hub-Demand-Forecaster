@@ -6,7 +6,7 @@
 			"best_iteration": 1006,
 			"early_stop_rmsle_open_rows": 0.1106998701599747,
 			"backtest_rmsle_all_rows": 0.09845672626854983,
-			"seconds": 52.5,
+			"seconds": 65.7,
 			"device": "cuda:0"
 		},
 		{
@@ -15,7 +15,7 @@
 			"best_iteration": 1272,
 			"early_stop_rmsle_open_rows": 0.10792623290705747,
 			"backtest_rmsle_all_rows": 0.09599148010522429,
-			"seconds": 62.9,
+			"seconds": 79.3,
 			"device": "cuda:1"
 		}
 	],

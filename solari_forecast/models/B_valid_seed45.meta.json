@@ -8,7 +8,7 @@
 	"train_rows": 515225,
 	"target_rows": 46830,
 	"use_weights": false,
-	"seconds": 55.4,
+	"seconds": 65.3,
 	"importance_gain": {
 		"PromoActive": 5.164133548736572,
 		"RegionalHoliday": 0.8074371218681335,

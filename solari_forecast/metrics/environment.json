@@ -1,6 +1,6 @@
 {
-	"run_tag": "20260924_155301",
-	"started_at": "2026-09-24T15:53:01",
+	"run_tag": "20260924_185033",
+	"started_at": "2026-09-24T18:50:33",
 	"python": "3.12.13",
 	"platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
 	"cpu_count": 4,
@@ -10,7 +10,7 @@
 	"lightgbm": "4.6.0",
 	"matplotlib": "3.10.0",
 	"devices": ["cuda:0", "cuda:1"],
-	"lightgbm_threads": 2,
+	"lightgbm_threads": 4,
 	"lightgbm_concurrent_with_gpu": true,
 	"gpu_devices_detected": ["cuda:0", "cuda:1"],
 	"seed": 42

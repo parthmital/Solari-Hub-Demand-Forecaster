@@ -1,6 +1,6 @@
 # Solari hub demand forecasting — approach, validation and findings
 
-**Run:** `20260924_155301` · **Seed:** `42` (models use `42`..`49`)
+**Run:** `20260924_185033` · **Seed:** `42` (models use `42`..`49`)
 · **Hardware:** cuda:0, cuda:1 · **XGBoost** 3.2.0
 
 ## 1. Problem and metric
@@ -13,13 +13,18 @@ loss the metric implies — and predictions are mapped back with `expm1`.
 
 ## 2. Approach
 
-- **Models:** a log-space blend of two structurally different gradient-boosting models
-  (LightGBM weight 0.65, chosen on both held-out blocks). No deep learning.
+- **Models:** a log-space blend of three structurally different gradient-boosting forecasters
+  (weights XGBoost rolling-origin 0.15, LightGBM direct 0.70, XGBoost multi-gap direct 0.15,
+  chosen on both held-out blocks). No deep learning.
   - _Rolling-origin XGBoost:_ 8 boosters (`hist`, depth 10,
     eta 0.03), 1400 rounds, averaged in log space.
   - _Direct LightGBM (CPU, concurrent with the GPU boosters when GPUs exist):_
-    2 boosters, 4592 rounds, trained on every
-    open day with `HubID` and lags that are all at least 42 days old.
+    2 boosters, 4249 rounds, trained on every
+    open day with `HubID` as a native categorical, a Huber loss (alpha
+    0.2) and lags that are all at least 42 days old.
+  - _Multi-gap direct XGBoost (GPU):_ 6 models whose lags end
+    7, 14, 21, 28, 35, 42 days back. A test day `h` days ahead uses the smallest
+    gap `>= h`, so near days get the freshest history the horizon allows.
 - **Rows used:** open days with positive volume. Closed days (`IsOpen == 0`) are predicted as
   exact zeros — in the full history that implication holds without a single exception.
 - **Features (122 total):** hub history statistics (overall, by weekday, by promo
@@ -37,7 +42,7 @@ loss the metric implies — and predictions are mapped back with `expm1`.
   by its own earlier statistics window.
   No training row contributes to any statistic that describes it. Three automated audits assert
   this (Section 8.2).
-- **Calibration:** one global multiplier (1.008), selected on the validation block
+- **Calibration:** one global multiplier (1.014), selected on the validation block
   and confirmed on an independent back-test block.
 
 ## 3. Validation
@@ -56,11 +61,12 @@ the same horizon as the leaderboard window:
 | -------------------------------------------------- | ----------- |
 | XGBoost single booster (mean of 8)                 | 0.09890     |
 | XGBoost 8-booster ensemble                         | 0.09776     |
-| LightGBM direct (2 seeds)                          | 0.09712     |
-| blend                                              | 0.09536     |
-| blend + calibration                                | **0.09510** |
-| blend, excluding open-but-zero rows                | 0.08448     |
-| back-test block, blend (models early-stopped here) | 0.08816     |
+| LightGBM direct (2 seeds)                          | 0.09558     |
+| XGBoost multi-gap direct (6 gap models)            | 0.09684     |
+| blend                                              | 0.09436     |
+| blend + calibration                                | **0.09358** |
+| blend, excluding open-but-zero rows                | 0.08259     |
+| back-test block, blend (models early-stopped here) | 0.08455     |
 
 **Naive baselines on the same validation block**
 
@@ -75,12 +81,12 @@ the same horizon as the leaderboard window:
 
 | Horizon | RMSLE   |
 | ------- | ------- |
-| week 1  | 0.13528 |
-| week 2  | 0.08116 |
-| week 3  | 0.08221 |
-| week 4  | 0.08365 |
-| week 5  | 0.09065 |
-| week 6  | 0.08605 |
+| week 1  | 0.13353 |
+| week 2  | 0.07916 |
+| week 3  | 0.08222 |
+| week 4  | 0.08155 |
+| week 5  | 0.08855 |
+| week 6  | 0.08482 |
 
 ## 4. Findings
 
@@ -99,17 +105,17 @@ the same horizon as the leaderboard window:
 | year-over-year          | 0.4%  |
 
 - Promotions lift demand materially and the model captures them: RMSLE on promo days is
-  0.0875 vs 0.0991 on
+  0.0850 vs 0.0980 on
   non-promo days.
 - Error is concentrated: the worst 1% of rows carry
-  35.2% of the total squared log error.
+  36.3% of the total squared log error.
 - Hubs with a renovation gap in their history score
-  0.0891 vs 0.0962 for
+  0.0881 vs 0.0946 for
   the rest, and the first week after a closure is harder
-  (0.1054) than settled trading days
-  (0.1279).
+  (0.1041) than settled trading days
+  (0.1177).
 - Residual log-space bias after calibration is
-  +0.00008, i.e. the forecast is effectively unbiased at the network level.
+  +0.00028, i.e. the forecast is effectively unbiased at the network level.
 
 ## 5. Limitations
 

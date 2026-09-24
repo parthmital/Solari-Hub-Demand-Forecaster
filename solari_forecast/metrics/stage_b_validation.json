@@ -6,7 +6,7 @@
 			"tag": "B_valid_seed42",
 			"seed": 42,
 			"device": "cuda:0",
-			"seconds": 55.7,
+			"seconds": 67.9,
 			"rmsle_single": 0.10003602889606132,
 			"rmsle_running_ensemble": 0.10003602889606132,
 			"n_models_in_ensemble": 1
@@ -15,7 +15,7 @@
 			"tag": "B_valid_seed43",
 			"seed": 43,
 			"device": "cuda:1",
-			"seconds": 55.8,
+			"seconds": 66.2,
 			"rmsle_single": 0.09868623845714086,
 			"rmsle_running_ensemble": 0.09865675402358563,
 			"n_models_in_ensemble": 2
@@ -24,7 +24,7 @@
 			"tag": "B_valid_seed44",
 			"seed": 44,
 			"device": "cuda:0",
-			"seconds": 54.6,
+			"seconds": 65.3,
 			"rmsle_single": 0.09870819591420883,
 			"rmsle_running_ensemble": 0.0982512559750155,
 			"n_models_in_ensemble": 3
@@ -33,7 +33,7 @@
 			"tag": "B_valid_seed45",
 			"seed": 45,
 			"device": "cuda:1",
-			"seconds": 55.4,
+			"seconds": 65.3,
 			"rmsle_single": 0.0985158581341173,
 			"rmsle_running_ensemble": 0.09799797090238964,
 			"n_models_in_ensemble": 4
@@ -42,7 +42,7 @@
 			"tag": "B_valid_seed46",
 			"seed": 46,
 			"device": "cuda:0",
-			"seconds": 53.7,
+			"seconds": 64.9,
 			"rmsle_single": 0.09867241999611175,
 			"rmsle_running_ensemble": 0.09787000931262264,
 			"n_models_in_ensemble": 5
@@ -51,7 +51,7 @@
 			"tag": "B_valid_seed47",
 			"seed": 47,
 			"device": "cuda:1",
-			"seconds": 53.9,
+			"seconds": 65.3,
 			"rmsle_single": 0.0981615337573903,
 			"rmsle_running_ensemble": 0.09768392825718875,
 			"n_models_in_ensemble": 6
@@ -60,7 +60,7 @@
 			"tag": "B_valid_seed48",
 			"seed": 48,
 			"device": "cuda:0",
-			"seconds": 53.6,
+			"seconds": 65.5,
 			"rmsle_single": 0.0990282003461708,
 			"rmsle_running_ensemble": 0.09769702847599902,
 			"n_models_in_ensemble": 7
@@ -69,7 +69,7 @@
 			"tag": "B_valid_seed49",
 			"seed": 49,
 			"device": "cuda:1",
-			"seconds": 53.7,
+			"seconds": 64.6,
 			"rmsle_single": 0.09942721880977405,
 			"rmsle_running_ensemble": 0.09776144880630386,
 			"n_models_in_ensemble": 8

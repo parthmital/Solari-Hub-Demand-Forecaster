@@ -1,0 +1,6 @@
+variant,file,validation_rmsle_all_rows,mean_prediction
+blend_calibrated,submission_blend_calibrated.csv,0.09358008676042573,6093.129489643391
+lgbm_only,submission_lgbm_only.csv,0.0942032770463292,6127.745868033312
+blend_uncalibrated,submission_blend_uncalibrated.csv,0.09436154165295675,6009.0051462737565
+mg_only,submission_mg_only.csv,0.09683095900110586,6038.030258381379
+xgb_only,submission_xgb_only.csv,0.09897665640630371,5995.751484091395

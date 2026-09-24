@@ -54,12 +54,23 @@ def main():
         tag = job["tag"]
         t0 = time.time()
         if job["data"] not in cache:
+            if len(cache) >= 3:
+                cache.clear()  # bound worker RAM; jobs are dealt so that reloads are rare
             cache[job["data"]] = pd.read_parquet(job["data"])
         df = cache[job["data"]]
         feats = job["features"]
 
-        is_train = (df["role"] == "train").to_numpy()
-        is_target = (df["role"] == "target").to_numpy()
+        if "train_end" in job:
+            # direct-model table: every observed hub-day; the job names its own windows
+            dates = df["Date"].to_numpy()
+            good = (df["IsOpen"].to_numpy() == 1) & (df["OrderVolume"].to_numpy() > 0)
+            is_train = good & (dates <= np.datetime64(job["train_end"]))
+            is_target = (dates >= np.datetime64(job["target_start"])) & (
+                dates <= np.datetime64(job["target_end"])
+            )
+        else:
+            is_train = (df["role"] == "train").to_numpy()
+            is_target = (df["role"] == "target").to_numpy()
         Xtr = df.loc[is_train, feats].to_numpy(dtype=np.float32)
         ytr = df.loc[is_train, "y"].to_numpy(dtype=np.float32)
         wtr = (
@@ -84,6 +95,9 @@ def main():
                 & (df["IsOpen"].to_numpy() == 1)
                 & (df["OrderVolume"].to_numpy() > 0)
             )
+            if "eval_end" in job:
+                # a gap-G direct model is only allowed to serve the first G days of a block
+                mask &= df["Date"].to_numpy() <= np.datetime64(job["eval_end"])
             Xva = df.loc[mask, feats].to_numpy(dtype=np.float32)
             yva = df.loc[mask, "y"].to_numpy(dtype=np.float32)
             dvalid = xgb.QuantileDMatrix(
