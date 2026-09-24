@@ -8,8 +8,8 @@
 		"train_rows": 518427,
 		"target_rows": 46830,
 		"target_open_rows": 37044,
-		"features": 106,
-		"parquet_mb": 21.15
+		"features": 122,
+		"parquet_mb": 28.42
 	},
 	"valid": {
 		"block": "valid",
@@ -20,8 +20,8 @@
 		"train_rows": 515225,
 		"target_rows": 46830,
 		"target_open_rows": 37473,
-		"features": 106,
-		"parquet_mb": 21.25
+		"features": 122,
+		"parquet_mb": 29.37
 	},
 	"final": {
 		"block": "final",
@@ -32,7 +32,7 @@
 		"train_rows": 514194,
 		"target_rows": 46830,
 		"target_open_rows": 40282,
-		"features": 106,
-		"parquet_mb": 21.32
+		"features": 122,
+		"parquet_mb": 30.28
 	}
 }

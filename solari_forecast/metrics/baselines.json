@@ -1,10 +1,10 @@
 {
-	"valid:global_mean": 0.3656437834998893,
+	"valid:global_mean": 0.36564378349988913,
 	"valid:hub_mean": 0.23417186055598466,
-	"valid:hub_weekday_mean": 0.18407086114845359,
+	"valid:hub_weekday_mean": 0.1840708611484536,
 	"valid:hub_weekday_promo_mean": 0.1454396682904793,
 	"backtest:global_mean": 0.3896142906181043,
 	"backtest:hub_mean": 0.27429006913265347,
 	"backtest:hub_weekday_mean": 0.23598441412797527,
-	"backtest:hub_weekday_promo_mean": 0.16608318876772862
+	"backtest:hub_weekday_promo_mean": 0.16608318876772865
 }

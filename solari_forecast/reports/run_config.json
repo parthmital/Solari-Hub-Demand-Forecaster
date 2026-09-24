@@ -1,7 +1,7 @@
 {
-	"run_tag": "20260924_140828",
+	"run_tag": "20260924_155301",
 	"seed": 42,
-	"seeds_used": [42, 43, 44, 45],
+	"seeds_used": [42, 43, 44, 45, 46, 47, 48, 49],
 	"config": {
 		"SEED": 42,
 		"TARGET": "OrderVolume",
@@ -10,7 +10,8 @@
 		"DATE": "Date",
 		"VALID_DAYS": 42,
 		"MIN_STATS_DAYS": 180,
-		"N_SEEDS": 4,
+		"N_SEEDS": 8,
+		"N_SEEDS_GPU": 8,
 		"NUM_BOOST_ROUND": 8000,
 		"EARLY_STOPPING": 300,
 		"FINAL_ROUND_INFLATION": 1.1,
@@ -28,9 +29,33 @@
 			"reg_alpha": 0.0,
 			"max_bin": 256
 		},
+		"N_LGB_SEEDS": 2,
+		"LGB_MAX_ROUNDS": 6000,
+		"LGB_EARLY_STOPPING": 200,
+		"LGB_PARAMS": {
+			"objective": "regression",
+			"metric": "rmse",
+			"learning_rate": 0.05,
+			"num_leaves": 127,
+			"min_data_in_leaf": 40,
+			"feature_fraction": 0.6,
+			"bagging_fraction": 0.8,
+			"bagging_freq": 1,
+			"lambda_l2": 1.0,
+			"max_bin": 255,
+			"deterministic": true,
+			"force_row_wise": true,
+			"verbosity": -1
+		},
+		"BLEND_GRID": [
+			0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6,
+			0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0
+		],
 		"TRAIL_WINDOWS": [7, 28, 91, 182, 365],
 		"SMOOTH_PRIOR": 12.0,
 		"RECENCY_HALFLIFE_DAYS": 365.0,
+		"CALENDAR_EXTENSION_DAYS": 14,
+		"LAG_GAP_DAYS": 42,
 		"CALIB_GRID": [
 			0.94, 0.942, 0.944, 0.946, 0.948, 0.95, 0.952, 0.954, 0.956, 0.958, 0.96,
 			0.962, 0.964, 0.966, 0.968, 0.97, 0.972, 0.974, 0.976, 0.978, 0.98, 0.982,
@@ -47,9 +72,12 @@
 	},
 	"chosen": {
 		"use_recency_weights": false,
-		"validation_rounds": 564,
-		"final_rounds": 620,
-		"calibration_multiplier": 1.0
+		"validation_rounds": 1273,
+		"final_rounds": 1400,
+		"calibration_multiplier": 1.008,
+		"blend_weight_lgbm": 0.65,
+		"lgbm_validation_rounds": 4175,
+		"lgbm_final_rounds": 4592
 	},
 	"blocks": {
 		"backtest": {
@@ -122,6 +150,19 @@
 		"SchoolClosureRunLength",
 		"HolidayYesterday",
 		"HolidayTomorrow",
+		"RegionCluster",
+		"DaysSinceHoliday",
+		"DaysUntilHoliday",
+		"HolidaysThisWeek",
+		"DaysSinceSchool",
+		"DaysUntilSchool",
+		"SchoolDaysThisWeek",
+		"DaysSinceLongClosure",
+		"DaysUntilLongClosure",
+		"DaysToMonthEnd",
+		"LYShape",
+		"LYDowShape",
+		"LY2Shape",
 		"HubLogMean",
 		"HubLogStd",
 		"HubLogMedian",
@@ -169,6 +210,9 @@
 		"HubTrend28over182",
 		"HubTrend91over365",
 		"HubTrend7over91",
+		"HubLYShapeOrigin",
+		"HubLY2ShapeOrigin",
+		"HubYoYGrowth91",
 		"HubTrailMean7",
 		"HubTrailObs7",
 		"HubTrailDelta7",
@@ -185,24 +229,238 @@
 		"HubTrailObs365",
 		"HubTrailDelta365"
 	],
+	"direct_features": [
+		"HubID",
+		"IsOpen",
+		"PromoActive",
+		"RegionalHoliday",
+		"SchoolClosureFlag",
+		"Weekday",
+		"IsWeekend",
+		"Year",
+		"Month",
+		"Day",
+		"WeekOfYear",
+		"DayOfYear",
+		"DaysSinceStart",
+		"IsMonthStart",
+		"IsMonthMid",
+		"IsMonthEnd",
+		"SinDayOfYear",
+		"CosDayOfYear",
+		"HubFormat",
+		"AssortmentTier",
+		"CompetitorDistance",
+		"LogCompetitorDistance",
+		"CompetitorDistanceMissing",
+		"CompetitorKnown",
+		"CompetitorOpenMonths",
+		"CompetitorActive",
+		"LoyaltyProgram",
+		"LoyaltyWeeks",
+		"LoyaltyActive",
+		"IsLoyaltyRoundMonth",
+		"LoyaltyIntervalCount",
+		"PromoRunLength",
+		"DaysSincePromo",
+		"DaysUntilPromo",
+		"PromoYesterday",
+		"PromoTomorrow",
+		"OpenRunLength",
+		"ClosedRunLength",
+		"DaysSinceClosed",
+		"DaysUntilClosed",
+		"ClosedYesterday",
+		"ClosedTomorrow",
+		"SchoolClosureRunLength",
+		"HolidayYesterday",
+		"HolidayTomorrow",
+		"RegionCluster",
+		"DaysSinceHoliday",
+		"DaysUntilHoliday",
+		"HolidaysThisWeek",
+		"DaysSinceSchool",
+		"DaysUntilSchool",
+		"SchoolDaysThisWeek",
+		"DaysSinceLongClosure",
+		"DaysUntilLongClosure",
+		"DaysToMonthEnd",
+		"LYShape",
+		"LYDowShape",
+		"LY2Shape",
+		"Lag28",
+		"Lag91",
+		"Lag182",
+		"Lag364",
+		"LagDow4",
+		"LagDowPromo",
+		"LagPromo91",
+		"LagNoPromo91",
+		"LagSess91",
+		"LagTrend28over182",
+		"LagYoYGrowth"
+	],
 	"environment": {
-		"run_tag": "20260924_140828",
-		"started_at": "2026-09-24T14:08:28",
+		"run_tag": "20260924_155301",
+		"started_at": "2026-09-24T15:53:01",
 		"python": "3.12.13",
 		"platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
 		"cpu_count": 4,
 		"numpy": "2.0.2",
 		"pandas": "2.3.3",
 		"xgboost": "3.2.0",
+		"lightgbm": "4.6.0",
 		"matplotlib": "3.10.0",
-		"devices": ["cpu"],
-		"gpu_devices_detected": [],
+		"devices": ["cuda:0", "cuda:1"],
+		"lightgbm_threads": 2,
+		"lightgbm_concurrent_with_gpu": true,
+		"gpu_devices_detected": ["cuda:0", "cuda:1"],
 		"seed": 42
 	},
 	"results": {
-		"validation_rmsle_uncalibrated": 0.0968902225380305,
-		"validation_rmsle_calibrated": 0.0968902225380305,
-		"backtest_rmsle": 0.10354689569103784,
-		"best_baseline_rmsle": 0.1454396682904793
+		"validation_rmsle_uncalibrated": 0.09535934330897279,
+		"validation_rmsle_calibrated": 0.09509921751446564,
+		"backtest_rmsle": 0.09599148010522429,
+		"best_baseline_rmsle": 0.1454396682904793,
+		"validation_rmsle_excluding_open_zero": 0.08447910320884475,
+		"blend": {
+			"w_lgbm": 0.65,
+			"lgbm_rounds_validation": 4175,
+			"lgbm_rounds_final": 4592,
+			"valid_rmsle_xgb_all_rows": 0.09776144880630386,
+			"valid_rmsle_lgbm_all_rows": 0.09711698399315465,
+			"valid_rmsle_blend_all_rows": 0.09535934330897279,
+			"backtest_rmsle_xgb_all_rows": 0.09599148010522429,
+			"backtest_rmsle_lgbm_all_rows": 0.09005062516317383,
+			"backtest_rmsle_blend_all_rows": 0.08815623425947226,
+			"curve_excluding_open_zero": [
+				{
+					"w_lgbm": 0.0,
+					"backtest": 0.09599148010522429,
+					"valid": 0.08743279245809978,
+					"combined": 0.09181192038567983
+				},
+				{
+					"w_lgbm": 0.05,
+					"backtest": 0.09490931541476265,
+					"valid": 0.08694320552853531,
+					"combined": 0.09101345818085377
+				},
+				{
+					"w_lgbm": 0.1,
+					"backtest": 0.09389987510784005,
+					"valid": 0.08649897196748756,
+					"combined": 0.09027529755337325
+				},
+				{
+					"w_lgbm": 0.15,
+					"backtest": 0.09296540761449554,
+					"valid": 0.08610158177611826,
+					"combined": 0.08959924496690495
+				},
+				{
+					"w_lgbm": 0.2,
+					"backtest": 0.09210732035358186,
+					"valid": 0.08575110677945626,
+					"combined": 0.08898598422397504
+				},
+				{
+					"w_lgbm": 0.25,
+					"backtest": 0.09132888475369086,
+					"valid": 0.08544888108255645,
+					"combined": 0.08843776475186893
+				},
+				{
+					"w_lgbm": 0.3,
+					"backtest": 0.09063141043716348,
+					"valid": 0.08519419104117529,
+					"combined": 0.0879548257487611
+				},
+				{
+					"w_lgbm": 0.35,
+					"backtest": 0.09001696336327616,
+					"valid": 0.08498845316997379,
+					"combined": 0.08753882243145104
+				},
+				{
+					"w_lgbm": 0.4,
+					"backtest": 0.08948702015863087,
+					"valid": 0.08483184501311589,
+					"combined": 0.08719050609212141
+				},
+				{
+					"w_lgbm": 0.45,
+					"backtest": 0.08904416885830406,
+					"valid": 0.08472418166261503,
+					"combined": 0.086911020492415
+				},
+				{
+					"w_lgbm": 0.5,
+					"backtest": 0.0886882056502968,
+					"valid": 0.08466607994174263,
+					"combined": 0.0867004697627726
+				},
+				{
+					"w_lgbm": 0.55,
+					"backtest": 0.08842101277042899,
+					"valid": 0.08465868681989801,
+					"combined": 0.0865602933030438
+				},
+				{
+					"w_lgbm": 0.6,
+					"backtest": 0.08824346657668669,
+					"valid": 0.08470008504912342,
+					"combined": 0.08648992369287754
+				},
+				{
+					"w_lgbm": 0.65,
+					"backtest": 0.08815623425947226,
+					"valid": 0.08479080026688489,
+					"combined": 0.08648988798902944
+				},
+				{
+					"w_lgbm": 0.7,
+					"backtest": 0.08815858067946794,
+					"valid": 0.08493074830514548,
+					"combined": 0.08655971163044107
+				},
+				{
+					"w_lgbm": 0.75,
+					"backtest": 0.08825156726470311,
+					"valid": 0.08512020178224282,
+					"combined": 0.08670002271085675
+				},
+				{
+					"w_lgbm": 0.8,
+					"backtest": 0.08843419557093414,
+					"valid": 0.08535895059232673,
+					"combined": 0.08691017602243567
+				},
+				{
+					"w_lgbm": 0.85,
+					"backtest": 0.08870649880771056,
+					"valid": 0.08564546871771295,
+					"combined": 0.0871894180580393
+				},
+				{
+					"w_lgbm": 0.9,
+					"backtest": 0.08906750673843268,
+					"valid": 0.08597976359013991,
+					"combined": 0.08753725065255677
+				},
+				{
+					"w_lgbm": 0.95,
+					"backtest": 0.08951614637040316,
+					"valid": 0.0863618043420591,
+					"combined": 0.08795311737006126
+				},
+				{
+					"w_lgbm": 1.0,
+					"backtest": 0.09005062516317383,
+					"valid": 0.08679043075060011,
+					"combined": 0.08843555269842879
+				}
+			]
+		}
 	}
 }

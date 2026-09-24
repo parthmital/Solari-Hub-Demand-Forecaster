@@ -1,6 +1,6 @@
 {
 	"file": "/kaggle/working/solari_forecast/submission/submission.csv",
-	"size_bytes": 489544,
+	"size_bytes": 489819,
 	"columns_exact": true,
 	"dtype_integer": true,
 	"row_count_matches_test": true,
@@ -13,6 +13,10 @@
 	"n_zero_predictions": 6548,
 	"n_closed_test_rows": 6548,
 	"rmsle_implementation_selfcheck_ok": true,
-	"validation_rmsle_expected_on_leaderboard": 0.0968902225380305,
-	"backtest_rmsle": 0.10354689569103784
+	"validation_rmsle_expected_on_leaderboard": 0.09509921751446564,
+	"backtest_rmsle": 0.09599148010522429,
+	"kaggle_submission_file": "/kaggle/working/submission.csv",
+	"kaggle_submission_named_submission_csv": true,
+	"kaggle_submission_in_working_root": true,
+	"kaggle_submission_identical_to_verified_file": true
 }

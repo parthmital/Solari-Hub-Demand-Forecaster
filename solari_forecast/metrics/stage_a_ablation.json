@@ -3,24 +3,24 @@
 		{
 			"tag": "A_backtest_weighted",
 			"use_weights": true,
-			"best_iteration": 690,
-			"early_stop_rmsle_open_rows": 0.11965886028071603,
-			"backtest_rmsle_all_rows": 0.10642438792295729,
-			"seconds": 208.9,
-			"device": "cpu"
+			"best_iteration": 1006,
+			"early_stop_rmsle_open_rows": 0.1106998701599747,
+			"backtest_rmsle_all_rows": 0.09845672626854983,
+			"seconds": 52.5,
+			"device": "cuda:0"
 		},
 		{
 			"tag": "A_backtest_unweighted",
 			"use_weights": false,
-			"best_iteration": 563,
-			"early_stop_rmsle_open_rows": 0.11642330329249637,
-			"backtest_rmsle_all_rows": 0.10354689569103784,
-			"seconds": 189.4,
-			"device": "cpu"
+			"best_iteration": 1272,
+			"early_stop_rmsle_open_rows": 0.10792623290705747,
+			"backtest_rmsle_all_rows": 0.09599148010522429,
+			"seconds": 62.9,
+			"device": "cuda:1"
 		}
 	],
 	"chosen_use_weights": false,
-	"chosen_rounds": 564,
+	"chosen_rounds": 1273,
 	"recency_halflife_days": 365.0,
 	"selection_block": "backtest (validation block untouched)"
 }

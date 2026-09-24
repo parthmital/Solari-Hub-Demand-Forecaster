@@ -1,7 +1,7 @@
 # Solari hub demand forecasting — approach, validation and findings
 
-**Run:** `20260924_140828` · **Seed:** `42` (models use `42`..`45`)
-· **Hardware:** cpu · **XGBoost** 3.2.0
+**Run:** `20260924_155301` · **Seed:** `42` (models use `42`..`49`)
+· **Hardware:** cuda:0, cuda:1 · **XGBoost** 3.2.0
 
 ## 1. Problem and metric
 
@@ -13,23 +13,31 @@ loss the metric implies — and predictions are mapped back with `expm1`.
 
 ## 2. Approach
 
-- **Model:** 4 XGBoost boosters (`hist`, depth 10,
-  eta 0.03), 620 rounds, averaged in log space. No deep learning.
+- **Models:** a log-space blend of two structurally different gradient-boosting models
+  (LightGBM weight 0.65, chosen on both held-out blocks). No deep learning.
+  - _Rolling-origin XGBoost:_ 8 boosters (`hist`, depth 10,
+    eta 0.03), 1400 rounds, averaged in log space.
+  - _Direct LightGBM (CPU, concurrent with the GPU boosters when GPUs exist):_
+    2 boosters, 4592 rounds, trained on every
+    open day with `HubID` and lags that are all at least 42 days old.
 - **Rows used:** open days with positive volume. Closed days (`IsOpen == 0`) are predicted as
   exact zeros — in the full history that implication holds without a single exception.
-- **Features (106 total):** hub history statistics (overall, by weekday, by promo
+- **Features (122 total):** hub history statistics (overall, by weekday, by promo
   state, by month, with shrinkage), trailing 7/28/91/182/365-day levels and trends, the
   operating calendar supplied for the test window (promo runs, days since/until promo, closure
   runs), calendar seasonality, and hub metadata (format, assortment, competitor distance and
-  age, loyalty programme timing). `AppSessions` exists only in train, so it enters solely as
-  hub-level aggregates computed inside each statistics window.
+  age, loyalty programme timing), plus 12 regional calendars inferred
+  from identical holiday/school-closure patterns, holiday/school/long-closure proximity, and last
+  year's seasonal shape around the same date. `AppSessions` exists only in train, so it enters
+  solely as hub-level aggregates computed inside each statistics window (and as a lagged level in
+  the direct model).
 - **Leakage control:** history statistics are always computed from a window ending strictly
   before the window being predicted, and training rows come from _rolling origins_ —
   14 consecutive 42-day windows, each described
   by its own earlier statistics window.
   No training row contributes to any statistic that describes it. Three automated audits assert
   this (Section 8.2).
-- **Calibration:** one global multiplier (1.0), selected on the validation block
+- **Calibration:** one global multiplier (1.008), selected on the validation block
   and confirmed on an independent back-test block.
 
 ## 3. Validation
@@ -44,12 +52,15 @@ the same horizon as the leaderboard window:
 
 **Results**
 
-| Model                         | RMSLE       |
-| ----------------------------- | ----------- |
-| single booster (mean of 4)    | 0.09770     |
-| 4-booster ensemble            | 0.09689     |
-| ensemble + calibration        | **0.09689** |
-| back-test block (independent) | 0.10355     |
+| Model                                              | RMSLE       |
+| -------------------------------------------------- | ----------- |
+| XGBoost single booster (mean of 8)                 | 0.09890     |
+| XGBoost 8-booster ensemble                         | 0.09776     |
+| LightGBM direct (2 seeds)                          | 0.09712     |
+| blend                                              | 0.09536     |
+| blend + calibration                                | **0.09510** |
+| blend, excluding open-but-zero rows                | 0.08448     |
+| back-test block, blend (models early-stopped here) | 0.08816     |
 
 **Naive baselines on the same validation block**
 
@@ -64,40 +75,41 @@ the same horizon as the leaderboard window:
 
 | Horizon | RMSLE   |
 | ------- | ------- |
-| week 1  | 0.13832 |
-| week 2  | 0.07622 |
-| week 3  | 0.08515 |
-| week 4  | 0.09015 |
-| week 5  | 0.09222 |
-| week 6  | 0.08661 |
+| week 1  | 0.13528 |
+| week 2  | 0.08116 |
+| week 3  | 0.08221 |
+| week 4  | 0.08365 |
+| week 5  | 0.09065 |
+| week 6  | 0.08605 |
 
 ## 4. Findings
 
-- Hub identity and recent level dominate: the top features are `HubDowPromoMean`, `HubPromoMean`, `HubTrailPromo91`, `HubTrailDow365`, `HubDowMean`, `HolidayTomorrow`, `PromoActive`, `HolidayYesterday`.
+- Hub identity and recent level dominate: the top features are `HubDowPromoMean`, `HubPromoMean`, `HubTrailPromo91`, `HubTrailDow365`, `HolidaysThisWeek`, `PromoActive`, `HolidayTomorrow`, `HubDowMean`.
 - Gain share by feature family:
 
 | Family                  | Share |
 | ----------------------- | ----- |
-| hub history             | 63.8% |
-| trailing-window history | 20.5% |
-| calendar                | 8.7%  |
-| promotion calendar      | 3.4%  |
-| operating status        | 2.4%  |
-| hub metadata            | 0.7%  |
+| hub history             | 54.0% |
+| trailing-window history | 22.3% |
+| calendar                | 14.8% |
+| promotion calendar      | 4.4%  |
+| operating status        | 2.9%  |
+| hub metadata            | 0.8%  |
 | network shape           | 0.5%  |
+| year-over-year          | 0.4%  |
 
 - Promotions lift demand materially and the model captures them: RMSLE on promo days is
-  0.0881 vs 0.1015 on
+  0.0875 vs 0.0991 on
   non-promo days.
 - Error is concentrated: the worst 1% of rows carry
-  35.0% of the total squared log error.
+  35.2% of the total squared log error.
 - Hubs with a renovation gap in their history score
-  0.0926 vs 0.0977 for
+  0.0891 vs 0.0962 for
   the rest, and the first week after a closure is harder
-  (0.1069) than settled trading days
-  (0.1414).
+  (0.1054) than settled trading days
+  (0.1279).
 - Residual log-space bias after calibration is
-  -0.00213, i.e. the forecast is effectively unbiased at the network level.
+  +0.00008, i.e. the forecast is effectively unbiased at the network level.
 
 ## 5. Limitations
 

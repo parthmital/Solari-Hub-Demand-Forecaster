@@ -1,36 +1,48 @@
 {
 	"all_rows": {
 		"n": 46830.0,
-		"rmsle": 0.09689022320838864,
-		"mae": 412.3389920990818,
-		"rmse": 647.7054561714783,
-		"mape_nonzero_pct": 7.328596505236853,
-		"log_bias": -0.002134574208187739,
+		"rmsle": 0.09509921721594167,
+		"mae": 404.4717275250907,
+		"rmse": 625.0709498913187,
+		"mape_nonzero_pct": 7.212763730116118,
+		"log_bias": 8.421710491868416e-5,
 		"median_log_error": 0.0,
-		"r2_log": 0.9992519206166883,
+		"r2_log": 0.9992793213480531,
 		"mean_actual": 5825.61279296875,
-		"mean_pred": 5773.864744821695
+		"mean_pred": 5797.174503523383
 	},
 	"open_rows_only": {
 		"n": 37473.0,
-		"rmsle": 0.10831355338968737,
-		"mae": 515.2999492968271,
-		"rmse": 724.0697480584117,
-		"mape_nonzero_pct": 7.328596505236853,
-		"log_bias": -0.0026675769265719802,
-		"median_log_error": -0.0025177544312242617,
-		"r2_log": 0.9283205184873031,
+		"rmsle": 0.10631138829231811,
+		"mae": 505.468230459264,
+		"rmse": 698.7666398268165,
+		"mape_nonzero_pct": 7.212763730116118,
+		"log_bias": 0.00010524609781287843,
+		"median_log_error": -0.0003406999569808278,
+		"r2_log": 0.9309460021740735,
 		"mean_actual": 7280.26708984375,
-		"mean_pred": 7215.597523550289
+		"mean_pred": 7244.727723961252
 	},
-	"calibration_multiplier": 1.0,
-	"rounds": 564,
-	"n_models": 4,
+	"all_rows_excluding_open_zero": {
+		"n": 46829.0,
+		"rmsle": 0.08447910320884475,
+		"mae": 404.2087808836405,
+		"rmse": 622.308631176818,
+		"mape_nonzero_pct": 7.212763730116118,
+		"log_bias": -0.00011759732631722859,
+		"median_log_error": 0.0,
+		"r2_log": 0.9994312598918853,
+		"mean_actual": 5825.73681640625,
+		"mean_pred": 5797.02671421555
+	},
+	"calibration_multiplier": 1.008,
+	"rounds": 1273,
+	"n_models": 8,
 	"use_weights": false,
 	"baselines": {
-		"valid:global_mean": 0.3656437834998893,
+		"valid:global_mean": 0.36564378349988913,
 		"valid:hub_mean": 0.23417186055598466,
-		"valid:hub_weekday_mean": 0.18407086114845359,
+		"valid:hub_weekday_mean": 0.1840708611484536,
 		"valid:hub_weekday_promo_mean": 0.1454396682904793
 	}
 }

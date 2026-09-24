@@ -1,4 +1,3 @@
-
 # Standalone XGBoost training worker: one process per device, jobs run sequentially.
 import argparse
 import json
@@ -23,8 +22,12 @@ def make_callback(xgb, tag, total, every=25):
                 for split, mdict in evals_log.items():
                     for metric, values in mdict.items():
                         metrics[split + "-" + metric] = float(values[-1])
-                emit("PROGRESS", {"tag": tag, "iter": epoch + 1, "total": total, "metrics": metrics})
+                emit(
+                    "PROGRESS",
+                    {"tag": tag, "iter": epoch + 1, "total": total, "metrics": metrics},
+                )
             return False
+
     return _CB()
 
 
@@ -59,7 +62,11 @@ def main():
         is_target = (df["role"] == "target").to_numpy()
         Xtr = df.loc[is_train, feats].to_numpy(dtype=np.float32)
         ytr = df.loc[is_train, "y"].to_numpy(dtype=np.float32)
-        wtr = df.loc[is_train, "w"].to_numpy(dtype=np.float32) if job["use_weights"] else None
+        wtr = (
+            df.loc[is_train, "w"].to_numpy(dtype=np.float32)
+            if job["use_weights"]
+            else None
+        )
 
         params = dict(job["params"])
         params["device"] = device
@@ -72,10 +79,16 @@ def main():
         dvalid = None
         if job["evaluate"]:
             # Only open target rows carry a usable label; closed rows are deterministic zeros.
-            mask = is_target & (df["IsOpen"].to_numpy() == 1) & (df["OrderVolume"].to_numpy() > 0)
+            mask = (
+                is_target
+                & (df["IsOpen"].to_numpy() == 1)
+                & (df["OrderVolume"].to_numpy() > 0)
+            )
             Xva = df.loc[mask, feats].to_numpy(dtype=np.float32)
             yva = df.loc[mask, "y"].to_numpy(dtype=np.float32)
-            dvalid = xgb.QuantileDMatrix(Xva, label=yva, ref=dtrain, feature_names=feats)
+            dvalid = xgb.QuantileDMatrix(
+                Xva, label=yva, ref=dtrain, feature_names=feats
+            )
             evals.append((dvalid, "valid"))
 
         total = int(job["num_boost_round"])
@@ -84,8 +97,15 @@ def main():
         if job["evaluate"] and job.get("early_stopping"):
             kwargs["early_stopping_rounds"] = int(job["early_stopping"])
 
-        booster = xgb.train(params, dtrain, num_boost_round=total, evals=evals,
-                            verbose_eval=False, callbacks=callbacks, **kwargs)
+        booster = xgb.train(
+            params,
+            dtrain,
+            num_boost_round=total,
+            evals=evals,
+            verbose_eval=False,
+            callbacks=callbacks,
+            **kwargs
+        )
 
         best_iter = int(getattr(booster, "best_iteration", total - 1))
         rng = (0, best_iter + 1)
@@ -117,8 +137,15 @@ def main():
         }
         with open(prefix + ".meta.json", "w", encoding="utf-8") as fh:
             json.dump(meta, fh, indent=2)
-        emit("DONE", {"tag": tag, "best_iteration": best_iter,
-                      "best_score": meta["best_score"], "seconds": meta["seconds"]})
+        emit(
+            "DONE",
+            {
+                "tag": tag,
+                "best_iteration": best_iter,
+                "best_score": meta["best_score"],
+                "seconds": meta["seconds"],
+            },
+        )
 
     emit("WORKER_DONE", {"device": args.device, "jobs": len(jobs)})
 
