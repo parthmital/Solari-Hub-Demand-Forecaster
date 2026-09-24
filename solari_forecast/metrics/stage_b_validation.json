@@ -1,0 +1,46 @@
+{
+	"rounds": 564,
+	"use_weights": false,
+	"per_seed": [
+		{
+			"tag": "B_valid_seed42",
+			"seed": 42,
+			"device": "cpu",
+			"seconds": 133.0,
+			"rmsle_single": 0.09816167980212114,
+			"rmsle_running_ensemble": 0.09816167980212114,
+			"n_models_in_ensemble": 1
+		},
+		{
+			"tag": "B_valid_seed43",
+			"seed": 43,
+			"device": "cpu",
+			"seconds": 132.5,
+			"rmsle_single": 0.09725982338962949,
+			"rmsle_running_ensemble": 0.09717850963206445,
+			"n_models_in_ensemble": 2
+		},
+		{
+			"tag": "B_valid_seed44",
+			"seed": 44,
+			"device": "cpu",
+			"seconds": 132.2,
+			"rmsle_single": 0.09811219751044013,
+			"rmsle_running_ensemble": 0.09710399221513978,
+			"n_models_in_ensemble": 3
+		},
+		{
+			"tag": "B_valid_seed45",
+			"seed": 45,
+			"device": "cpu",
+			"seconds": 131.6,
+			"rmsle_single": 0.09725528506786224,
+			"rmsle_running_ensemble": 0.0968902225380305,
+			"n_models_in_ensemble": 4
+		}
+	],
+	"ensemble_rmsle": 0.0968902225380305,
+	"mean_single_model_rmsle": 0.09769724644251325,
+	"ensemble_gain": 0.0008070239044827565,
+	"best_baseline_rmsle": 0.1454396682904793
+}

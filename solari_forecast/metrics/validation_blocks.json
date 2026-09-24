@@ -1,0 +1,26 @@
+{
+	"backtest": {
+		"stats_end": "2015-03-27",
+		"target_start": "2015-03-28",
+		"target_end": "2015-05-08",
+		"scored": true,
+		"stats_days": 816,
+		"target_days": 42
+	},
+	"valid": {
+		"stats_end": "2015-05-08",
+		"target_start": "2015-05-09",
+		"target_end": "2015-06-19",
+		"scored": true,
+		"stats_days": 858,
+		"target_days": 42
+	},
+	"final": {
+		"stats_end": "2015-06-19",
+		"target_start": "2015-06-20",
+		"target_end": "2015-07-31",
+		"scored": false,
+		"stats_days": 900,
+		"target_days": 42
+	}
+}

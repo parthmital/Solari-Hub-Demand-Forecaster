@@ -1,0 +1,27 @@
+{
+	"competitor_distance_nulls_filled": 3,
+	"competitor_distance_median_used": 2325.0,
+	"hubs_without_competitor_date": 354,
+	"hubs_in_loyalty_program": 571,
+	"mean_orders_by_hub_format": {
+		"1": 6928.162348282293,
+		"2": 10205.712447797387,
+		"3": 6935.461984392419,
+		"4": 6814.412879434007
+	},
+	"mean_orders_by_assortment": {
+		"1": 6627.300661604284,
+		"2": 8591.987868726856,
+		"3": 7292.5939566793395
+	},
+	"mean_orders_by_loyalty": {
+		"0": 7349.648967273881,
+		"1": 6556.912978445004
+	},
+	"hub_format_counts": {
+		"1": 602,
+		"4": 348,
+		"3": 148,
+		"2": 17
+	}
+}

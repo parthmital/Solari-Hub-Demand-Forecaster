@@ -1,0 +1,8 @@
+{
+	"pearson_log_sessions_vs_log_orders": 0.8544641515801248,
+	"spearman_sessions_vs_orders": 0.8328140658603842,
+	"orders_per_session_mean": 9.624772255377247,
+	"orders_per_session_p05": 6.804827837268404,
+	"orders_per_session_p95": 13.08718068682435,
+	"usage": "hub-level aggregates only (column absent from orders_test.csv)"
+}

@@ -1,0 +1,26 @@
+{
+	"results": [
+		{
+			"tag": "A_backtest_weighted",
+			"use_weights": true,
+			"best_iteration": 690,
+			"early_stop_rmsle_open_rows": 0.11965886028071603,
+			"backtest_rmsle_all_rows": 0.10642438792295729,
+			"seconds": 208.9,
+			"device": "cpu"
+		},
+		{
+			"tag": "A_backtest_unweighted",
+			"use_weights": false,
+			"best_iteration": 563,
+			"early_stop_rmsle_open_rows": 0.11642330329249637,
+			"backtest_rmsle_all_rows": 0.10354689569103784,
+			"seconds": 189.4,
+			"device": "cpu"
+		}
+	],
+	"chosen_use_weights": false,
+	"chosen_rounds": 564,
+	"recency_halflife_days": 365.0,
+	"selection_block": "backtest (validation block untouched)"
+}

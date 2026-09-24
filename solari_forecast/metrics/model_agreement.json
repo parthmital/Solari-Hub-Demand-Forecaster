@@ -1,0 +1,16 @@
+{
+	"n_models": 4,
+	"mean_pairwise_correlation": 0.9968432673604884,
+	"min_pairwise_correlation": 0.9966804576220463,
+	"mean_prediction_sd_log": 0.015274574048817158,
+	"p95_prediction_sd_log": 0.035357244312763214,
+	"gain_share_by_family": {
+		"hub history": 63.776322464317964,
+		"trailing-window history": 20.53822034398215,
+		"calendar": 8.71522975033647,
+		"promotion calendar": 3.4101763184721134,
+		"operating status": 2.3648549318721623,
+		"hub metadata": 0.7132169802804124,
+		"network shape": 0.4819792107387336
+	}
+}

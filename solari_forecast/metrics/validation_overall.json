@@ -1,0 +1,36 @@
+{
+	"all_rows": {
+		"n": 46830.0,
+		"rmsle": 0.09689022320838864,
+		"mae": 412.3389920990818,
+		"rmse": 647.7054561714783,
+		"mape_nonzero_pct": 7.328596505236853,
+		"log_bias": -0.002134574208187739,
+		"median_log_error": 0.0,
+		"r2_log": 0.9992519206166883,
+		"mean_actual": 5825.61279296875,
+		"mean_pred": 5773.864744821695
+	},
+	"open_rows_only": {
+		"n": 37473.0,
+		"rmsle": 0.10831355338968737,
+		"mae": 515.2999492968271,
+		"rmse": 724.0697480584117,
+		"mape_nonzero_pct": 7.328596505236853,
+		"log_bias": -0.0026675769265719802,
+		"median_log_error": -0.0025177544312242617,
+		"r2_log": 0.9283205184873031,
+		"mean_actual": 7280.26708984375,
+		"mean_pred": 7215.597523550289
+	},
+	"calibration_multiplier": 1.0,
+	"rounds": 564,
+	"n_models": 4,
+	"use_weights": false,
+	"baselines": {
+		"valid:global_mean": 0.3656437834998893,
+		"valid:hub_mean": 0.23417186055598466,
+		"valid:hub_weekday_mean": 0.18407086114845359,
+		"valid:hub_weekday_promo_mean": 0.1454396682904793
+	}
+}

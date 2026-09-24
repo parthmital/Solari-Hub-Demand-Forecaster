@@ -1,0 +1,14 @@
+{
+	"run_tag": "20260924_140828",
+	"started_at": "2026-09-24T14:08:28",
+	"python": "3.12.13",
+	"platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
+	"cpu_count": 4,
+	"numpy": "2.0.2",
+	"pandas": "2.3.3",
+	"xgboost": "3.2.0",
+	"matplotlib": "3.10.0",
+	"devices": ["cpu"],
+	"gpu_devices_detected": [],
+	"seed": 42
+}

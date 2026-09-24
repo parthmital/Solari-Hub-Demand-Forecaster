@@ -1,0 +1,34 @@
+{
+	"hubs_with_any_gap": 180,
+	"hubs_with_renovation_gap_30d+": 180,
+	"max_gap_days_observed": 185,
+	"rows_per_hub_min": 716,
+	"rows_per_hub_max": 900,
+	"full_span_days": 900,
+	"open_rate": {
+		"train_all": 0.8286556077573813,
+		"train_tail_42d": 0.8001921844971173,
+		"test": 0.8601751014307069
+	},
+	"promo_rate": {
+		"train_all": 0.38269068065158046,
+		"train_tail_42d": 0.35714285714285715,
+		"test": 0.35714285714285715
+	},
+	"school_closure_rate": {
+		"train_all": 0.173511586709935,
+		"train_tail_42d": 0.07458893871449926,
+		"test": 0.2850523168908819
+	},
+	"regional_holiday_value_counts": {
+		"train": {
+			"0": 939329,
+			"1": 20260,
+			"2": 6690,
+			"3": 4100
+		},
+		"test": {
+			"0": 46830
+		}
+	}
+}

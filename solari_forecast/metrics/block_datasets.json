@@ -1,0 +1,38 @@
+{
+	"backtest": {
+		"block": "backtest",
+		"anchor_stats_end": "2015-03-27",
+		"target_range": ["2015-03-28", "2015-05-08"],
+		"train_origins": 14,
+		"train_date_range": ["2013-08-17", "2015-03-27"],
+		"train_rows": 518427,
+		"target_rows": 46830,
+		"target_open_rows": 37044,
+		"features": 106,
+		"parquet_mb": 21.15
+	},
+	"valid": {
+		"block": "valid",
+		"anchor_stats_end": "2015-05-08",
+		"target_range": ["2015-05-09", "2015-06-19"],
+		"train_origins": 14,
+		"train_date_range": ["2013-09-28", "2015-05-08"],
+		"train_rows": 515225,
+		"target_rows": 46830,
+		"target_open_rows": 37473,
+		"features": 106,
+		"parquet_mb": 21.25
+	},
+	"final": {
+		"block": "final",
+		"anchor_stats_end": "2015-06-19",
+		"target_range": ["2015-06-20", "2015-07-31"],
+		"train_origins": 14,
+		"train_date_range": ["2013-11-09", "2015-06-19"],
+		"train_rows": 514194,
+		"target_rows": 46830,
+		"target_open_rows": 40282,
+		"features": 106,
+		"parquet_mb": 21.32
+	}
+}

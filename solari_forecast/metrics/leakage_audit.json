@@ -1,0 +1,26 @@
+{
+	"backtest": {
+		"temporal_order_ok": true,
+		"train_date_max": "2015-03-27",
+		"target_date_min": "2015-03-28",
+		"hub_mean_recompute_max_abs_diff": 7.670250248281718e-7,
+		"max_distinct_hub_level_values_within_block": 1,
+		"raw_target_columns_in_FEATURES": []
+	},
+	"valid": {
+		"temporal_order_ok": true,
+		"train_date_max": "2015-05-08",
+		"target_date_min": "2015-05-09",
+		"hub_mean_recompute_max_abs_diff": 6.489949981869358e-7,
+		"max_distinct_hub_level_values_within_block": 1,
+		"raw_target_columns_in_FEATURES": []
+	},
+	"final": {
+		"temporal_order_ok": true,
+		"train_date_max": "2015-06-19",
+		"target_date_min": "2015-06-20",
+		"hub_mean_recompute_max_abs_diff": 6.627536581760296e-7,
+		"max_distinct_hub_level_values_within_block": 1,
+		"raw_target_columns_in_FEATURES": []
+	}
+}

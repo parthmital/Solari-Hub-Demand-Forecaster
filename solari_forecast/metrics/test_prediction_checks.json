@@ -1,0 +1,15 @@
+{
+	"all_finite": true,
+	"all_non_negative": true,
+	"closed_rows_are_zero": true,
+	"open_rows_all_positive": true,
+	"pred_mean_open": 6959.720917531404,
+	"recent_actual_mean_open": 7280.26651188856,
+	"mean_ratio_pred_over_recent": 0.9559706236256996,
+	"hub_ratio_p01": 0.894810760853294,
+	"hub_ratio_p50": 0.9589433731198952,
+	"hub_ratio_p99": 1.0605964128240242,
+	"hubs_within_0.4_to_2.5x": 1.0,
+	"max_prediction": 28890.0,
+	"historical_max": 38722.0
+}

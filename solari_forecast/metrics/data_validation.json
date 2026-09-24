@@ -1,0 +1,62 @@
+{
+	"checks": {
+		"train_columns": {
+			"passed": true,
+			"detail": "['AppSessions', 'Date', 'HubID', 'IsOpen', 'OrderVolume', 'PromoActive', 'RegionalHoliday', 'SchoolClosureFlag', 'Weekday']"
+		},
+		"test_columns": {
+			"passed": true,
+			"detail": "['Date', 'HubID', 'Id', 'IsOpen', 'PromoActive', 'RegionalHoliday', 'SchoolClosureFlag', 'Weekday']"
+		},
+		"train_key_unique": {
+			"passed": true,
+			"detail": "0"
+		},
+		"test_key_unique": {
+			"passed": true,
+			"detail": "0"
+		},
+		"test_after_train": {
+			"passed": true,
+			"detail": "train_max=2015-06-19 test_min=2015-06-20"
+		},
+		"test_contiguous": {
+			"passed": true,
+			"detail": "42 distinct dates"
+		},
+		"test_hubs_in_train": {
+			"passed": true,
+			"detail": "0"
+		},
+		"hubs_in_metadata": {
+			"passed": true,
+			"detail": "0"
+		},
+		"submission_ids_match": {
+			"passed": true,
+			"detail": "sample=46830 test=46830"
+		},
+		"closed_implies_zero": {
+			"passed": true,
+			"detail": "0"
+		},
+		"no_nulls_in_test": {
+			"passed": true,
+			"detail": "{'Id': 0, 'HubID': 0, 'Weekday': 0, 'Date': 0, 'IsOpen': 0, 'PromoActive': 0, 'RegionalHoliday': 0, 'SchoolClosureFlag': 0}"
+		},
+		"target_non_negative": {
+			"passed": true,
+			"detail": "0"
+		},
+		"appsessions_absent_from_test": {
+			"passed": true,
+			"detail": "AppSessions is train-only and is never used as a row-level feature"
+		}
+	},
+	"train_rows": 970379,
+	"test_rows": 46830,
+	"hubs": 1115,
+	"train_range": ["2013-01-01", "2015-06-19"],
+	"test_range": ["2015-06-20", "2015-07-31"],
+	"test_horizon_days": 42
+}

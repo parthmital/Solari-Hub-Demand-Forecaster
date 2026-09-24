@@ -1,0 +1,24 @@
+{
+	"rounds": 620,
+	"rounds_source": "564 (back-test early stopping) x 1.1",
+	"n_models": 4,
+	"seeds": [42, 43, 44, 45],
+	"devices": ["cpu"],
+	"train_rows": 514194,
+	"seconds_total": 483.0,
+	"calibration_multiplier": 1.0,
+	"ensemble_sd_log_mean": 0.011361110024154186,
+	"ensemble_sd_log_p95": 0.022849949076771736,
+	"prediction_summary": {
+		"count": 46830.0,
+		"mean": 5986.578646166987,
+		"std": 3595.788929384036,
+		"min": 0.0,
+		"25%": 4191.0,
+		"50%": 5928.0,
+		"75%": 7978.0,
+		"max": 28890.0
+	},
+	"zero_predictions": 6548,
+	"closed_test_rows": 6548
+}
