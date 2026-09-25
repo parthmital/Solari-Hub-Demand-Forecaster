@@ -1,6 +1,6 @@
 {
 	"file": "/kaggle/working/submission.csv",
-	"size_bytes": 489874,
+	"size_bytes": 489615,
 	"columns_exact": true,
 	"dtype_integer": true,
 	"row_count_matches_test": true,
@@ -13,8 +13,8 @@
 	"n_zero_predictions": 6548,
 	"n_closed_test_rows": 6548,
 	"rmsle_implementation_selfcheck_ok": true,
-	"validation_rmsle_full_pipeline": 0.0954280974418454,
-	"backtest_rmsle": 0.08696272022205942,
+	"validation_rmsle_full_pipeline": 0.09431688681976315,
+	"backtest_rmsle": 0.08880985081281398,
 	"kaggle_submission_named_submission_csv": true,
 	"kaggle_submission_in_working_root": true,
 	"single_submission_file": true

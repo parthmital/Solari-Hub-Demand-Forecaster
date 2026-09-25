@@ -3,29 +3,35 @@
 		{
 			"tag": "A_backtest_weighted",
 			"use_weights": true,
-			"best_iteration": 551,
-			"early_stop_rmsle_open_rows": 0.11104769251067753,
-			"backtest_rmsle_all_rows": 0.09876709343488056,
-			"seconds": 50.3,
-			"device": "cuda:1"
+			"best_iteration": 1011,
+			"early_stop_rmsle_testlike": 0.0880465670367322,
+			"backtest_rmsle_all_rows": 0.09713360306482557,
+			"backtest_rmsle_testlike": 0.08090253100873918,
+			"seconds": 73.9,
+			"device": "cuda:0"
 		},
 		{
 			"tag": "A_backtest_unweighted",
 			"use_weights": false,
-			"best_iteration": 519,
-			"early_stop_rmsle_open_rows": 0.1078965684684895,
-			"backtest_rmsle_all_rows": 0.09596334311330966,
-			"seconds": 50.0,
+			"best_iteration": 1469,
+			"early_stop_rmsle_testlike": 0.08875032732866518,
+			"backtest_rmsle_all_rows": 0.09515105950289494,
+			"backtest_rmsle_testlike": 0.08154903465706653,
+			"seconds": 96.4,
 			"device": "cuda:0"
 		}
 	],
-	"chosen_use_weights": false,
-	"chosen_rounds": 520,
+	"chosen_use_weights": true,
+	"chosen_rounds": 1012,
 	"recency_halflife_days": 365.0,
 	"selection_block": "backtest (validation block untouched)",
 	"multigap_objective_scores": {
-		"primary": 0.0954460476057875,
-		"alt": 0.09674060396842375
+		"primary": 0.08819598325789453,
+		"alt": 0.08879511322329936
 	},
-	"multigap_objective_chosen": "reg:pseudohubererror"
+	"multigap_objective_chosen": "reg:pseudohubererror",
+	"multigap_variant_chosen": "primary",
+	"multigap_max_leaves_chosen": 127,
+	"plain_backtest_best_iteration": 2516,
+	"plain_backtest_early_stop_rmsle_testlike": 0.09438652810099261
 }

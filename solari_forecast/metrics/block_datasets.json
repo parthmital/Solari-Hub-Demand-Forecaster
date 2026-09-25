@@ -3,36 +3,36 @@
 		"block": "backtest",
 		"anchor_stats_end": "2015-03-27",
 		"target_range": ["2015-03-28", "2015-05-08"],
-		"train_origins": 14,
-		"train_date_range": ["2013-08-17", "2015-03-27"],
-		"train_rows": 518427,
+		"train_origins": 15,
+		"train_date_range": ["2013-07-06", "2015-03-27"],
+		"train_rows": 558536,
 		"target_rows": 46830,
 		"target_open_rows": 37044,
 		"features": 128,
-		"parquet_mb": 28.56
+		"parquet_mb": 30.03
 	},
 	"valid": {
 		"block": "valid",
 		"anchor_stats_end": "2015-05-08",
 		"target_range": ["2015-05-09", "2015-06-19"],
-		"train_origins": 14,
-		"train_date_range": ["2013-09-28", "2015-05-08"],
-		"train_rows": 515225,
+		"train_origins": 16,
+		"train_date_range": ["2013-07-06", "2015-05-08"],
+		"train_rows": 595580,
 		"target_rows": 46830,
 		"target_open_rows": 37473,
 		"features": 128,
-		"parquet_mb": 29.51
+		"parquet_mb": 32.41
 	},
 	"final": {
 		"block": "final",
 		"anchor_stats_end": "2015-06-19",
 		"target_range": ["2015-06-20", "2015-07-31"],
-		"train_origins": 14,
-		"train_date_range": ["2013-11-09", "2015-06-19"],
-		"train_rows": 514194,
+		"train_origins": 17,
+		"train_date_range": ["2013-07-06", "2015-06-19"],
+		"train_rows": 633052,
 		"target_rows": 46830,
 		"target_open_rows": 40282,
 		"features": 128,
-		"parquet_mb": 30.41
+		"parquet_mb": 34.94
 	}
 }

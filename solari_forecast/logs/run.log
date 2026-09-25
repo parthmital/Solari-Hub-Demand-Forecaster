@@ -1,230 +1,236 @@
-# Solari forecasting run 20260924_203311
-[20:33:11] INFO  Run tag        : 20260924_203311
-[20:33:11] INFO  Working dir    : /kaggle/working
-[20:33:11] INFO  Artifact root  : /kaggle/working/solari_forecast
-[20:33:11] INFO  Master seed    : 42
-[20:33:14] INFO  GPU OK  -> cuda:0  (0, Tesla T4, 15360 MiB)
-[20:33:14] INFO  GPU OK  -> cuda:1  (1, Tesla T4, 15360 MiB)
-[20:33:14] INFO  Training devices: ['cuda:0', 'cuda:1']
-[20:33:18] INFO  XGBoost seeds 4 | worker slots 4 | CatBoost GPU 1.2.10
-[20:33:18] INFO    run_tag               : 20260924_203311
-[20:33:18] INFO    started_at            : 2026-09-24T20:33:11
-[20:33:18] INFO    python                : 3.12.13
-[20:33:18] INFO    platform              : Linux-6.12.90+-x86_64-with-glibc2.35
-[20:33:18] INFO    cpu_count             : 4
-[20:33:18] INFO    numpy                 : 2.0.2
-[20:33:18] INFO    pandas                : 2.3.3
-[20:33:18] INFO    xgboost               : 3.2.0
-[20:33:18] INFO    catboost              : 1.2.10
-[20:33:18] INFO    matplotlib            : 3.10.0
-[20:33:18] INFO    devices               : ['cuda:0', 'cuda:1']
-[20:33:18] INFO    workers_per_gpu       : 2
-[20:33:18] INFO    worker_slots          : 4
-[20:33:18] INFO    gpu_devices_detected  : ['cuda:0', 'cuda:1']
-[20:33:18] INFO    seed                  : 42
-[20:33:18] INFO  Found orders_train.csv       -> /kaggle/input/competitions/ch-27-celebal-technologies-vit-vellore/orders_train.csv  (32.4 MB)
-[20:33:18] INFO  Found orders_test.csv        -> /kaggle/input/competitions/ch-27-celebal-technologies-vit-vellore/orders_test.csv  (1.4 MB)
-[20:33:18] INFO  Found hub_metadata.csv       -> /kaggle/input/competitions/ch-27-celebal-technologies-vit-vellore/hub_metadata.csv  (0.0 MB)
-[20:33:18] INFO  Found sample_submission.csv  -> /kaggle/input/competitions/ch-27-celebal-technologies-vit-vellore/sample_submission.csv  (0.4 MB)
-[20:33:20] INFO  PASS  train_columns                ['AppSessions', 'Date', 'HubID', 'IsOpen', 'OrderVolume', 'PromoActive', 'RegionalHoliday', 'SchoolClosureFlag', 'Weekday']
-[20:33:20] INFO  PASS  test_columns                 ['Date', 'HubID', 'Id', 'IsOpen', 'PromoActive', 'RegionalHoliday', 'SchoolClosureFlag', 'Weekday']
-[20:33:20] INFO  PASS  train_key_unique             0
-[20:33:20] INFO  PASS  test_key_unique              0
-[20:33:20] INFO  PASS  test_after_train             train_max=2015-06-19 test_min=2015-06-20
-[20:33:20] INFO  PASS  test_contiguous              42 distinct dates
-[20:33:20] INFO  PASS  test_hubs_in_train           0
-[20:33:20] INFO  PASS  hubs_in_metadata             0
-[20:33:20] INFO  PASS  submission_ids_match         sample=46830 test=46830
-[20:33:20] INFO  PASS  closed_implies_zero          0
-[20:33:20] INFO  PASS  no_nulls_in_test             {'Id': 0, 'HubID': 0, 'Weekday': 0, 'Date': 0, 'IsOpen': 0, 'PromoActive': 0, 'RegionalHoliday': 0, 'SchoolClosureFlag': 0}
-[20:33:20] INFO  PASS  target_non_negative          0
-[20:33:20] INFO  PASS  appsessions_absent_from_test AppSessions is train-only and is never used as a row-level feature
-[20:33:20] INFO  train 970,379 rows | test 46,830 rows | hubs 1115
-[20:33:20] INFO  train 2013-01-01 .. 2015-06-19 | test 2015-06-20 .. 2015-07-31 (42 days)
-[20:33:20] INFO  closed rows                 : 166,269 (17.1%)
-[20:33:20] INFO  open-but-zero rows (dropped): 54
-[20:33:20] INFO  training rows (open, > 0)   : 804,056
-[20:33:20] INFO  hub mean spread             : 2707 .. 21803 (8.1x) -> RMSLE is the right metric
-[20:33:20] INFO  skew raw 1.59 -> log1p -0.11
-[20:33:22] INFO  figure -> eda_target_overview.png
-[20:33:23] INFO  hubs with a >=30-day history gap (renovation): 180
-[20:33:23] INFO  open rate   train=0.829  test=0.860
-[20:33:23] INFO  promo rate  train=0.383  test=0.357
-[20:33:23] INFO  school rate train=0.174  test=0.285
-[20:33:23] INFO  RegionalHoliday in test: {'0': 46830} (levels 1-3 never occur in the test window)
-[20:33:25] INFO  figure -> eda_coverage_and_shift.png
-[20:33:28] INFO  figure -> eda_hub_metadata.png
-[20:33:28] INFO  competitor distance nulls filled with median 2325 m: 3
-[20:33:28] INFO  hubs with no competitor-opening date: 354
-[20:33:30] INFO  figure -> eda_appsessions.png
-[20:33:30] INFO  log-space correlation AppSessions ~ OrderVolume: 0.854 (used only via hub-level, stats-window aggregates)
-[20:33:30] INFO  panel rows 1,065,940 | synthetic filler days (missing history) 48,731
-[20:33:30] INFO  calendar projected 14 days past the test end (sequence features only)
-[20:33:32] INFO  inferred 12 regional calendars from holiday/school flags (sizes [286, 180, 115, 112, 92, 75, 73, 56, 40, 36, 28, 22])
-[20:33:34] INFO  panel shape (1065940, 90); memory 253 MB
-[20:33:34] INFO  block backtest  history 2013-01-01..2015-03-27 (816d) -> target 2015-03-28..2015-05-08 (42d)
-[20:33:34] INFO  block valid     history 2013-01-01..2015-05-08 (858d) -> target 2015-05-09..2015-06-19 (42d)
-[20:33:34] INFO  block final     history 2013-01-01..2015-06-19 (900d) -> target 2015-06-20..2015-07-31 (42d)
-[20:33:34] INFO  figure -> validation_blocks.png
-[20:33:34] INFO  feature count: 128 (63 calendar/metadata + 65 history-derived); direct model: 77
-[20:33:55] INFO  block backtest  origins=14 train=518,427 (2013-08-17..2015-03-27) target=46,830 (open 37,044) -> 28.56 MB
-[20:34:15] INFO  block valid     origins=14 train=515,225 (2013-09-28..2015-05-08) target=46,830 (open 37,473) -> 29.51 MB
-[20:34:36] INFO  block final     origins=14 train=514,194 (2013-11-09..2015-06-19) target=46,830 (open 40,282) -> 30.41 MB
-[20:34:36] INFO  final block covers all test Ids exactly once — submission alignment guaranteed
-[20:34:37] INFO  leakage audit backtest  PASS (max hub-mean recompute diff 7.67e-07)
-[20:34:37] INFO  leakage audit valid     PASS (max hub-mean recompute diff 6.49e-07)
-[20:34:38] INFO  leakage audit final     PASS (max hub-mean recompute diff 6.63e-07)
-[20:34:38] INFO  worker written -> /kaggle/working/solari_forecast/xgb_worker.py (8.7 KB)
-[20:34:38] INFO  dispatcher ready — devices: ['cuda:0', 'cuda:1'], 4 worker slot(s)
-[20:34:38] INFO  validation rows 46,830 (open 37,473); backtest rows 46,830
-[20:34:38] INFO  test-like rows (no holiday within 3 days): validation 25,858, backtest 27,875
-[20:34:38] INFO  baseline RMSLE  valid:global_mean                  0.36564
-[20:34:38] INFO  baseline RMSLE  valid:hub_mean                     0.23417
-[20:34:38] INFO  baseline RMSLE  valid:hub_weekday_mean             0.18407
-[20:34:38] INFO  baseline RMSLE  valid:hub_weekday_promo_mean       0.14544
-[20:34:38] INFO  baseline RMSLE  backtest:global_mean               0.38961
-[20:34:38] INFO  baseline RMSLE  backtest:hub_mean                  0.27429
-[20:34:38] INFO  baseline RMSLE  backtest:hub_weekday_mean          0.23598
-[20:34:38] INFO  baseline RMSLE  backtest:hub_weekday_promo_mean    0.16608
-[20:34:39] INFO  direct-model lag audit PASS (Lag28 recomputed from the raw CSV for 25 random test rows)
-[20:34:43] INFO  gap  7d table -> direct_gap7.parquet (63.3 MB, 1,017,209 rows x 77 features)
-[20:34:47] INFO  gap 14d table -> direct_gap14.parquet (63.0 MB, 1,017,209 rows x 77 features)
-[20:34:51] INFO  gap 21d table -> direct_gap21.parquet (62.7 MB, 1,017,209 rows x 77 features)
-[20:34:54] INFO  gap 28d table -> direct_gap28.parquet (62.4 MB, 1,017,209 rows x 77 features)
-[20:34:58] INFO  gap 35d table -> direct_gap35.parquet (62.0 MB, 1,017,209 rows x 77 features)
-[20:35:02] INFO  gap 42d table -> direct_gap42.parquet (61.5 MB, 1,017,209 rows x 77 features)
-[20:35:02] INFO  multi-gap lag audit PASS (gap 42 == panel lags; gap 7 Lag28 recomputed from the raw CSV for 25 random test rows)
-[20:35:02] INFO  12 multi-gap XGBoost + 2 CatBoost back-test jobs queued for the Stage A launch
-[20:35:02] INFO  stage A (ablation) + direct-model back-tests: 16 job(s) on 4 slot(s) (2 per device, nthread=1)
-[20:38:59] INFO    finished M_backtest_gap7 on cuda:0: best_iter=2016 best_rmsle=0.09308 in 236.5s
-[20:39:28] INFO    finished M_backtest_gap14 on cuda:1: best_iter=2163 best_rmsle=0.09448 in 265.0s
-[20:42:05] INFO    finished K_backtest_gap14 on cuda:0: best_iter=1467 best_rmsle=0.09945 in 422.4s
-[20:43:47] INFO    finished M_backtest_gap21 on cuda:0: best_iter=2199 best_rmsle=0.09454 in 287.1s
-[20:44:48] INFO    finished M_backtest_gap28 on cuda:1: best_iter=2959 best_rmsle=0.09580 in 318.9s
-[20:47:12] INFO    finished M_backtest_gap7_alt on cuda:1: best_iter=1225 best_rmsle=0.09472 in 142.2s
-[20:49:30] INFO    finished M_backtest_gap14_alt on cuda:1: best_iter=1169 best_rmsle=0.09460 in 137.4s
-[20:49:57] INFO    finished K_backtest_gap42 on cuda:1: best_iter=3254 best_rmsle=0.10084 in 894.5s
-[20:50:18] INFO    finished M_backtest_gap35 on cuda:0: best_iter=2276 best_rmsle=0.09761 in 491.3s
-[20:52:47] INFO    finished M_backtest_gap28_alt on cuda:1: best_iter=559 best_rmsle=0.10071 in 168.6s
-[20:55:15] INFO    finished M_backtest_gap21_alt on cuda:1: best_iter=1774 best_rmsle=0.09567 in 344.2s
-[20:55:50] INFO    finished M_backtest_gap42 on cuda:0: best_iter=3458 best_rmsle=0.09717 in 721.4s
-[20:56:07] INFO    finished A_backtest_weighted on cuda:1: best_iter=551 best_rmsle=0.11105 in 50.3s
-[20:56:41] INFO    finished A_backtest_unweighted on cuda:0: best_iter=519 best_rmsle=0.10790 in 50.0s
-[20:56:54] INFO    finished M_backtest_gap42_alt on cuda:1: best_iter=1635 best_rmsle=0.09609 in 246.4s
-[20:57:02] INFO    finished M_backtest_gap35_alt on cuda:0: best_iter=2076 best_rmsle=0.09865 in 403.5s
-[20:57:03] INFO  stage A (ablation) + direct-model back-tests: 16 job(s) finished in 1321s
-[20:57:03] INFO  multi-gap objective: reg:pseudohubererror (mean back-test RMSLE primary 0.09545 vs alternative 0.09674)
-[20:57:03] INFO  stage A winner: use_weights=False, rounds=520, backtest RMSLE=0.09596
-[20:57:03] INFO  multi-gap rounds (validation): {7: 2017, 14: 2164, 21: 2200, 28: 2960, 35: 2277, 42: 3459}
-[20:57:03] INFO  CatBoost rounds (validation): {14: 1468, 42: 3255}
-[20:57:03] INFO  stages B + C + direct models (all GPUs): 24 job(s) on 4 slot(s) (2 per device, nthread=1)
-[21:03:30] INFO    finished M_valid_gap42 on cuda:1: best_iter=3458 best_rmsle=nan in 386.3s
-[21:03:58] INFO    finished M_final_gap42 on cuda:0: best_iter=3804 best_rmsle=nan in 414.3s
-[21:09:12] INFO    finished K_valid_gap42 on cuda:1: best_iter=3254 best_rmsle=nan in 728.6s
-[21:09:21] INFO    finished M_final_gap28 on cuda:1: best_iter=3255 best_rmsle=nan in 349.6s
-[21:09:27] INFO    finished M_valid_gap28 on cuda:0: best_iter=2959 best_rmsle=nan in 327.6s
-[21:11:31] INFO    finished K_final_gap42 on cuda:0: best_iter=3580 best_rmsle=nan in 867.1s
-[21:13:35] INFO    finished M_final_gap35 on cuda:1: best_iter=2504 best_rmsle=nan in 261.8s
-[21:15:31] INFO    finished M_final_gap21 on cuda:0: best_iter=2419 best_rmsle=nan in 362.6s
-[21:16:37] INFO    finished K_final_gap14 on cuda:1: best_iter=1614 best_rmsle=nan in 434.3s
-[21:17:16] INFO    finished M_valid_gap35 on cuda:1: best_iter=2276 best_rmsle=nan in 219.8s
-[21:19:26] INFO    finished M_final_gap14 on cuda:0: best_iter=2379 best_rmsle=nan in 473.5s
-[21:20:53] INFO    finished M_valid_gap21 on cuda:1: best_iter=2199 best_rmsle=nan in 214.9s
-[21:22:51] INFO    finished M_final_gap7 on cuda:0: best_iter=2218 best_rmsle=nan in 439.4s
-[21:23:31] INFO    finished K_valid_gap14 on cuda:1: best_iter=1467 best_rmsle=nan in 412.6s
-[21:23:32] INFO    finished C_final_seed42 on cuda:0: best_iter=571 best_rmsle=nan in 39.6s
-[21:24:14] INFO    finished C_final_seed43 on cuda:1: best_iter=571 best_rmsle=nan in 41.5s
-[21:24:16] INFO    finished C_final_seed44 on cuda:0: best_iter=571 best_rmsle=nan in 41.9s
-[21:24:32] INFO    finished M_valid_gap7 on cuda:1: best_iter=2016 best_rmsle=nan in 218.6s
-[21:24:59] INFO    finished C_final_seed45 on cuda:1: best_iter=571 best_rmsle=nan in 43.6s
-[21:24:59] INFO    finished B_valid_seed42 on cuda:0: best_iter=519 best_rmsle=nan in 41.8s
-[21:25:16] INFO    finished B_valid_seed43 on cuda:1: best_iter=519 best_rmsle=nan in 42.1s
-[21:25:34] INFO    finished B_valid_seed44 on cuda:1: best_iter=519 best_rmsle=nan in 34.3s
-[21:25:41] INFO    finished B_valid_seed45 on cuda:0: best_iter=519 best_rmsle=nan in 40.8s
-[21:25:54] INFO    finished M_valid_gap14 on cuda:0: best_iter=2163 best_rmsle=nan in 387.1s
-[21:25:54] INFO  stages B + C + direct models (all GPUs): 24 job(s) finished in 1731s
-[21:25:54] INFO  validation RMSLE  single-model mean : 0.09873
-[21:25:54] INFO  validation RMSLE  4-seed ensemble  : 0.09797 (gain +0.00076)
-[21:25:54] INFO  best naive baseline on the same block: 0.14544 -> improvement +0.04747
-[21:25:55] INFO  multi-gap look-ahead audit PASS (every served row's newest lag day <= history end)
-[21:25:56] INFO  figure -> multigap_horizon.png
-[21:25:56] INFO  multi-gap direct XGBoost: validation 0.08607 vs gap-42 only 0.08672 | back-test 0.08453 vs 0.08642 (excl. open-but-zero)
-[21:25:56] INFO  blend optimum on back-test  alone: xgb=0.25, mg=0.35, cat=0.40
-[21:25:56] INFO  blend optimum on validation alone: xgb=0.60, mg=0.40, cat=0.00
-[21:25:57] INFO  figure -> blend_curve.png
-[21:25:57] INFO  blend weights: XGBoost rolling-origin 0.45, XGBoost multi-gap direct 0.35, CatBoost direct 0.20
-[21:25:57] INFO  validation RMSLE, test-like rows: xgb 0.08580 / mg 0.08799 / cat 0.08978 / blend 0.08484
-[21:25:57] INFO  validation RMSLE, all rows: xgb 0.09797 / mg 0.09679 / cat 0.09762 / blend 0.09491
-[21:25:57] INFO  component correlations (validation, log): {'xgb~mg': 0.922400855739462, 'xgb~cat': 0.8231782572841054, 'mg~cat': 0.9611792590806988}
-[21:25:57] INFO  figure -> calibration_curve.png
-[21:25:57] INFO  calibration: valid optimum 1.018, backtest optimum 1.008, agreement=True -> applying 1.018
-[21:25:57] INFO  validation RMSLE calibrated: 0.09543 (was 0.09491); test-like rows 0.08332 (was 0.08484)
-[21:25:57] INFO  per-hub correction: best prior 80 gains -0.00009 RMSLE on test-like validation rows -> not applied
-[21:25:57] INFO  validation RMSLE, full pipeline (all rows): 0.09543
-[21:25:58] INFO  validation RMSLE (all rows)   : 0.09543
-[21:25:58] INFO  validation RMSLE (open rows)  : 0.10668
-[21:25:58] INFO  validation RMSLE (all rows except open-but-zero): 0.08468
-[21:25:58] INFO  validation log-space bias     : +0.00992
-[21:25:58] INFO  validation MAE / MAPE         : 405.3 orders / 7.34%
-[21:25:58] INFO  per-hub RMSLE  p50=0.0771  p90=0.1001  worst=1.4757
-[21:25:59] INFO  figure -> diagnostics_validation.png
-[21:26:00] INFO  figure -> feature_importance.png
-[21:26:00] INFO  ensemble agreement: mean pairwise r = 0.99715, mean per-row sd = 0.0145 log-units
-[21:26:00] INFO  top-10 features: HubDowPromoMean, HubPromoMean, HubTrailPromo91, HubTrailDow365, HubDowMean, PromoActive, HubTrailDow91, HubTrailMean365, HolidaysThisWeek, HolidayTomorrow
-[21:26:00] INFO    rows_over_forecast_pct                        44.33483
-[21:26:00] INFO    rows_under_forecast_pct                       35.68439
-[21:26:00] INFO    mean_log_error_over                           0.07653
-[21:26:00] INFO    mean_log_error_under                          -0.06728
-[21:26:00] INFO    worst_1pct_rows_share_of_squared_error        35.05163
-[21:26:00] INFO    rmsle_renovation_hubs                         0.08889
-[21:26:00] INFO    rmsle_other_hubs                              0.09664
-[21:26:00] INFO    rmsle_first_week_after_closure                0.10635
-[21:26:00] INFO    rmsle_settled_open_days                       0.11512
-[21:26:00] INFO    rmsle_promo_days                              0.08762
-[21:26:00] INFO    rmsle_non_promo_days                          0.09950
-[21:26:00] INFO    closed_rows_all_predicted_zero                True
-[21:26:00] INFO    closed_rows_all_actually_zero                 True
-[21:26:00] INFO  the worst 1% of rows account for 35.1% of total squared log error
-[21:26:01] INFO  figure -> error_analysis_hub_series.png
-[21:26:02] INFO  final ensemble: 4 rolling-origin XGBoost x 572 rounds + 6 multi-gap XGBoost + 2 CatBoost | weights xgb=0.45, mg=0.35, cat=0.20
-[21:26:02] INFO  component correlations on test (log): {'xgb~mg': 0.9376953431978949, 'xgb~cat': 0.8441109828172356, 'mg~cat': 0.9583549961894244}
-[21:26:02] INFO  test predictions: mean 6057.5, median 5975.0, max 30428, zeros 6,548
-[21:26:02] INFO  rolling-origin seed disagreement (log sd): mean 0.0106, p95 0.0205
-[21:26:04] INFO  figure -> test_prediction_sanity.png
-[21:26:04] INFO    check all_finite                       True
-[21:26:04] INFO    check all_non_negative                 True
-[21:26:04] INFO    check closed_rows_are_zero             True
-[21:26:04] INFO    check open_rows_all_positive           True
-[21:26:04] INFO    check pred_mean_open                   7042.2205699816295
-[21:26:04] INFO    check recent_actual_mean_open          7280.26651188856
-[21:26:04] INFO    check mean_ratio_pred_over_recent      0.9673025786187628
-[21:26:04] INFO    check hub_ratio_p01                    0.9033161811018205
-[21:26:04] INFO    check hub_ratio_p50                    0.9697487551453221
-[21:26:04] INFO    check hub_ratio_p99                    1.0921335370155543
-[21:26:04] INFO    check hubs_within_0.4_to_2.5x          1.0
-[21:26:04] INFO    check max_prediction                   30428.0
-[21:26:04] INFO    check historical_max                   38722.0
-[21:26:04] INFO  submission written -> /kaggle/working/submission.csv (0.49 MB)
-[21:26:04] INFO  rows 46,830 | mean 6057.5 | zeros 6,548
-[21:26:04] INFO    verify file                                          /kaggle/working/submission.csv
-[21:26:04] INFO    verify size_bytes                                    489874
-[21:26:04] INFO    verify columns_exact                                 True
-[21:26:04] INFO    verify dtype_integer                                 True
-[21:26:04] INFO    verify row_count_matches_test                        True
-[21:26:04] INFO    verify id_set_matches_test                           True
-[21:26:04] INFO    verify id_order_matches_sample                       True
-[21:26:04] INFO    verify no_nulls                                      True
-[21:26:04] INFO    verify no_negatives                                  True
-[21:26:04] INFO    verify no_duplicate_ids                              True
-[21:26:04] INFO    verify zeros_exactly_match_closed_rows               True
-[21:26:04] INFO    verify n_zero_predictions                            6548
-[21:26:04] INFO    verify n_closed_test_rows                            6548
-[21:26:04] INFO    verify rmsle_implementation_selfcheck_ok             True
-[21:26:04] INFO    verify validation_rmsle_full_pipeline                0.0954280974418454
-[21:26:04] INFO    verify backtest_rmsle                                0.08696272022205942
-[21:26:04] INFO    verify kaggle_submission_named_submission_csv        True
-[21:26:04] INFO    verify kaggle_submission_in_working_root             True
-[21:26:04] INFO    verify single_submission_file                        True
-[21:26:04] INFO  submission verification: ALL CHECKS PASSED
-[21:26:04] INFO  summary written -> /kaggle/working/solari_forecast/reports/summary.md (5973 chars)
-[21:26:04] INFO  verified 43 required artefacts are present
+# Solari forecasting run 20260925_075244
+[07:52:44] INFO  Run tag        : 20260925_075244
+[07:52:44] INFO  Working dir    : /kaggle/working
+[07:52:44] INFO  Artifact root  : /kaggle/working/solari_forecast
+[07:52:44] INFO  Master seed    : 42
+[07:52:48] INFO  GPU OK  -> cuda:0  (0, Tesla T4, 15360 MiB)
+[07:52:49] INFO  GPU OK  -> cuda:1  (1, Tesla T4, 15360 MiB)
+[07:52:49] INFO  Training devices: ['cuda:0', 'cuda:1']
+[07:52:53] INFO  XGBoost seeds 4 | worker slots 4 | CatBoost GPU 1.2.10
+[07:52:53] INFO    run_tag               : 20260925_075244
+[07:52:53] INFO    started_at            : 2026-09-25T07:52:44
+[07:52:53] INFO    python                : 3.12.13
+[07:52:53] INFO    platform              : Linux-6.12.90+-x86_64-with-glibc2.35
+[07:52:53] INFO    cpu_count             : 4
+[07:52:53] INFO    numpy                 : 2.0.2
+[07:52:53] INFO    pandas                : 2.3.3
+[07:52:53] INFO    xgboost               : 3.2.0
+[07:52:53] INFO    catboost              : 1.2.10
+[07:52:53] INFO    matplotlib            : 3.10.0
+[07:52:53] INFO    devices               : ['cuda:0', 'cuda:1']
+[07:52:53] INFO    workers_per_gpu       : 2
+[07:52:53] INFO    worker_slots          : 4
+[07:52:53] INFO    gpu_devices_detected  : ['cuda:0', 'cuda:1']
+[07:52:53] INFO    seed                  : 42
+[07:52:53] INFO  Found orders_train.csv       -> /kaggle/input/competitions/ch-27-celebal-technologies-vit-vellore/orders_train.csv  (32.4 MB)
+[07:52:53] INFO  Found orders_test.csv        -> /kaggle/input/competitions/ch-27-celebal-technologies-vit-vellore/orders_test.csv  (1.4 MB)
+[07:52:53] INFO  Found hub_metadata.csv       -> /kaggle/input/competitions/ch-27-celebal-technologies-vit-vellore/hub_metadata.csv  (0.0 MB)
+[07:52:53] INFO  Found sample_submission.csv  -> /kaggle/input/competitions/ch-27-celebal-technologies-vit-vellore/sample_submission.csv  (0.4 MB)
+[07:52:55] INFO  PASS  train_columns                ['AppSessions', 'Date', 'HubID', 'IsOpen', 'OrderVolume', 'PromoActive', 'RegionalHoliday', 'SchoolClosureFlag', 'Weekday']
+[07:52:55] INFO  PASS  test_columns                 ['Date', 'HubID', 'Id', 'IsOpen', 'PromoActive', 'RegionalHoliday', 'SchoolClosureFlag', 'Weekday']
+[07:52:55] INFO  PASS  train_key_unique             0
+[07:52:55] INFO  PASS  test_key_unique              0
+[07:52:55] INFO  PASS  test_after_train             train_max=2015-06-19 test_min=2015-06-20
+[07:52:55] INFO  PASS  test_contiguous              42 distinct dates
+[07:52:55] INFO  PASS  test_hubs_in_train           0
+[07:52:55] INFO  PASS  hubs_in_metadata             0
+[07:52:55] INFO  PASS  submission_ids_match         sample=46830 test=46830
+[07:52:55] INFO  PASS  closed_implies_zero          0
+[07:52:55] INFO  PASS  no_nulls_in_test             {'Id': 0, 'HubID': 0, 'Weekday': 0, 'Date': 0, 'IsOpen': 0, 'PromoActive': 0, 'RegionalHoliday': 0, 'SchoolClosureFlag': 0}
+[07:52:55] INFO  PASS  target_non_negative          0
+[07:52:55] INFO  PASS  appsessions_absent_from_test AppSessions is train-only and is never used as a row-level feature
+[07:52:55] INFO  train 970,379 rows | test 46,830 rows | hubs 1115
+[07:52:55] INFO  train 2013-01-01 .. 2015-06-19 | test 2015-06-20 .. 2015-07-31 (42 days)
+[07:52:55] INFO  closed rows                 : 166,269 (17.1%)
+[07:52:55] INFO  open-but-zero rows (dropped): 54
+[07:52:55] INFO  training rows (open, > 0)   : 804,056
+[07:52:55] INFO  hub mean spread             : 2707 .. 21803 (8.1x) -> RMSLE is the right metric
+[07:52:55] INFO  skew raw 1.59 -> log1p -0.11
+[07:52:57] INFO  figure -> eda_target_overview.png
+[07:52:58] INFO  hubs with a >=30-day history gap (renovation): 180
+[07:52:58] INFO  open rate   train=0.829  test=0.860
+[07:52:58] INFO  promo rate  train=0.383  test=0.357
+[07:52:58] INFO  school rate train=0.174  test=0.285
+[07:52:58] INFO  RegionalHoliday in test: {'0': 46830} (levels 1-3 never occur in the test window)
+[07:52:59] INFO  figure -> eda_coverage_and_shift.png
+[07:53:03] INFO  figure -> eda_hub_metadata.png
+[07:53:03] INFO  competitor distance nulls filled with median 2325 m: 3
+[07:53:03] INFO  hubs with no competitor-opening date: 354
+[07:53:04] INFO  figure -> eda_appsessions.png
+[07:53:04] INFO  log-space correlation AppSessions ~ OrderVolume: 0.854 (used only via hub-level, stats-window aggregates)
+[07:53:05] INFO  panel rows 1,065,940 | synthetic filler days (missing history) 48,731
+[07:53:05] INFO  calendar projected 14 days past the test end (sequence features only)
+[07:53:07] INFO  inferred 12 regional calendars from holiday/school flags (sizes [286, 180, 115, 112, 92, 75, 73, 56, 40, 36, 28, 22])
+[07:53:08] INFO  panel shape (1065940, 90); memory 253 MB
+[07:53:09] INFO  block backtest  history 2013-01-01..2015-03-27 (816d) -> target 2015-03-28..2015-05-08 (42d)
+[07:53:09] INFO  block valid     history 2013-01-01..2015-05-08 (858d) -> target 2015-05-09..2015-06-19 (42d)
+[07:53:09] INFO  block final     history 2013-01-01..2015-06-19 (900d) -> target 2015-06-20..2015-07-31 (42d)
+[07:53:09] INFO  figure -> validation_blocks.png
+[07:53:09] INFO  feature count: 128 (63 calendar/metadata + 65 history-derived); direct model: 77
+[07:53:30] INFO  block backtest  origins=15 train=558,536 (2013-07-06..2015-03-27) target=46,830 (open 37,044) -> 30.03 MB
+[07:53:52] INFO  block valid     origins=16 train=595,580 (2013-07-06..2015-05-08) target=46,830 (open 37,473) -> 32.41 MB
+[07:54:16] INFO  block final     origins=17 train=633,052 (2013-07-06..2015-06-19) target=46,830 (open 40,282) -> 34.94 MB
+[07:54:16] INFO  final block covers all test Ids exactly once — submission alignment guaranteed
+[07:54:17] INFO  leakage audit backtest  PASS (max hub-mean recompute diff 7.67e-07)
+[07:54:17] INFO  leakage audit valid     PASS (max hub-mean recompute diff 6.49e-07)
+[07:54:18] INFO  leakage audit final     PASS (max hub-mean recompute diff 6.63e-07)
+[07:54:18] INFO  worker written -> /kaggle/working/solari_forecast/xgb_worker.py (8.9 KB)
+[07:54:18] INFO  dispatcher ready — devices: ['cuda:0', 'cuda:1'], 4 worker slot(s)
+[07:54:18] INFO  validation rows 46,830 (open 37,473); backtest rows 46,830
+[07:54:18] INFO  test-like rows (no holiday within 3 days): validation 25,858, backtest 27,875
+[07:54:19] INFO  baseline RMSLE  valid:global_mean                  0.36564
+[07:54:19] INFO  baseline RMSLE  valid:hub_mean                     0.23417
+[07:54:19] INFO  baseline RMSLE  valid:hub_weekday_mean             0.18407
+[07:54:19] INFO  baseline RMSLE  valid:hub_weekday_promo_mean       0.14544
+[07:54:19] INFO  baseline RMSLE  backtest:global_mean               0.38961
+[07:54:19] INFO  baseline RMSLE  backtest:hub_mean                  0.27429
+[07:54:19] INFO  baseline RMSLE  backtest:hub_weekday_mean          0.23598
+[07:54:19] INFO  baseline RMSLE  backtest:hub_weekday_promo_mean    0.16608
+[07:54:19] INFO  direct-model lag audit PASS (Lag28 recomputed from the raw CSV for 25 random test rows)
+[07:54:24] INFO  gap  7d table -> direct_gap7.parquet (63.3 MB, 1,017,209 rows x 77 features)
+[07:54:27] INFO  gap 14d table -> direct_gap14.parquet (63.0 MB, 1,017,209 rows x 77 features)
+[07:54:31] INFO  gap 21d table -> direct_gap21.parquet (62.7 MB, 1,017,209 rows x 77 features)
+[07:54:35] INFO  gap 28d table -> direct_gap28.parquet (62.4 MB, 1,017,209 rows x 77 features)
+[07:54:38] INFO  gap 35d table -> direct_gap35.parquet (62.0 MB, 1,017,209 rows x 77 features)
+[07:54:42] INFO  gap 42d table -> direct_gap42.parquet (61.5 MB, 1,017,209 rows x 77 features)
+[07:54:43] INFO  multi-gap lag audit PASS (gap 42 == panel lags; gap 7 Lag28 recomputed from the raw CSV for 25 random test rows)
+[07:54:43] INFO  12 multi-gap XGBoost + 2 CatBoost + 1 plain XGBoost (64 features) back-test jobs queued for the Stage A launch
+[07:54:43] INFO  stage A (ablation) + direct-model back-tests: 17 job(s) on 4 slot(s) (2 per device, nthread=1)
+[07:57:49] INFO    finished M_backtest_gap7 on cuda:0: best_iter=1419 best_rmsle=0.08626 in 185.4s
+[07:58:43] INFO    finished M_backtest_gap14 on cuda:1: best_iter=1964 best_rmsle=0.08731 in 239.8s
+[08:01:27] INFO    finished M_backtest_gap21 on cuda:0: best_iter=1799 best_rmsle=0.08785 in 217.1s
+[08:02:07] INFO    finished K_backtest_gap14 on cuda:0: best_iter=1587 best_rmsle=0.08844 in 444.0s
+[08:02:39] INFO    finished M_backtest_gap28 on cuda:1: best_iter=2034 best_rmsle=0.08988 in 234.6s
+[08:03:14] INFO    finished K_backtest_gap42 on cuda:1: best_iter=1813 best_rmsle=0.09430 in 510.8s
+[08:09:10] INFO    finished M_backtest_gap35 on cuda:0: best_iter=2268 best_rmsle=0.08866 in 461.6s
+[08:10:32] INFO    finished M_backtest_gap42 on cuda:0: best_iter=2347 best_rmsle=0.08923 in 503.5s
+[08:11:19] INFO    finished M_backtest_gap7_alt on cuda:1: best_iter=1225 best_rmsle=0.08784 in 518.7s
+[08:14:05] INFO    finished M_backtest_gap14_alt on cuda:1: best_iter=1495 best_rmsle=0.08839 in 649.1s
+[08:16:20] INFO    finished M_backtest_gap21_alt on cuda:0: best_iter=928 best_rmsle=0.08816 in 427.9s
+[08:17:09] INFO    finished M_backtest_gap28_alt on cuda:0: best_iter=837 best_rmsle=0.08871 in 395.5s
+[08:18:25] INFO    finished A_backtest_weighted on cuda:0: best_iter=1011 best_rmsle=0.08805 in 73.9s
+[08:19:01] INFO    finished M_backtest_gap35_alt on cuda:1: best_iter=1011 best_rmsle=0.09003 in 460.6s
+[08:20:02] INFO    finished A_backtest_unweighted on cuda:0: best_iter=1469 best_rmsle=0.08875 in 96.4s
+[08:21:30] INFO    finished P_backtest on cuda:0: best_iter=2516 best_rmsle=0.09439 in 308.8s
+[08:21:46] INFO    finished M_backtest_gap42_alt on cuda:1: best_iter=2163 best_rmsle=0.08964 in 459.8s
+[08:21:46] INFO  stage A (ablation) + direct-model back-tests: 17 job(s) finished in 1624s
+[08:21:46] INFO  multi-gap family: primary (reg:pseudohubererror, 127 leaves; mean back-test test-like RMSLE primary 0.08820 vs alternative 0.08880)
+[08:21:46] INFO  stage A winner: use_weights=True, rounds=1012, backtest RMSLE all rows=0.09713, test-like=0.08090
+[08:21:46] INFO  multi-gap rounds (validation): {7: 1420, 14: 1965, 21: 1800, 28: 2035, 35: 2269, 42: 2348}
+[08:21:46] INFO  CatBoost rounds (validation): {14: 1588, 42: 1814}
+[08:21:46] INFO  plain direct rounds (validation): 2517
+[08:21:46] INFO  stages B + C + direct models (all GPUs): 26 job(s) on 4 slot(s) (2 per device, nthread=1)
+[08:26:51] INFO    finished P_final on cuda:1: best_iter=2768 best_rmsle=nan in 303.9s
+[08:28:09] INFO    finished K_valid_gap42 on cuda:0: best_iter=1813 best_rmsle=nan in 381.4s
+[08:28:28] INFO    finished K_final_gap14 on cuda:1: best_iter=1746 best_rmsle=nan in 400.8s
+[08:29:22] INFO    finished K_final_gap42 on cuda:0: best_iter=1994 best_rmsle=nan in 455.0s
+[08:32:01] INFO    finished P_valid on cuda:0: best_iter=2516 best_rmsle=nan in 230.9s
+[08:34:13] INFO    finished M_final_gap42 on cuda:1: best_iter=2582 best_rmsle=nan in 440.2s
+[08:35:58] INFO    finished M_valid_gap42 on cuda:0: best_iter=2347 best_rmsle=nan in 235.4s
+[08:36:41] INFO    finished M_final_gap35 on cuda:1: best_iter=2495 best_rmsle=nan in 491.8s
+[08:37:01] INFO    finished K_valid_gap14 on cuda:0: best_iter=1587 best_rmsle=nan in 457.4s
+[08:41:41] INFO    finished M_valid_gap35 on cuda:1: best_iter=2268 best_rmsle=nan in 447.2s
+[08:42:21] INFO    finished M_final_gap28 on cuda:0: best_iter=2237 best_rmsle=nan in 382.0s
+[08:43:45] INFO    finished M_final_gap14 on cuda:1: best_iter=2161 best_rmsle=nan in 422.1s
+[08:43:48] INFO    finished M_valid_gap28 on cuda:0: best_iter=2034 best_rmsle=nan in 405.7s
+[08:48:17] INFO    finished M_final_gap21 on cuda:1: best_iter=1979 best_rmsle=nan in 394.2s
+[08:49:00] INFO    finished M_valid_gap14 on cuda:0: best_iter=1964 best_rmsle=nan in 396.8s
+[08:49:10] INFO    finished M_final_gap7 on cuda:0: best_iter=1561 best_rmsle=nan in 319.5s
+[08:49:42] INFO    finished M_valid_gap21 on cuda:1: best_iter=1799 best_rmsle=nan in 355.7s
+[08:50:38] INFO    finished C_final_seed42 on cuda:0: best_iter=1112 best_rmsle=nan in 97.3s
+[08:50:46] INFO    finished C_final_seed43 on cuda:0: best_iter=1112 best_rmsle=nan in 94.3s
+[08:50:55] INFO    finished C_final_seed44 on cuda:1: best_iter=1112 best_rmsle=nan in 71.7s
+[08:52:02] INFO    finished B_valid_seed43 on cuda:1: best_iter=1011 best_rmsle=nan in 65.1s
+[08:52:20] INFO    finished C_final_seed45 on cuda:0: best_iter=1112 best_rmsle=nan in 100.8s
+[08:52:23] INFO    finished B_valid_seed42 on cuda:0: best_iter=1011 best_rmsle=nan in 95.1s
+[08:52:56] INFO    finished M_valid_gap7 on cuda:1: best_iter=1419 best_rmsle=nan in 277.5s
+[08:53:05] INFO    finished B_valid_seed44 on cuda:1: best_iter=1011 best_rmsle=nan in 61.1s
+[08:53:11] INFO    finished B_valid_seed45 on cuda:0: best_iter=1011 best_rmsle=nan in 49.6s
+[08:53:12] INFO  stages B + C + direct models (all GPUs): 26 job(s) finished in 1885s
+[08:53:12] INFO  final direct models seed-bagged over 1 seed(s): 9 bags, 9 fits
+[08:53:12] INFO  validation RMSLE  single-model mean : 0.09810
+[08:53:12] INFO  validation RMSLE  4-seed ensemble  : 0.09758 (gain +0.00053)
+[08:53:12] INFO  best naive baseline on the same block: 0.14544 -> improvement +0.04786
+[08:53:13] INFO  multi-gap look-ahead audit PASS (every served row's newest lag day <= history end)
+[08:53:14] INFO  figure -> multigap_horizon.png
+[08:53:14] INFO  multi-gap direct XGBoost: validation 0.08623 vs gap-42 only 0.08702 | back-test 0.08478 vs 0.08702 (excl. open-but-zero)
+[08:53:18] INFO  blend optimum on back-test  alone: xgb=0.35, mg=0.25, cat=0.20, plain=0.20
+[08:53:18] INFO  blend optimum on validation alone: xgb=0.65, mg=0.15, cat=0.00, plain=0.20
+[08:53:19] INFO  figure -> blend_curve.png
+[08:53:19] INFO  blend weights: XGBoost rolling-origin 0.55, XGBoost multi-gap direct 0.25, CatBoost direct 0.00, XGBoost direct, no lags 0.20
+[08:53:19] INFO  validation RMSLE, test-like rows: xgb 0.08475 / mg 0.08785 / cat 0.08986 / plain 0.09279 / blend 0.08319
+[08:53:19] INFO  validation RMSLE, all rows: xgb 0.09758 / mg 0.09691 / cat 0.09772 / plain 0.10187 / blend 0.09429
+[08:53:19] INFO  component correlations (validation, log): {'xgb~mg': 0.9267534164156945, 'xgb~cat': 0.8114029333802862, 'xgb~plain': 0.9364026968674116, 'mg~cat': 0.9536053446190806, 'mg~plain': 0.9699377969728376, 'cat~plain': 0.9256583293543759}
+[08:53:19] INFO  figure -> calibration_curve.png
+[08:53:19] INFO  calibration: valid optimum 1.016, backtest optimum 1.008, combined optimum 1.012, agreement=True -> applying 1.012
+[08:53:19] INFO  validation RMSLE calibrated: 0.09432 (was 0.09429); test-like rows 0.08200 (was 0.08319)
+[08:53:19] INFO  per-hub correction: best prior 80 gains -0.00020 RMSLE on test-like validation rows -> not applied
+[08:53:19] INFO  validation RMSLE, full pipeline (all rows): 0.09432
+[08:53:20] INFO  validation RMSLE (all rows)   : 0.09432
+[08:53:20] INFO  validation RMSLE (open rows)  : 0.10544
+[08:53:20] INFO  validation RMSLE (all rows except open-but-zero): 0.08339
+[08:53:20] INFO  validation log-space bias     : +0.00499
+[08:53:20] INFO  validation MAE / MAPE         : 398.3 orders / 7.18%
+[08:53:20] INFO  per-hub RMSLE  p50=0.0754  p90=0.0994  worst=1.4778
+[08:53:22] INFO  figure -> diagnostics_validation.png
+[08:53:22] INFO  figure -> feature_importance.png
+[08:53:22] INFO  ensemble agreement: mean pairwise r = 0.99814, mean per-row sd = 0.0119 log-units
+[08:53:22] INFO  top-10 features: HubDowPromoMean, HubPromoMean, HubTrailPromo91, HubTrailDow365, HubDowMean, PromoActive, HolidaysThisWeek, HubTrailDow91, HubTrailMean365, HolidayTomorrow
+[08:53:22] INFO    rows_over_forecast_pct                        41.95815
+[08:53:22] INFO    rows_under_forecast_pct                       38.06107
+[08:53:22] INFO    mean_log_error_over                           0.07381
+[08:53:22] INFO    mean_log_error_under                          -0.06827
+[08:53:22] INFO    worst_1pct_rows_share_of_squared_error        35.80153
+[08:53:22] INFO    rmsle_renovation_hubs                         0.08793
+[08:53:22] INFO    rmsle_other_hubs                              0.09550
+[08:53:22] INFO    rmsle_first_week_after_closure                0.10482
+[08:53:22] INFO    rmsle_settled_open_days                       0.12070
+[08:53:22] INFO    rmsle_promo_days                              0.08601
+[08:53:22] INFO    rmsle_non_promo_days                          0.09863
+[08:53:22] INFO    closed_rows_all_predicted_zero                True
+[08:53:22] INFO    closed_rows_all_actually_zero                 True
+[08:53:22] INFO  the worst 1% of rows account for 35.8% of total squared log error
+[08:53:24] INFO  figure -> error_analysis_hub_series.png
+[08:53:25] INFO  final ensemble: 4 rolling-origin XGBoost x 1113 rounds + 6 multi-gap XGBoost + 2 CatBoost + 1 plain XGBoost (direct models x 1 seeds) | weights xgb=0.55, mg=0.25, cat=0.00, plain=0.20
+[08:53:25] INFO  component correlations on test (log): {'xgb~mg': 0.9439094236281497, 'xgb~cat': 0.8379440762523026, 'xgb~plain': 0.9547978900730736, 'mg~cat': 0.9530401660301341, 'mg~plain': 0.9759195356927076, 'cat~plain': 0.9281237650460795}
+[08:53:25] INFO  test predictions: mean 6002.1, median 5938.0, max 30310, zeros 6,548
+[08:53:25] INFO  rolling-origin seed disagreement (log sd): mean 0.0090, p95 0.0174
+[08:53:27] INFO  figure -> test_prediction_sanity.png
+[08:53:27] INFO    check all_finite                       True
+[08:53:27] INFO    check all_non_negative                 True
+[08:53:27] INFO    check closed_rows_are_zero             True
+[08:53:27] INFO    check open_rows_all_positive           True
+[08:53:27] INFO    check pred_mean_open                   6977.753736160072
+[08:53:27] INFO    check recent_actual_mean_open          7280.26651188856
+[08:53:27] INFO    check mean_ratio_pred_over_recent      0.9584475684736967
+[08:53:27] INFO    check hub_ratio_p01                    0.8978433465080972
+[08:53:27] INFO    check hub_ratio_p50                    0.9610709289420598
+[08:53:27] INFO    check hub_ratio_p99                    1.0745520634976038
+[08:53:27] INFO    check hubs_within_0.4_to_2.5x          1.0
+[08:53:27] INFO    check max_prediction                   30310.0
+[08:53:27] INFO    check historical_max                   38722.0
+[08:53:27] INFO  submission written -> /kaggle/working/submission.csv (0.49 MB)
+[08:53:27] INFO  rows 46,830 | mean 6002.1 | zeros 6,548
+[08:53:27] INFO    verify file                                          /kaggle/working/submission.csv
+[08:53:27] INFO    verify size_bytes                                    489615
+[08:53:27] INFO    verify columns_exact                                 True
+[08:53:27] INFO    verify dtype_integer                                 True
+[08:53:27] INFO    verify row_count_matches_test                        True
+[08:53:27] INFO    verify id_set_matches_test                           True
+[08:53:27] INFO    verify id_order_matches_sample                       True
+[08:53:27] INFO    verify no_nulls                                      True
+[08:53:27] INFO    verify no_negatives                                  True
+[08:53:27] INFO    verify no_duplicate_ids                              True
+[08:53:27] INFO    verify zeros_exactly_match_closed_rows               True
+[08:53:27] INFO    verify n_zero_predictions                            6548
+[08:53:27] INFO    verify n_closed_test_rows                            6548
+[08:53:27] INFO    verify rmsle_implementation_selfcheck_ok             True
+[08:53:27] INFO    verify validation_rmsle_full_pipeline                0.09431688681976315
+[08:53:27] INFO    verify backtest_rmsle                                0.08880985081281398
+[08:53:27] INFO    verify kaggle_submission_named_submission_csv        True
+[08:53:27] INFO    verify kaggle_submission_in_working_root             True
+[08:53:27] INFO    verify single_submission_file                        True
+[08:53:27] INFO  submission verification: ALL CHECKS PASSED
+[08:53:27] INFO  summary written -> /kaggle/working/solari_forecast/reports/summary.md (6382 chars)
+[08:53:27] INFO  verified 44 required artefacts are present
+[08:53:27] WARN  skipping zero-byte file logs/worker_cuda1.err.log

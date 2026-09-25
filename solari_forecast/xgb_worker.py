@@ -48,6 +48,11 @@ def row_masks(df, job):
     is_eval = (
         is_target & (df["IsOpen"].to_numpy() == 1) & (df["OrderVolume"].to_numpy() > 0)
     )
+    if job.get("eval_testlike"):
+        # the test window has no regional holiday: stop on rows that look like it
+        is_eval &= (df["RegionalHoliday"].to_numpy() == 0) & (
+            df["HolidaysThisWeek"].to_numpy() == 0
+        )
     return is_train, is_target, is_eval
 
 

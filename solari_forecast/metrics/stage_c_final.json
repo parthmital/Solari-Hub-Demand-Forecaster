@@ -1,46 +1,52 @@
 {
-	"rounds": 572,
-	"rounds_source": "520 (back-test early stopping) x 1.1",
+	"rounds": 1113,
+	"rounds_source": "1012 (back-test early stopping) x 1.1",
 	"n_models": 4,
 	"seeds": [42, 43, 44, 45],
 	"devices": ["cuda:0", "cuda:1"],
-	"train_rows": 514194,
-	"seconds_total": 3769.2000000000003,
-	"calibration_multiplier": 1.018,
+	"train_rows": 633052,
+	"seconds_total": 3973.6,
+	"direct_final_seeds": 1,
+	"plain_final_rounds": 2769,
+	"calibration_multiplier": 1.012,
 	"hub_correction_prior": null,
 	"blend_weights": {
-		"xgb": 0.45,
-		"mg": 0.35,
-		"cat": 0.2
+		"xgb": 0.55,
+		"mg": 0.25,
+		"cat": 0.0,
+		"plain": 0.2
 	},
 	"mg_final_rounds": {
-		"7": 2219,
-		"14": 2380,
-		"21": 2420,
-		"28": 3256,
-		"35": 2505,
-		"42": 3805
+		"7": 1562,
+		"14": 2162,
+		"21": 1980,
+		"28": 2238,
+		"35": 2496,
+		"42": 2583
 	},
 	"cat_final_rounds": {
-		"14": 1615,
-		"42": 3581
+		"14": 1747,
+		"42": 1995
 	},
 	"component_log_correlation_test": {
-		"xgb~mg": 0.9376953431978949,
-		"xgb~cat": 0.8441109828172356,
-		"mg~cat": 0.9583549961894244
+		"xgb~mg": 0.9439094236281497,
+		"xgb~cat": 0.8379440762523026,
+		"xgb~plain": 0.9547978900730736,
+		"mg~cat": 0.9530401660301341,
+		"mg~plain": 0.9759195356927076,
+		"cat~plain": 0.9281237650460795
 	},
-	"ensemble_sd_log_mean": 0.01059588324278593,
-	"ensemble_sd_log_p95": 0.020540712401270866,
+	"ensemble_sd_log_mean": 0.00901908241212368,
+	"ensemble_sd_log_p95": 0.017448093742132187,
 	"prediction_summary": {
 		"count": 46830.0,
-		"mean": 6057.5427930813585,
-		"std": 3677.8449566971226,
+		"mean": 6002.090027759983,
+		"std": 3625.7018128914765,
 		"min": 0.0,
-		"25%": 4197.0,
-		"50%": 5975.0,
-		"75%": 8048.0,
-		"max": 30428.0
+		"25%": 4179.25,
+		"50%": 5938.0,
+		"75%": 7974.0,
+		"max": 30310.0
 	},
 	"zero_predictions": 6548,
 	"closed_test_rows": 6548

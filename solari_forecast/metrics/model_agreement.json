@@ -1,17 +1,17 @@
 {
 	"n_models": 4,
-	"mean_pairwise_correlation": 0.997153663845407,
-	"min_pairwise_correlation": 0.9969797743692813,
-	"mean_prediction_sd_log": 0.014480652287602425,
-	"p95_prediction_sd_log": 0.032198045402765274,
+	"mean_pairwise_correlation": 0.9981428969238061,
+	"min_pairwise_correlation": 0.997999058839032,
+	"mean_prediction_sd_log": 0.011913327500224113,
+	"p95_prediction_sd_log": 0.025645030662417412,
 	"gain_share_by_family": {
-		"hub history": 52.64926446560068,
-		"trailing-window history": 27.503291310316378,
-		"calendar": 11.780132301825883,
-		"promotion calendar": 4.862097060580739,
-		"operating status": 1.8790811070742002,
-		"hub metadata": 0.5452988705958979,
-		"network shape": 0.3986155598801591,
-		"year-over-year": 0.38221932412606163
+		"hub history": 53.851794720758996,
+		"trailing-window history": 26.004546179469234,
+		"calendar": 11.666883193186518,
+		"promotion calendar": 5.2946817408537425,
+		"operating status": 1.812245993040855,
+		"hub metadata": 0.5081769189371568,
+		"year-over-year": 0.45067852996154945,
+		"network shape": 0.4109927237919466
 	}
 }
